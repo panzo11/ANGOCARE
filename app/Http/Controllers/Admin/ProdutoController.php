@@ -42,7 +42,14 @@ class ProdutoController extends Controller
 
     public function create()
     {
-        $data['usuarios']=User::all();
+        if(Auth::user()->it_tipo_utilizador==0){
+            // dd(Auth::user()->it_tipo_utilizador);
+         $data['usuarios']=User::all();
+        }
+         else{
+            $id=Auth::user()->id;
+            $data['usuarios']=User::where('id',$id)->get();
+         }
         // Exibir formulário de criação
         return view('admin.produto.registrar', $data);
     }

@@ -17,8 +17,13 @@
         
         <div class="form-group col-md-6">
             <label for="categoria">Categoria</label>
-            <input type="text" id="categoria" class="form-control" name="categoria" placeholder="Categoria"
-                value="{{ isset($produto->categoria) ? $produto->categoria : '' }}">
+            <select class="form-select mb-3 shadow-none" name="categoria">
+                <option selected disabled>Selecione a categoria</option>
+                <option value="Educação">Educação</option>
+                <option value="Educação">Humanidade</option>
+                <option value="Educação">Água</option>
+                <option value="Educação">Alimentação</option>
+            </select>
         </div>
       
         
@@ -26,7 +31,9 @@
             <div class="form-group">
                 <label class="form-label fw-semibold">Usuário Responsável*</label>
                 <select class="form-select mb-3 shadow-none" name="users_id">
+                    @if(Auth::user()->it_tipo_utilizador==0)
                     <option selected disabled>Selecione o usuário responsável</option>
+                    @endif
                     <!-- Incluir opções dinamicamente com dados de usuários -->
                     @foreach ($usuarios as $usuario)
                         <option value="{{ $usuario->id }}" {{ old('users_id') == $usuario->id ? 'selected' : '' }}>{{ $usuario->name }}</option>
@@ -36,7 +43,7 @@
         </div>
         
         <div class="form-group col-md-6">
-            <label for="capa">Capa</label>
+            <label for="capa">Foto de Capa</label>
             <input type="file" id="capa" class="form-control" name="capa" placeholder="capa"
                 value="{{ isset($produto->capa) ? $produto->capa : '' }}">
         </div>

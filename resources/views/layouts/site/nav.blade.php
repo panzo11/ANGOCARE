@@ -5,7 +5,7 @@
             <div class="row align-items-center">
                 <div class="col d-flex align-items-center contact-info">
                     <div>
-                        <i data-feather="phone"></i>  <a href="tel:+244922773978">+244922773978</a>
+                        <i data-feather="phone"></i>  <a href="tel:+244911111111">+244911111111</a>
                     </div>
                     <div>
                         <i data-feather="mail"></i>  <a href="/cdn-cgi/l/email-protection#dab3b4bcb59abbacbbaebbb3bef4b9b5b7"><span class="__cf_email__" >angocare@gmail.com</span></a>
@@ -38,7 +38,7 @@
             <div class="d-inline-flex request-btn order-lg-last col-auto p-0 align-items-center"> 
                 <a class="btn-outline-primary btn ms-3" href="#" id="search_home"><i data-feather="search"></i></a>
 
-                <a class="nav-link btn btn-default ms-3 donate-btn" href="#">Doar</a>
+                <a class="nav-link btn btn-default ms-3 donate-btn" href="{{ route('site.causas.index') }}">Doar</a>
 
                 <!-- Toggle Button Start -->
                 <button class="navbar-toggler x collapsed" type="button" data-bs-toggle="collapse"
@@ -71,7 +71,7 @@
                         </li>
                      
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle-mob" href="index.html" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Causas </a>
+                            <a class="nav-link dropdown-toggle-mob" href="{{ route('site.causas.index') }}" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pedidos de Ajuda </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="{{ route('site.causas.index') }}">Recursos Financeiros</a></li>
                                 <li><a class="dropdown-item" href="{{ route('site.causas.index2') }}">Recursos Materias</a></li>

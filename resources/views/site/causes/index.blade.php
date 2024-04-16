@@ -6,11 +6,11 @@
   <section class="breadcrumbs-page-wrap">
     <div class="bg-fixed pos-rel breadcrumbs-page">
         <div class="container">
-            <h1>Explorar as causas</h1>
+            <h1>Explorar Pedidos</h1>
             <nav aria-label="breadcrumb" class="breadcrumb-wrap">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Explorar as causas</li>
+                    <li class="breadcrumb-item"><a href="{{ route('site.home.index') }}">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Explorar Pedidos</li>
                 </ol>
             </nav>  
         </div>
@@ -26,7 +26,7 @@
         <div class="container">
             <h1 class="heading-main">
                 <small>Ajude-nos Agora</small>
-                Causas mais recentes
+                Pedidos mais recentes
             </h1>
             <div class="row">                    
                 @foreach ($doacoes as $doacao)
@@ -131,7 +131,7 @@
                             perguntas frequentes
                         </h1>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                        <a class="btn btn-default" href="our-faqs.html">Pergunte agora</a>
+                        {{-- <a class="btn btn-default" href="our-faqs.html">Pergunte agora</a> --}}
                     </div>
 
                     <!-- Spacer For Medium -->
@@ -173,7 +173,7 @@
                             <!-- Toggle Content 2 -->
     
                             <!-- Toggle Links 3 -->
-                            <div class="toggle">
+                            {{-- <div class="toggle">
                                 <span class="icon">
                                     <i class="icofont-plus"></i>
                                 </span> Saiba mais sobre adoção
@@ -185,7 +185,7 @@
                                 <div class="content">
                                     Donec commodo sodales ex, scelerisque laoreet nibh hendrerit id. In aliquet magna nec lobortis maximus. Etiam rhoncus leo a dolor placerat, nec elementum ipsum convall.
                                 </div>
-                            </div>
+                            </div> --}}
                             <!-- Toggle Content 3 -->
                         </div>
                     </div>

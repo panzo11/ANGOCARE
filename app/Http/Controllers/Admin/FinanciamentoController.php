@@ -21,14 +21,14 @@ class FinanciamentoController extends Controller
 
     public function index()
     {
-        if(Auth::user()->it_tipo_utilzador==0){
+        if(Auth::user()->it_tipo_utilizador==0){
             $data['usuarios']=User::all();
             // Obter todos os registros de financiamento
             $data['financiamentos'] = Financiamento::join('users','financiamentos.users_id','users.id')
             ->select('users.name as usuario','financiamentos.*')
             ->get();
         }   
-        elseif(Auth::user()->it_tipo_utilzador==2 ){
+        elseif(Auth::user()->it_tipo_utilizador==2 ){
             $id=Auth::user()->id;
             $data['usuarios']=User::where('id',$id)->get();
             // Obter todos os registros de financiamento
@@ -42,7 +42,16 @@ class FinanciamentoController extends Controller
     }
 
     public function create()
-    {  $data['usuarios']=User::all();
+    { 
+        
+        if(Auth::user()->it_tipo_utilizador==0){
+            // dd(Auth::user()->it_tipo_utilizador);
+         $data['usuarios']=User::all();
+        }
+         else{
+            $id=Auth::user()->id;
+            $data['usuarios']=User::where('id',$id)->get();
+         }
         // Exibir formulário de criação
         return view('admin.financiamento.registrar',$data);
     }

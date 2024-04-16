@@ -16,7 +16,7 @@
                         </li>
                         <li>
                             <div><i data-feather="phone"></i> </div>
-                            <div><a href="tel:+23522530587">+244 922 773 978</a></div>
+                            <div><a href="tel:+23522530587">+244 911 111 111</a></div>
                         </li>
                         <li>
                             <div><i data-feather="mail"></i> </div>
@@ -60,7 +60,7 @@
                         <div class="give-us-call">
                             <i data-feather="phone"></i>
                             <h4>Liga-Nos</h4>
-                            <h3><a href="tel:+244922773978">+244922773978</a></h3>
+                            <h3><a href="tel:+2449111111111">+2449111111111</a></h3>
                         </div>
                     </div>
                 </div>

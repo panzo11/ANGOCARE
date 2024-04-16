@@ -120,8 +120,10 @@
                                 </div>
                                 <!-- Map Icons Start -->
                             </div>
-
-                            <a href="become-volunteers.html" class="btn btn-outline-default">Torne-se um voluntário</a>
+@guest
+<a href="{{ route('login') }}" class="btn btn-outline-default">Inscreva-se</a>
+@endguest
+                           
                         </div>
                     </div>
 
@@ -162,7 +164,7 @@
                                 <a href="#"><img src="{{asset('asset/images/causes/causes_img_1.jpg')}}" alt=""></a>
                             </div>
                             <div class="text">
-                                <h3>Ajuda para a educaçãon</h3>
+                                <h3>Ajuda para a educação</h3>
                                 <p>Uma serenidade maravilhosa tomou posse de toda a minha alma</p>
                                 <div class="text-md-end">
                                     {{-- <a href="#" class="read-more-line"><span>Read More</span></a> --}}
@@ -241,7 +243,7 @@
                     <div class="col col-12 col-lg-4 col-md-6">
                         <div class="counter-style-box small-box">              
                             <div class="counter-txt"><span class="counter">{{ $financiamento }}</span>+</div>
-                            <div>Causas de Recursos<br> <Select:disabled></Select:disabled>Financeiros</div>
+                            <div>Pedidos por Recursos<br> <Select:disabled></Select:disabled>Financeiros</div>
                         </div>
                     </div>
                     <!-- Counter Col End -->
@@ -259,7 +261,7 @@
                     <div class="col col-12 col-lg-4 col-md-6">
                         <div class="counter-style-box small-box">              
                             <div class="counter-txt"><span class="counter">{{ $produto }}</span>+</div>
-                            <div>Causas de Recursos <br>Máterias</div>
+                            <div>Pedidos por Recursos <br>Máterias</div>
                         </div>
                     </div>
                     <!-- Counter Col End -->
@@ -276,11 +278,11 @@
                     <div class="col-lg-4 col-md-6">
                         <h1 class="heading-main">
                             <small>Ajude-nos agora</small>
-                            Causas mais recentes
+                            Pedidos de Ajuda mais recentes
                         </h1>
                     </div>
                     <div class="col-lg-8 col-md-6 text-md-end btn-team">
-                        <a href="{{ route('site.causas.index') }}" class="btn btn-outline-dark">Ver todas as causas</a>
+                        <a href="{{ route('site.causas.index') }}" class="btn btn-outline-dark">Ver todas Pedidos de Ajuda</a>
                     </div>
                 </div>
 
@@ -352,8 +354,8 @@
         <div class="row img-gallery">                    
             <div class="col-lg-4">
                 <h1 class="heading-main mb-lg-0">
-                    <small>Images Gallery</small>
-                    Project We Have Done
+                    <small>Galeria de Imagens</small>
+                    Pedidos de ajuda Realizados
                 </h1>
             </div>
 
@@ -362,8 +364,8 @@
                 <div class="img-gallery-item">
                     <a href="{{ asset('asset/images/gallery/gallery_img_1.jpg') }}" title="School Development">
                         <div class="gallery-content">
-                            <div class="tag"><span>Education</span></div>
-                            <h3>School Development</h3>
+                            {{-- <div class="tag"><span>Education</span></div>
+                            <h3>School Development</h3> --}}
                             <div class="img-open">
                                 <i data-feather="plus-circle"></i>
                             </div>
@@ -379,8 +381,8 @@
                 <div class="img-gallery-item">
                     <a href="{{ asset('asset/images/gallery/gallery_img_2.jpg') }}" title="Child Welfare">
                         <div class="gallery-content">
-                            <div class="tag"><span>Education</span></div>
-                            <h3>Child Welfare</h3>
+                            {{-- <div class="tag"><span>Education</span></div>
+                            <h3>Child Welfare</h3> --}}
                             <div class="img-open">
                                 <i data-feather="plus-circle"></i>
                             </div>
@@ -395,13 +397,13 @@
                 <!-- Gallery Item -->
                 <div class="img-gallery-item">
                     <a href="{{ asset('asset/images/gallery/gallery_img_3.jpg') }}" title="Child Welfare">
-                        <div class="gallery-content">
+                        {{-- <div class="gallery-content">
                             <div class="tag"><span>Education</span></div>
-                            <h3>Child Welfare</h3>
+                            <h3>Child Welfare</h3> --}}
                             <div class="img-open">
                                 <i data-feather="plus-circle"></i>
                             </div>
-                        </div>
+                        {{-- </div> --}}
                         <img src="{{ asset('asset/images/gallery/gallery_img_3.jpg') }}" alt="">
                     </a>
                 </div>
@@ -413,8 +415,8 @@
                 <div class="img-gallery-item">
                     <a href="{{ asset('asset/images/gallery/gallery_img_4.jpg') }}" title="Child Welfare">
                         <div class="gallery-content">
-                            <div class="tag"><span>Education</span></div>
-                            <h3>Child Welfare</h3>
+                            {{-- <div class="tag"><span>Education</span></div>
+                            <h3>Child Welfare</h3> --}}
                             <div class="img-open">
                                 <i data-feather="plus-circle"></i>
                             </div>
@@ -430,8 +432,8 @@
                 <div class="img-gallery-item">
                     <a href="{{ asset('asset/images/gallery/gallery_img_5.jpg') }}" title="Child Welfare">
                         <div class="gallery-content">
-                            <div class="tag"><span>Education</span></div>
-                            <h3>Child Welfare</h3>
+                            {{-- <div class="tag"><span>Education</span></div>
+                            <h3>Child Welfare</h3> --}}
                             <div class="img-open">
                                 <i data-feather="plus-circle"></i>
                             </div>
@@ -447,8 +449,8 @@
                 <div class="img-gallery-item">
                     <a href="{{ asset('asset/images/gallery/gallery_img_6.jpg') }}" title="Child Welfare">
                         <div class="gallery-content">
-                            <div class="tag"><span>Education</span></div>
-                            <h3>Child Welfare</h3>
+                            {{-- <div class="tag"><span>Education</span></div>
+                            <h3>Child Welfare</h3> --}}
                             <div class="img-open">
                                 <i data-feather="plus-circle"></i>
                             </div>
@@ -464,8 +466,8 @@
                 <div class="img-gallery-item">
                     <a href="{{ asset('asset/images/gallery/gallery_img_7.jpg') }}" title="Child Welfare">
                         <div class="gallery-content">
-                            <div class="tag"><span>Education</span></div>
-                            <h3>Child Welfare</h3>
+                            {{-- <div class="tag"><span>Education</span></div>
+                            <h3>Child Welfare</h3> --}}
                             <div class="img-open">
                                 <i data-feather="plus-circle"></i>
                             </div>
@@ -481,8 +483,8 @@
                 <div class="img-gallery-item">
                     <a href="{{ asset('asset/images/gallery/gallery_img_8.jpg') }}" title="Child Welfare">
                         <div class="gallery-content">
-                            <div class="tag"><span>Education</span></div>
-                            <h3>Child Welfare</h3>
+                            {{-- <div class="tag"><span>Education</span></div>
+                            <h3>Child Welfare</h3> --}}
                             <div class="img-open">
                                 <i data-feather="plus-circle"></i>
                             </div>
@@ -525,10 +527,10 @@
                         </div> --}}
                         
                         <div class="d-flex">
-                            <a class="btn btn-default me-3" href="become-volunteers.html">Inscreva-se agora</a>
+                            <a class="btn btn-default me-3" href="{{ route('login') }}">Inscreva-se agora</a>
                             <div class="sobre-telefone">
                                 <i data-feather="phone-call"></i>
-                                Contate-nos <br> +23522530587
+                                Contate-nos <br> +244 911 111 111
                             </div>
                         </div>
 
@@ -542,7 +544,7 @@
 
 
  
-        <!-- Google Map Style Start -->   
+        {{-- <!-- Google Map Style Start -->   
         <section class="wide-tb-100 pb-0">
             <div class="map-frame">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5516.795517377202!2d15.049412799495283!3d12.114648541083664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x111961f67b29ef2d%3A0xd39cbe5e3ec7b840!2sRue%20de%20Mongo%2C%20N%27Djamena%2C%20Chad!5e0!3m2!1sen!2sjo!4v1699964474698!5m2!1sen!2sjo"></iframe>
@@ -570,11 +572,11 @@
                     <!-- Callout Section Side Image -->
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- Google Map Style End -->   
 
         <!-- Our Partners Start -->
-        <section class="wide-tb-100">
+        {{-- <section class="wide-tb-100">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-12">
@@ -630,7 +632,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- Our Partners End -->
         
            

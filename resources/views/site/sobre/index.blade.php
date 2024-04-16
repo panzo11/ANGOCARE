@@ -5,10 +5,10 @@
     <section class="breadcrumbs-page-wrap">
         <div class="bg-fixed pos-rel breadcrumbs-page">
             <div class="container">
-                <h1>About Us</h1>
+                <h1>Sobre Nós</h1>
                 <nav aria-label="breadcrumb" class="breadcrumb-wrap">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('site.home.index') }}">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Sobre Nós</script></li>
                     </ol>
                 </nav>  
@@ -46,10 +46,10 @@
                             </div> --}}
                             
                             <div class="d-flex">
-                                <a class="btn btn-default me-3" href="become-volunteers.html">Inscreva-se agora</a>
+                                <a class="btn btn-default me-3" href="{{ route('login') }}">Inscreva-se agora</a>
                                 <div class="sobre-telefone">
                                     <i data-feather="phone-call"></i>
-                                    Contate-nos <br> +23522530587
+                                    Contate-nos <br> +244 911 111 111
                                 </div>
                             </div>
     
@@ -62,7 +62,7 @@
     
     
         <!-- Get to Know Us Style Start -->
-        <section class="wide-tb-100 bg-white mb-spacer-md">
+        {{-- <section class="wide-tb-100 bg-white mb-spacer-md">
             <div class="container">
                 <div class="row">                    
                     <div class="col-lg-5 col-md-12">
@@ -194,7 +194,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- Get to Know Us Style End -->
 
    
@@ -211,7 +211,7 @@
                             perguntas frequentes
                         </h1>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                        <a class="btn btn-default" href="our-faqs.html">Pergunte agora</a>
+                        {{-- <a class="btn btn-default" href="our-faqs.html">Pergunte agora</a> --}}
                     </div>
 
                     <!-- Spacer For Medium -->
@@ -253,7 +253,7 @@
                             <!-- Toggle Content 2 -->
     
                             <!-- Toggle Links 3 -->
-                            <div class="toggle">
+                            {{-- <div class="toggle">
                                 <span class="icon">
                                     <i class="icofont-plus"></i>
                                 </span> Saiba mais sobre adoção
@@ -265,7 +265,7 @@
                                 <div class="content">
                                     Donec commodo sodales ex, scelerisque laoreet nibh hendrerit id. In aliquet magna nec lobortis maximus. Etiam rhoncus leo a dolor placerat, nec elementum ipsum convall.
                                 </div>
-                            </div>
+                            </div> --}}
                             <!-- Toggle Content 3 -->
                         </div>
                     </div>

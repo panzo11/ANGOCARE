@@ -33,7 +33,7 @@
     </div>
     <br>
     <div class="text-center" style="text-align: center;">
-        <h3 class="tema">Livros Registrados na Livraria</h3>
+        <h3 class="tema">Produtos</h3>
     </div>
 
     <table class="table table-striped  table-bodered table-hover"  border="1" width="100%" style="border-collapse: collapse;">

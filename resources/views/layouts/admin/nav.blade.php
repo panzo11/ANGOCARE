@@ -1,7 +1,7 @@
 
     <aside class="sidebar sidebar-base sidebar-white sidebar-default navs-rounded-all " id="first-tour" data-toggle="main-sidebar" data-sidebar="responsive">
         <div class="sidebar-header d-flex align-items-center justify-content-start">
-            <a href="{{ route('admin.index') }}" class="navbar-brand">
+            <a href="{{ route('site.home.index') }}" class="navbar-brand">
 
                 <!--Logo start-->
                 <div class="logo-main">
@@ -167,7 +167,7 @@
                     @endif
                     <li class="nav-item static-item">
                         <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
-                            <span class="default-icon">Causas</span>
+                            <span class="default-icon">Pedidos</span>
                             <span class="mini-icon" data-bs-toggle="tooltip" title="Home" data-bs-placement="right">-</span>
                         </a>
                     </li>

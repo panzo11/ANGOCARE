@@ -15,10 +15,28 @@ class DatabaseSeeder extends Seeder
     protected static ?string $password;
     public function run(): void
     {
-        // \App\Models\User::factory(1)->create();
+        \App\Models\User::factory(1)->create();
 
         \App\Models\User::factory()->create([
-            'name' => "Miguel Mateus",
+            'name' => "Paulo Tumba",
+            'email' => "911222333",
+            'email_verified_at' => now(),
+            'password' => static::$password ??= Hash::make('password'),
+            'bi'=> fake()->name(),
+            'it_tipo_utilizador' => 1,
+        ]);
+
+        \App\Models\User::factory()->create([
+            'name' => "Euclides Costa",
+            'email' => "911111222",
+            'email_verified_at' => now(),
+            'password' => static::$password ??= Hash::make('password'),
+            'bi'=> fake()->name(),
+            'it_tipo_utilizador' => 2,
+        ]);
+
+        \App\Models\User::factory()->create([
+            'name' => "Paulino Mateus",
             'email' => "953854043",
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
@@ -26,7 +44,7 @@ class DatabaseSeeder extends Seeder
             'it_tipo_utilizador' => 3,
         ]);
         \App\Models\User::factory()->create([
-            'name' => "Isabel Mateus",
+            'name' => "Pedro Mateus",
             'email' => "957572349",
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),

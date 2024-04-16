@@ -9,7 +9,7 @@
             <h1>Organizações que apoiam necessitados</h1>
             <nav aria-label="breadcrumb" class="breadcrumb-wrap">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('site.home.index') }}">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">ONGs</li>
                 </ol>
             </nav>  

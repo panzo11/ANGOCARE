@@ -5,11 +5,11 @@
     <section class="breadcrumbs-page-wrap">
         <div class="bg-fixed pos-rel breadcrumbs-page">
             <div class="container">
-                <h1>Causes Single</h1>
+                <h1>{{ $doacao->titulo }</h1>
                 <nav aria-label="breadcrumb" class="breadcrumb-wrap">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Causes Single</li>
+                        <li class="breadcrumb-item"><a href="{{ route('site.home.index') }}">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Detalhe do Pedido</li>
                     </ol>
                 </nav>  
             </div>
@@ -28,13 +28,13 @@
                         <div class="sidebar-spacer">
                                                     
                             <h1 class="heading-main">
-                                <small>Help Us Now</small>
-                                Education for Poor Children
+                                <small>Ajude-nos Agora</small>
+                               {{$doacao->titulo}}
                             </h1>
                             <!-- Causes Single Wrap -->
                             <div class="causes-wrap single">
                                 <div class="img-wrap">
-                                    <span class="tag-single">Education</span>
+                                    <span class="tag-single">{{ doacao->categoria }}</span>
                                     <img src="{{ $doacao->capa }}" alt="">
                                 </div>
 
@@ -228,7 +228,7 @@
                         </h1>
                     </div>
                     <div class="col-sm-12 text-md-end">
-                        <a href="{{ route("site.causas.index2") }}" class="btn btn-default">Donate Now</a>
+                        <a href="{{ route("site.causas.index2") }}" class="btn btn-default">Doa Agora</a>
                     </div>
                 </div>
             </div>

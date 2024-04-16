@@ -8,7 +8,7 @@
             <h1>Contacte-nos</h1>
             <nav aria-label="breadcrumb" class="breadcrumb-wrap">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('site.home.index') }}">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Contacte-nos</li>
                 </ol>
             </nav>  
@@ -45,31 +45,31 @@
                             <div class="row">
                                 <div class="col-md-6 mb-0">
                                     <div class="form-group">
-                                        <input type="text" name="name" id="name" class="form-control" placeholder="First Name">
+                                        <input type="text" name="name" id="name" class="form-control" placeholder="Nome">
                                     </div>
                                 </div>
 
                                 <div class="col-md-6 mb-0">
                                     <div class="form-group">
-                                        <input type="text" name="lastname" id="lastname" class="form-control" placeholder="Last Name">
+                                        <input type="text" name="lastname" id="lastname" class="form-control" placeholder="Sobre Nome">
                                     </div>
                                 </div>
 
                                 <div class="col-md-6 mb-0">
                                     <div class="form-group">
-                                        <input type="text" name="email" id="email" class="form-control" placeholder="Your Email">
+                                        <input type="text" name="email" id="email" class="form-control" placeholder="Email">
                                     </div>
                                 </div>
 
                                 <div class="col-md-6 mb-0">
                                     <div class="form-group">
-                                        <input type="number" name="phone" id="phone" class="form-control" placeholder="Phone Number">
+                                        <input type="number" name="phone" id="phone" class="form-control" placeholder="Numero">
                                     </div>
                                 </div>
 
                                 <div class="col-md-12 mb-0">
                                     <div class="form-group">
-                                        <textarea name="comment" id="comment" class="form-control" rows="6" placeholder="Message"></textarea>
+                                        <textarea name="comment" id="comment" class="form-control" rows="6" placeholder="Mensagem"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -112,7 +112,7 @@
         </div>
     </section>
 
-    <section class="wide-tb-100">
+    {{-- <section class="wide-tb-100">
         <div class="map-frame">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5516.795517377202!2d15.049412799495283!3d12.114648541083664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x111961f67b29ef2d%3A0xd39cbe5e3ec7b840!2sRue%20de%20Mongo%2C%20N%27Djamena%2C%20Chad!5e0!3m2!1sen!2sjo!4v1699964474698!5m2!1sen!2sjo"></iframe>
         </div>
@@ -140,7 +140,7 @@
                 <!-- Callout Section Side Image -->
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Contact Us Style Start -->
 
 
