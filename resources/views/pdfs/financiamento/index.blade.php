@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>Listas de Concorrentes</title>
+    <title>ANGOCARE - FINANCIAMENTOS</title>
     <style>
         <?php echo $bootstrap;
         echo $css;
