@@ -50,7 +50,7 @@ $documentos=App\Models\Documento::get();
                         
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label for="email" class="form-label">Email*</label>
+                                        <label for="email" class="form-label">Telefone*</label>
                                         <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"  aria-describedby="Telefone" placeholder="900111000">
                                         @error('email')
                                         <span class="invalid-feedback form-control" role="alert">
