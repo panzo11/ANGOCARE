@@ -11,30 +11,30 @@
                         <div class="row justify-content-center justify-content-md-start no-gutters">
                             <div class="col-10 col-md-6 static">
                                 <div class="owl-slide-text">
-                                    <h3 class="owl-slide-animated owl-slide-title">Aumentando a esperança</h3>
+                                    <h3 class="owl-slide-animated owl-slide-title">Aumentando esperanças</h3>
                                     <h1 class="owl-slide-animated owl-slide-subtitle">
-                                        Para os moradores de rua
+                                    Construindo um futuro brilhante para todos.
                                     </h1>
-                                 
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!--/owl-slide-->
-                
-                
+
+
                 <!--/owl-slide-->
                 <div class="owl-slide d-flex align-items-center cover" style="background-image: url({{asset('asset/images/slider/slider_home_first_3.jpg')}});">
                     <div class="container">
                         <div class="row justify-content-center justify-content-md-start no-gutters">
                             <div class="col-10 col-md-6 static">
                                 <div class="owl-slide-text">
-                                    <h3 class="owl-slide-animated owl-slide-title">Aumentando a esperança</h3>
+                                    <br>
+                                    <h3 class="owl-slide-animated owl-slide-title">Cultivando Esperanças.</h3>
                                     <h1 class="owl-slide-animated owl-slide-subtitle">
-                                        Para os moradores de rua
+                                    Unidos pela esperança, fortalecemos laços.
                                     </h1>
-                                 
                                 </div>
                             </div>
                         </div>
@@ -47,11 +47,11 @@
                         <div class="row justify-content-center justify-content-md-start no-gutters">
                             <div class="col-10 col-md-6 static">
                                 <div class="owl-slide-text">
-                                    <h3 class="owl-slide-animated owl-slide-title">Aumentando a esperança</h3>
+                                    <h3 class="owl-slide-animated owl-slide-title">Empoderando Comunidades</h3>
                                     <h1 class="owl-slide-animated owl-slide-subtitle">
-                                        Para os moradores de rua
+                                    Acreditando <br>no potencial de cada indivíduo.
                                     </h1>
-                                 
+
                                 </div>
                             </div>
                         </div>
@@ -59,7 +59,7 @@
                 </div>
                 <!--/owl-slide-->
             </div>
-            
+
         </div>
     </section>
     <!-- Banner Start -->
@@ -70,60 +70,17 @@
         <!-- Donation Style Start -->
         <section class="bg-white">
             <div class="container">
-                <div class="row align-items-center">  
+                <div class="row align-items-center">
                     <div class="col-lg-5 col-md-12 order-lg-last">
-                        <div class="home-second-donation-form">                                                    
-                           
+                        <div class="home-second-donation-form">
+
 
                             <div class="col-lg-7 col-md-12">
                                 <div class="text-center">
                                     <img src="{{asset('asset/images/about_img.png')}}" alt="">
                                 </div>
                             </div>
-                                
-                        </div>
-                    </div> 
-                    
-                    <!-- Spacer For Medium -->
-                    <div class="w-100 d-none d-sm-none d-md-block d-lg-none spacer-60"></div>
-                    <!-- Spacer For Medium -->
 
-                    <div class="col-lg-7 col-md-12">
-                        <div>
-                            
-                            <h1 class="heading-main">
-                                <small>Bem-vindo ao aumentar a esperança</small>
-                                Pequenas ações levam a grandes mudanças
-                            </h1>
-                            <p>Isso representa 14% da população mundial. Dito de outra forma, isto significa que 1 em cada 8 pessoas vivas hoje vive sem esperança entre lixo, esgoto, drogas e abuso em condições inimagináveis. A vida sem habitação segura é uma vida sem satisfação das necessidades básicas.</p>                        
-
-                            <div class="row my-5 home-second-welcome">                      
-                                <!-- Map Icons Start -->
-                                {{-- <div class="col-sm-6 mb-md-0">
-                                    <div class="icon-box-1">
-                                        <i class="charity-volunteer_people"></i>
-                                        <div class="text">
-                                            <h3>3,750 <br> <span>Produtos Fiduciários</span></h3>
-                                        </div>
-                                    </div>
-                                </div> --}}
-                                <!-- Map Icons Start -->
-
-                                <!-- Map Icons Start -->
-                                <div class="col-sm-6">
-                                    <div class="icon-box-1">
-                                        <i class="charity-donate_money"></i>
-                                        <div class="text">
-                                            <h3>{{ $fundos }} Kz <br> <span>Fundos Fiduciários</span></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Map Icons Start -->
-                            </div>
-@guest
-<a href="{{ route('login') }}" class="btn btn-outline-default">Inscreva-se</a>
-@endguest
-                           
                         </div>
                     </div>
 
@@ -131,7 +88,38 @@
                     <div class="w-100 d-none d-sm-none d-md-block d-lg-none spacer-60"></div>
                     <!-- Spacer For Medium -->
 
-                    
+                    <div class="col-lg-7 col-md-12">
+                        <div>
+                            <h1 class="heading-main mt-5">
+                                <small>Bem-vindo ao aumentar a esperança</small>
+                                Pequenas ações levam a grandes mudanças
+                            </h1>
+                            <p>Isso representa 14% da população mundial. Dito de outra forma, isto significa que 1 em cada 8 pessoas vivas hoje vive sem esperança entre lixo, esgoto, drogas e abuso em condições inimagináveis. A vida sem habitação segura é uma vida sem satisfação das necessidades básicas.</p>
+
+                            <div class="row my-5 home-second-welcome">
+                                <!-- Map Icons Start -->
+                                <div class="col-sm-6">
+                                    <div class="icon-box-1">
+                                        <i class="charity-donate_money"></i>
+                                        <div class="text">
+                                            <h3>{{ $fundos }} Kz <br> <span>Fundos Financeiros</span></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Map Icons Start -->
+                            </div>
+                            @guest
+                            <a href="{{ route('login') }}" class="btn btn-outline-default">Inscreva-se</a>
+                            @endguest
+
+                        </div>
+                    </div>
+
+                    <!-- Spacer For Medium -->
+                    <div class="w-100 d-none d-sm-none d-md-block d-lg-none spacer-60"></div>
+                    <!-- Spacer For Medium -->
+
+
                 </div>
             </div>
         </section>
@@ -140,26 +128,29 @@
         <!-- Welcome Home Style Start -->
         <section class="wide-tb-100 pb-5 bg-green">
             <div class="container">
-                <div class="row">                    
+                <div class="row">
                     <div class="col-lg-5 col-md-12">
                         <h1 class="heading-main">
                             <small>Bem-vindo ao aumentar a esperança</small>
                             Pequenas ações levam a grandes mudanças
                         </h1>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                        <p>
+                        Seja doar uma refeição, oferecer um agasalho ou compartilhar um momento de apoio,
+                        cada ato de caridade é uma semente plantada, pronta para florescer em mudanças significativas.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="wide-tb-100 pt-0 welcome-broke-grid green pb-5">          
+        <section class="wide-tb-100 pt-0 welcome-broke-grid green pb-5">
 
             <div class="container">
                 <div class="welcome-icon"><i class="charity-love_hearts"></i></div>
                 <div class="row">
                     <div class="col-sm-6 col-md-6 col-lg-3">
                         <!-- Icon Boxes Image Style -->
-                        <div class="icon-box-with-img">                                                        
+                        <div class="icon-box-with-img">
                             <div class="img">
                                 <a href="#"><img src="{{asset('asset/images/causes/causes_img_1.jpg')}}" alt=""></a>
                             </div>
@@ -176,7 +167,7 @@
 
                     <div class="col-sm-6 col-md-6 col-lg-3">
                         <!-- Icon Boxes Image Style -->
-                        <div class="icon-box-with-img">                            
+                        <div class="icon-box-with-img">
                             <div class="img">
                                 <a href="#"><img src="{{asset('asset/images/causes/causes_img_4.jpg')}}" alt=""></a>
                             </div>
@@ -197,7 +188,7 @@
 
                     <div class="col-sm-6 col-md-6 col-lg-3">
                         <!-- Icon Boxes Image Style -->
-                        <div class="icon-box-with-img">  
+                        <div class="icon-box-with-img">
                             <div class="img">
                                 <a href="#"><img src="{{asset('asset/images/causes/causes_img_3.jpg')}}" alt=""></a>
                             </div>
@@ -211,7 +202,7 @@
                         </div>
                         <!-- Icon Boxes Image Style -->
                     </div>
-                    
+
 
                     <div class="col-sm-6 col-md-6 col-lg-3">
                         <!-- Icon Boxes Image Style -->
@@ -229,7 +220,7 @@
                         </div>
                         <!-- Icon Boxes Image Style -->
                     </div>
-                    
+
                 </div>
             </div>
         </section>
@@ -241,7 +232,7 @@
                 <div class="row d-flex align-items-center">
                     <!-- Counter Col Start -->
                     <div class="col col-12 col-lg-4 col-md-6">
-                        <div class="counter-style-box small-box">              
+                        <div class="counter-style-box small-box">
                             <div class="counter-txt"><span class="counter">{{ $financiamento }}</span>+</div>
                             <div>Pedidos por Recursos<br> <Select:disabled></Select:disabled>Financeiros</div>
                         </div>
@@ -250,7 +241,7 @@
 
                     <!-- Counter Col Start -->
                     <div class="col col-12 col-lg-4 col-md-6">
-                        <div class="counter-style-box small-box">              
+                        <div class="counter-style-box small-box">
                             <div class="counter-txt"><span class="counter">{{ $organizacao }}</span>+</div>
                             <div>Organizacões</div>
                         </div>
@@ -259,7 +250,7 @@
 
                     <!-- Counter Col Start -->
                     <div class="col col-12 col-lg-4 col-md-6">
-                        <div class="counter-style-box small-box">              
+                        <div class="counter-style-box small-box">
                             <div class="counter-txt"><span class="counter">{{ $produto }}</span>+</div>
                             <div>Pedidos por Recursos <br>Máterias</div>
                         </div>
@@ -273,7 +264,7 @@
         <!-- Causes Grid Start -->
         <section class="wide-tb-100">
             <div class="container">
-                
+
                 <div class="row justify-content-between align-items-end">
                     <div class="col-lg-4 col-md-6">
                         <h1 class="heading-main">
@@ -288,8 +279,8 @@
 
                 <div class="owl-carousel owl-theme" id="home-second-causes">
                     @foreach ($doacoes as $doacao)
-                        
-                   
+
+
                     <!-- Causes Wrap -->
                     <div class="item">
                         <div class="causes-wrap">
@@ -306,7 +297,7 @@
                                         <div class="skillbar" data-percent="{{ $porcetangem }}%">
                                             <div class="skillbar-percent">{{ $porcetangem }}%</div>
                                             <div class="skillbar-bar"></div>
-                                        </div>             
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -322,15 +313,15 @@
                         </div>
                     </div>
                     <!-- End Causes Wrap -->
-                
+
                     @endforeach
-                    
-                
+
+
                 </div>
             </div>
         </section>
         <!-- Causes Grid Start -->
-        
+
 
         <!-- Callout Style Start -->
         <section class="wide-tb-100 bg-scroll bg-img-1 pos-rel callout-style-1">
@@ -342,7 +333,7 @@
                             <small>Ajude outras pessoas</small>
                             Sonhamos em criar um futuro brilhante para as crianças carentes
                         </h1>
-                      
+
                     </div>
                 </div>
             </div>
@@ -351,7 +342,7 @@
  <!-- Images Gallery Style Start -->
  <section class="wide-tb-100">
     <div class="container">
-        <div class="row img-gallery">                    
+        <div class="row img-gallery">
             <div class="col-lg-4">
                 <h1 class="heading-main mb-lg-0">
                     <small>Galeria de Imagens</small>
@@ -364,8 +355,6 @@
                 <div class="img-gallery-item">
                     <a href="{{ asset('asset/images/gallery/gallery_img_1.jpg') }}" title="School Development">
                         <div class="gallery-content">
-                            {{-- <div class="tag"><span>Education</span></div>
-                            <h3>School Development</h3> --}}
                             <div class="img-open">
                                 <i data-feather="plus-circle"></i>
                             </div>
@@ -373,11 +362,10 @@
                         <img src="{{ asset('asset/images/gallery/gallery_img_1.jpg') }}" alt="">
                     </a>
                 </div>
-                <!-- Gallery Item -->
             </div>
 
             <div class="col-lg-4 col-md-6">
-                <!-- Gallery Item -->
+                <!-- Gallery Item -- -->
                 <div class="img-gallery-item">
                     <a href="{{ asset('asset/images/gallery/gallery_img_2.jpg') }}" title="Child Welfare">
                         <div class="gallery-content">
@@ -397,17 +385,16 @@
                 <!-- Gallery Item -->
                 <div class="img-gallery-item">
                     <a href="{{ asset('asset/images/gallery/gallery_img_3.jpg') }}" title="Child Welfare">
-                        {{-- <div class="gallery-content">
-                            <div class="tag"><span>Education</span></div>
+                        <div class="gallery-content">
+                            {{-- <div class="tag"><span>Education</span></div>
                             <h3>Child Welfare</h3> --}}
                             <div class="img-open">
                                 <i data-feather="plus-circle"></i>
                             </div>
-                        {{-- </div> --}}
+                        </div>
                         <img src="{{ asset('asset/images/gallery/gallery_img_3.jpg') }}" alt="">
                     </a>
                 </div>
-                <!-- Gallery Item -->
             </div>
 
             <div class="col-lg-4 col-md-6">
@@ -500,7 +487,7 @@
 </section>
 <!-- Images Gallery Style End -->
 
-    
+
         <!-- About Us Style Start -->
         <section class="wide-tb-100 bg-white shadow">
             <div class="container">
@@ -525,12 +512,12 @@
                                 <p>Sed quia consequuntur agni dolores eos qui ratoluptatem sequi nesciun porquis</p>
                             </div>
                         </div> --}}
-                        
+
                         <div class="d-flex">
                             <a class="btn btn-default me-3" href="{{ route('login') }}">Inscreva-se agora</a>
                             <div class="sobre-telefone">
                                 <i data-feather="phone-call"></i>
-                                Contate-nos <br> +244 911 111 111
+                                Contate-nos <br> +244 949756951
                             </div>
                         </div>
 
@@ -543,8 +530,8 @@
 
 
 
- 
-        {{-- <!-- Google Map Style Start -->   
+
+        {{-- <!-- Google Map Style Start -->
         <section class="wide-tb-100 pb-0">
             <div class="map-frame">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5516.795517377202!2d15.049412799495283!3d12.114648541083664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x111961f67b29ef2d%3A0xd39cbe5e3ec7b840!2sRue%20de%20Mongo%2C%20N%27Djamena%2C%20Chad!5e0!3m2!1sen!2sjo!4v1699964474698!5m2!1sen!2sjo"></iframe>
@@ -558,7 +545,7 @@
                                 <img src="{{asset('asset/images/callout_side_img.jpg')}}" alt="">
                             </div>
                             <div class="text-callout">
-                                <div class="d-sm-flex align-items-center">                                   
+                                <div class="d-sm-flex align-items-center">
                                     <div class="heading">
                                         <h2>Vamos nos unir para fazer a diferença</h2>
                                     </div>
@@ -573,7 +560,7 @@
                 </div>
             </div>
         </section> --}}
-        <!-- Google Map Style End -->   
+        <!-- Google Map Style End -->
 
         <!-- Our Partners Start -->
         {{-- <section class="wide-tb-100">
@@ -587,7 +574,7 @@
                     </div>
                     <div class="col-sm-12">
                         <div class="owl-carousel owl-theme" id="home-clients">
-    
+
                             <!-- Client Logo -->
                             <div class="item">
                                 <div class="clients-logo">
@@ -595,7 +582,7 @@
                                 </div>
                             </div>
                             <!-- Client Logo -->
-    
+
                             <!-- Client Logo -->
                             <div class="item">
                                 <div class="clients-logo">
@@ -603,7 +590,7 @@
                                 </div>
                             </div>
                             <!-- Client Logo -->
-    
+
                             <!-- Client Logo -->
                             <div class="item">
                                 <div class="clients-logo">
@@ -611,7 +598,7 @@
                                 </div>
                             </div>
                             <!-- Client Logo -->
-    
+
                             <!-- Client Logo -->
                             <div class="item">
                                 <div class="clients-logo">
@@ -619,7 +606,7 @@
                                 </div>
                             </div>
                             <!-- Client Logo -->
-    
+
                             <!-- Client Logo -->
                             <div class="item">
                                 <div class="clients-logo">
@@ -627,14 +614,14 @@
                                 </div>
                             </div>
                             <!-- Client Logo -->
-    
+
                         </div>
                     </div>
                 </div>
             </div>
         </section> --}}
         <!-- Our Partners End -->
-        
-           
+
+
     </main>
 @endsection

@@ -11,7 +11,7 @@
                     <li class="breadcrumb-item"><a href="{{ route('site.home.index') }}">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Contacte-nos</li>
                 </ol>
-            </nav>  
+            </nav>
         </div>
     </div>
 </section>
@@ -76,7 +76,7 @@
                                     <button type="submit" class="btn btn-primary text-nowrap">Envia-nos uma Mensagem</button>
                                 </div>
                             </div>
-                            
+
                         </form>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                     <div class="icon-box-4 bg-green mb-4">
                         <i data-feather="phone"></i>
                         <h3>Telefone</h3>
-                        <div>+244 922 111 111</div>
+                        <div>+244 949 756 951</div>
                     </div>
                     <!-- Icon Boxes Style -->
 
@@ -107,45 +107,14 @@
                     </div>
                     <!-- Icon Boxes Style -->
                 </div>
-               
+
             </div>
         </div>
     </section>
 
-    {{-- <section class="wide-tb-100">
-        <div class="map-frame">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5516.795517377202!2d15.049412799495283!3d12.114648541083664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x111961f67b29ef2d%3A0xd39cbe5e3ec7b840!2sRue%20de%20Mongo%2C%20N%27Djamena%2C%20Chad!5e0!3m2!1sen!2sjo!4v1699964474698!5m2!1sen!2sjo"></iframe>
-        </div>
-        <div class="container">
-            <div class="row">
-                <!-- Callout Section Side Image -->
-                <div class="col-sm-12">
-                    <div class="callout-style-side-img d-lg-flex align-items-center top-broken-grid mb-0">
-                        <div class="img-callout">
-                            <img src="asset/images/callout_side_img.jpg" alt="">
-                        </div>
-                        <div class="text-callout">
-                            <div class="d-md-flex align-items-center">
-                               
-                                <div class="heading">
-                                    <h2>Vamos nos unir para fazer a diferença</h2>
-                                </div>
-                                <div class="icon">
-                                    <a href="donation-page.html" class="btn btn-default">Doe Agora</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Callout Section Side Image -->
-            </div>
-        </div>
-    </section> --}}
-    <!-- Contact Us Style Start -->
 
 
-    
-       
+
 </main>
 
 @endsection

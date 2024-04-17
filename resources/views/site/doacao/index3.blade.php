@@ -10,19 +10,17 @@
                     <li class="breadcrumb-item"><a href="{{ route('site.home.index') }}">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Doação</li>
                 </ol>
-            </nav>  
+            </nav>
         </div>
     </div>
 </section>
-<!-- Page Breadcrumbs End -->
 
-<!-- Main Body Content Start -->
 <main id="body-content">
 
     <!-- About Us Style Start -->
     <section class="wide-tb-100">
         <div class="container">
-            <div class="row">                    
+            <div class="row">
                 <div class="col-lg-8 col-md-12">
                     <h1 class="heading-main">
                         <small>Doação</small>
@@ -38,18 +36,18 @@
                             <div class="col-md-8">
                                 <form action="{{ route('organizacao.doacao.financiamento.store',$organizacao->id) }}" method="post" enctype="multipart/form-data">
                                 @csrf
-                               
+
                                 <div class="form-group">
-                                  
+
                                     <div class="mt-3">
                                         <input type="text" class="form-control" name="valores" id="custom" placeholder="Valor da Sua Doação">
                                     </div>
                                 </div>
                             </div>
-                         
+
                             {{-- <div class="col-md-12">
                                 <p class="text-primary">This is simple a note to the donators regarding our services and policy.</p>
-                                <div class="border-top mb-4"></div>                                    
+                                <div class="border-top mb-4"></div>
                             </div> --}}
 
                             <div class="col-md-6">
@@ -373,7 +371,7 @@
                 </div>
                 {{-- <div class="col-lg-4 col-md-12">
                     <div class="faqs-sidebar pos-rel">
-                        <div class="bg-overlay blue opacity-80"></div>                            
+                        <div class="bg-overlay blue opacity-80"></div>
                         <form>
                             <h3 class="h3-sm fw-7 txt-white mb-3">Have any Question?</h3>
                             <div class="form-group">
@@ -475,7 +473,7 @@
         </div>
     </section> --}}
     <!-- Our Partners End -->
-    
-       
+
+
 </main>
 @endsection

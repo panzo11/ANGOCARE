@@ -1,6 +1,7 @@
 @extends('layouts.site.index')
 @section('titulo','Doar')
 @section('conteudo')
+
 <section class="breadcrumbs-page-wrap">
     <div class="bg-fixed pos-rel breadcrumbs-page">
         <div class="container">
@@ -10,11 +11,10 @@
                     <li class="breadcrumb-item"><a href="{{ route('site.home.index') }}">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Doação</li>
                 </ol>
-            </nav>  
+            </nav>
         </div>
     </div>
 </section>
-<!-- Page Breadcrumbs End -->
 
 <!-- Main Body Content Start -->
 <main id="body-content">
@@ -22,7 +22,7 @@
     <!-- About Us Style Start -->
     <section class="wide-tb-100">
         <div class="container">
-            <div class="row">                    
+            <div class="row">
                 <div class="col-lg-8 col-md-12">
                     <h1 class="heading-main">
                         <small>Doação</small>
@@ -30,7 +30,7 @@
                     </h1>
 
                     <p>O segredo da felicidade está em ajudar os outros. Nunca subestime a diferença que VOCÊ pode fazer nas vidas dos pobres, dos abusados ​​e dos desamparados. Espalhe a luz do sol em suas vidas, não importa qual seja o clima.</p>
-                    
+
 
                     <div class="donation-wrap">
                         <h3 class="h3-sm fw-5 txt-blue mb-3">Digite o valor da sua doação</h3>
@@ -39,9 +39,9 @@
                             <div class="col-md-8">
                                 <form action="{{ route('organizacao.doacao.produto.store',$organizacao->id) }}" method="post" enctype="multipart/form-data">
                                 @csrf
-                               
+
                                 <div class="form-group">
-                                  
+
                                     <div class="mt-3">
                                        <textarea name="doados" id="" cols="30" rows="10" class="form-control">Nome do Produto: Quantidade
 Nome do Produto: Quantidade
@@ -50,10 +50,10 @@ Nome do Produto: Quantidade
                                     </div>
                                 </div>
                             </div>
-                         
+
                             {{-- <div class="col-md-12">
                                 <p class="text-primary">This is simple a note to the donators regarding our services and policy.</p>
-                                <div class="border-top mb-4"></div>                                    
+                                <div class="border-top mb-4"></div>
                             </div> --}}
 
                             <div class="col-md-6">
@@ -377,7 +377,7 @@ Nome do Produto: Quantidade
                 </div>
                 {{-- <div class="col-lg-4 col-md-12">
                     <div class="faqs-sidebar pos-rel">
-                        <div class="bg-overlay blue opacity-80"></div>                            
+                        <div class="bg-overlay blue opacity-80"></div>
                         <form>
                             <h3 class="h3-sm fw-7 txt-white mb-3">Have any Question?</h3>
                             <div class="form-group">
@@ -479,7 +479,7 @@ Nome do Produto: Quantidade
         </div>
     </section> --}}
     <!-- Our Partners End -->
-    
-       
+
+
 </main>
 @endsection
