@@ -165,7 +165,7 @@
                         
                     </li>
                     @endif
-                    @if(Auth::user()->it_tipo_utilizador==2 || Auth::user()->it_tipo_utilizador==0)
+                    @if(Auth::user()->it_tipo_utilizador==2 || Auth::user()->it_tipo_utilizador==0 || Auth::user()->it_tipo_utilizador==3)
                     <li class="nav-item static-item">
                         <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
                             <span class="default-icon">Pedidos</span>

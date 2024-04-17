@@ -28,7 +28,7 @@ class FinanciamentoController extends Controller
             ->select('users.name as usuario','financiamentos.*')
             ->get();
         }   
-        elseif(Auth::user()->it_tipo_utilizador==2 ){
+        else{
             $id=Auth::user()->id;
             $data['usuarios']=User::where('id',$id)->get();
             // Obter todos os registros de financiamento
