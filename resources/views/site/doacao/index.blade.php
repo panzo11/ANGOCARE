@@ -47,10 +47,10 @@
                                 </div>
                             </div>
                          
-                            <div class="col-md-12">
+                            {{-- <div class="col-md-12">
                                 <p class="text-primary">This is simple a note to the donators regarding our services and policy.</p>
                                 <div class="border-top mb-4"></div>                                    
-                            </div>
+                            </div> --}}
 
                             <div class="col-md-6">
                                 <div class="form-group">
