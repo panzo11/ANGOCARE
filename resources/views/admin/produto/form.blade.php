@@ -20,9 +20,9 @@
             <select class="form-select mb-3 shadow-none" name="categoria">
                 <option selected disabled>Selecione a categoria</option>
                 <option value="Educação">Educação</option>
-                <option value="Educação">Humanidade</option>
-                <option value="Educação">Água</option>
-                <option value="Educação">Alimentação</option>
+                <option value="Humanidade">Humanidade</option>
+                <option value="Água">Água</option>
+                <option value="Alimentação">Alimentação</option>
             </select>
         </div>
       
