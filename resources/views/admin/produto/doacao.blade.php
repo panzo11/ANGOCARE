@@ -55,7 +55,7 @@
                                  <span class="badge bg-danger">Rejeitado</span>
                               @endif
                         </td>
-
+                        @if(Auth::user()->it_tipo_utilizador==0)
                             <td>
                                
                  
@@ -103,7 +103,9 @@
                                      
                                    
                                 </td>
+                                @endif
                         </tr>
+                        
                         @endforeach
                     </tbody>
                    </table>

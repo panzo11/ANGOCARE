@@ -64,10 +64,10 @@
                                  <span class="badge bg-danger">Rejeitado</span>
                               @endif
                         </td>
-
+                        @if(Auth::user()->it_tipo_utilizador==0)
                             <td>
                                
-                 
+                               
                                      @if($doacao->estado==0)
                                            <a class="btn btn-sm btn-icon btn-success rounded" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Aprovar" href="{{route('doacao.financiamento.activar', $doacao->id)}}">
                                               <span class="btn-inner">
@@ -109,9 +109,10 @@
                                                   </span>
                                     </a>
                                      @endif
-                                     
+                                     @endif
                                    
                                 </td>
+                                @endif
                         </tr>
                         @endforeach
                     </tbody>
