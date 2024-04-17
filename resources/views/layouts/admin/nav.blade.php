@@ -165,13 +165,14 @@
                         
                     </li>
                     @endif
+                    @if(Auth::user()->it_tipo_utilizador==2 || Auth::user()->it_tipo_utilizador==0)
                     <li class="nav-item static-item">
                         <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
                             <span class="default-icon">Pedidos</span>
                             <span class="mini-icon" data-bs-toggle="tooltip" title="Home" data-bs-placement="right">-</span>
                         </a>
                     </li>
-                    @if(Auth::user()->it_tipo_utilizador==2 || Auth::user()->it_tipo_utilizador==3 || Auth::user()->it_tipo_utilizador==0)
+                    {{-- @if(Auth::user()->it_tipo_utilizador==2 || Auth::user()->it_tipo_utilizador==3 || Auth::user()->it_tipo_utilizador==0) --}}
                     
                     <li class="nav-item">
                         <a class="nav-link"  href="{{ route('financiamento.index') }}" >
@@ -210,6 +211,13 @@
                         
                     </li>
                     @endif
+                    @if(Auth::user()->it_tipo_utilizador==1 ||Auth::user()->it_tipo_utilizador==2 || Auth::user()->it_tipo_utilizador==0)
+                    <li class="nav-item static-item">
+                        <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
+                            <span class="default-icon">Individuos</span>
+                            <span class="mini-icon" data-bs-toggle="tooltip" title="Home" data-bs-placement="right">-</span>
+                        </a>
+                    </li>
                     <li class="nav-item" id="insc">
                         <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-doacao" role="button"
                             aria-expanded="false" aria-controls="sidebar-doacao">
@@ -276,13 +284,16 @@
                             </li>
                         </ul>
                     </li>
-                    @if(Auth::user()->it_tipo_utilizador==3 || Auth::user()->it_tipo_utilizador==0)
+                    @endif
+                    @if(Auth::user()->it_tipo_utilizador==3 || Auth::user()->it_tipo_utilizador==0 || Auth::user()->it_tipo_utilizador==1 )
                     <li class="nav-item static-item">
                         <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
                             <span class="default-icon">Organizacões</span>
                             <span class="mini-icon" data-bs-toggle="tooltip" title="Home" data-bs-placement="right">-</span>
                         </a>
                     </li>
+                    @endif
+                    @if(Auth::user()->it_tipo_utilizador==3 || Auth::user()->it_tipo_utilizador==0 || Auth::user()->it_tipo_utilizador==1 )
                     <li class="nav-item" id="insc">
                         <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-doacao-organizacao" role="button"
                             aria-expanded="false" aria-controls="sidebar-doacao-organizacao">
@@ -350,7 +361,7 @@
                         </ul>
                     </li>
                     @endif
-                   
+                    @if(Auth::user()->it_tipo_utilizador==4 || Auth::user()->it_tipo_utilizador==0 || Auth::user()->it_tipo_utilizador==1 || Auth::user()->it_tipo_utilizador==3)
                     <li class="nav-item static-item">
                         <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
                             <span class="default-icon">Empresas</span>
@@ -423,6 +434,7 @@
                             </li>
                         </ul>
                     </li>
+                    @endif
                     @if(Auth::user()->it_tipo_utilizador==0 )
                 
                     <li><hr class="hr-horizontal"></li>

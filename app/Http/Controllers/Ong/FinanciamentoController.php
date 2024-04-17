@@ -13,14 +13,34 @@ class FinanciamentoController extends Controller
 {
     //
     public function index(){
-        $user=Auth::user();
-       $data['doacoes'] = DoacaoFinanciamentoOng::join('users as doadores', 'doacao_financiamento_ongs.users_id', '=', 'doadores.id')
-       ->join('organizacaos as necessitados', 'doacao_financiamento_ongs.organizacaos_id', '=', 'necessitados.id')
-       
-       // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
-       ->select('doadores.name as doador', 'necessitados.nome as necessitado', 'doacao_financiamento_ongs.*')
-       ->get();
-    
+        $user=Auth::user()->it_tipo_utilizador;
+        $id=Auth::user()->id;
+        if($user==0){
+            $data['doacoes'] = DoacaoFinanciamentoOng::join('users as doadores', 'doacao_financiamento_ongs.users_id', '=', 'doadores.id')
+            ->join('organizacaos as necessitados', 'doacao_financiamento_ongs.organizacaos_id', '=', 'necessitados.id')
+            
+            // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
+            ->select('doadores.name as doador', 'necessitados.nome as necessitado', 'doacao_financiamento_ongs.*')
+            ->get();
+        }
+        elseif($user==3){
+            $data['doacoes'] = DoacaoFinanciamentoOng::join('users as doadores', 'doacao_financiamento_ongs.users_id', '=', 'doadores.id')
+            ->join('organizacaos as necessitados', 'doacao_financiamento_ongs.organizacaos_id', '=', 'necessitados.id')
+            
+            // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
+            ->select('doadores.name as doador', 'necessitados.nome as necessitado', 'doacao_financiamento_ongs.*','necessitados.users_id')
+            ->where('necessitados.users_id',$id)
+            ->get();
+        }
+        else{
+            $data['doacoes'] = DoacaoFinanciamentoOng::join('users as doadores', 'doacao_financiamento_ongs.users_id', '=', 'doadores.id')
+            ->join('organizacaos as necessitados', 'doacao_financiamento_ongs.organizacaos_id', '=', 'necessitados.id')
+            
+            // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
+            ->where('doadores.id',$id)
+            ->select('doadores.name as doador', 'necessitados.nome as necessitado', 'doacao_financiamento_ongs.*','necessitados.users_id','doadores.id as doador_id')
+            ->get();
+        }
         // dd($data);
 
        return view('admin.organizacao.doacao.financiamento',$data);

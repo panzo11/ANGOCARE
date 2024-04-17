@@ -46,7 +46,7 @@
                             </td>
                             <td>
                                @if($user->vc_tipo_utilizador == 1)
-                                      Adminstrador 
+                                      Administrador 
                                @elseif($user->vc_tipo_utilizador == 2)
                                        Necessitado
                                @elseif($user->vc_tipo_utilizador == 4)

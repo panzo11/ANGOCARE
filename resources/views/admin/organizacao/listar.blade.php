@@ -51,6 +51,7 @@
                                          @endif
                                         </td>
                                         <td>
+                                           
                                             <a class="btn btn-sm btn-icon btn-warning rounded" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Editar" href="{{route('organizacoes.edit', $organizacao->id)}}" >
                                                 <span class="btn-inner">
                                                    <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -69,6 +70,7 @@
                                                    </svg>
                                                 </span>
                                              </a>
+                                             @if(Auth::user()->it_tipo_utilizador==0)
                                              @if($organizacao->estado==0)
                                              <a class="btn btn-sm btn-icon btn-success rounded" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Aprovar" href="{{route('organizacao.activar', $organizacao->id)}}">
                                                 <span class="btn-inner">
@@ -109,6 +111,7 @@
                                         
                                                     </span>
                                       </a>
+                                       @endif
                                        @endif
                                             </td>
                                         

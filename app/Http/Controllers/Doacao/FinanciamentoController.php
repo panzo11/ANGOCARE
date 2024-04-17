@@ -18,28 +18,75 @@ class FinanciamentoController extends Controller
 {
     //
     public function index(){
-        $user=Auth::user();
+        $user=Auth::user()->it_tipo_utilizador;
+        $id=Auth::user()->id;
+        if($user==0){
        $data['doacoes'] = DoacaoFinancimento::join('users as doadores', 'doacao_financimentos.users_id', '=', 'doadores.id')
        ->join('financiamentos', 'doacao_financimentos.financiamentos_id', '=', 'financiamentos.id')
        ->join('users as necessitados', 'financiamentos.users_id', '=', 'necessitados.id')
        // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
-       ->select('doadores.name as doador', 'necessitados.name as necessitado', 'doacao_financimentos.*')
+       ->select('doadores.name as doador', 'necessitados.name as necessitado', 'doacao_financimentos.*','doadores.it_tipo_utilizador')
        ->where('doadores.it_tipo_utilizador','!=',4)
        ->get();
+    }
+    elseif($user==1){
+        $data['doacoes'] = DoacaoFinancimento::join('users as doadores', 'doacao_financimentos.users_id', '=', 'doadores.id')
+        ->join('financiamentos', 'doacao_financimentos.financiamentos_id', '=', 'financiamentos.id')
+        ->join('users as necessitados', 'financiamentos.users_id', '=', 'necessitados.id')
+        // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
+        ->select('doadores.name as doador', 'necessitados.name as necessitado', 'doacao_financimentos.*','doadores.it_tipo_utilizador')
+        ->where('doadores.it_tipo_utilizador','!=',4)
+        ->where('doacao_financimentos.users_id',$id)
+        ->get();
+    }
+    elseif($user==2){
+        $data['doacoes'] = DoacaoFinancimento::join('users as doadores', 'doacao_financimentos.users_id', '=', 'doadores.id')
+        ->join('financiamentos', 'doacao_financimentos.financiamentos_id', '=', 'financiamentos.id')
+        ->join('users as necessitados', 'financiamentos.users_id', '=', 'necessitados.id')
+        // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
+        ->select('doadores.name as doador', 'necessitados.name as necessitado', 'doacao_financimentos.*','doadores.it_tipo_utilizador')
+        ->where('doadores.it_tipo_utilizador','!=',4)
+        ->where('financiamentos.users_id',$id)
+        ->get();
+    }
     
         // dd($data);
 
        return view('admin.financiamento.doacao',$data);
     }
     public function index2(){
-        $user=Auth::user();
-       $data['doacoes'] = DoacaoFinancimento::join('users as doadores', 'doacao_financimentos.users_id', '=', 'doadores.id')
-       ->join('financiamentos', 'doacao_financimentos.financiamentos_id', '=', 'financiamentos.id')
-       ->join('users as necessitados', 'financiamentos.users_id', '=', 'necessitados.id')
-       // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
-       ->select('doadores.empresa as doador', 'necessitados.name as necessitado', 'doacao_financimentos.*')
-       ->where('doadores.it_tipo_utilizador',4)
-       ->get();
+        $user=Auth::user()->it_tipo_utilizador;
+        $id=Auth::user()->id;
+    if($user==0){
+        $data['doacoes'] = DoacaoFinancimento::join('users as doadores', 'doacao_financimentos.users_id', '=', 'doadores.id')
+        ->join('financiamentos', 'doacao_financimentos.financiamentos_id', '=', 'financiamentos.id')
+        ->join('users as necessitados', 'financiamentos.users_id', '=', 'necessitados.id')
+        // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
+        ->select('doadores.empresa as doador', 'necessitados.name as necessitado', 'doacao_financimentos.*','doadores.it_tipo_utilizador')
+        ->where('doadores.it_tipo_utilizador',4)
+        ->get();
+    }
+    elseif($user==4){
+        $data['doacoes'] = DoacaoFinancimento::join('users as doadores', 'doacao_financimentos.users_id', '=', 'doadores.id')
+        ->join('financiamentos', 'doacao_financimentos.financiamentos_id', '=', 'financiamentos.id')
+        ->join('users as necessitados', 'financiamentos.users_id', '=', 'necessitados.id')
+        // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
+        ->where('doadores.it_tipo_utilizador',4)
+        ->where('doacao_financimentos.users_id',$id)
+        ->select('doadores.empresa as doador', 'necessitados.name as necessitado', 'doacao_financimentos.*')
+        ->get();
+    }
+    else{
+        $data['doacoes'] = DoacaoFinancimento::join('users as doadores', 'doacao_financimentos.users_id', '=', 'doadores.id')
+        ->join('financiamentos', 'doacao_financimentos.financiamentos_id', '=', 'financiamentos.id')
+        ->join('users as necessitados', 'financiamentos.users_id', '=', 'necessitados.id')
+        // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
+        ->where('doadores.it_tipo_utilizador',4)
+        ->where('financiamentos.users_id',$id)
+        ->select('doadores.empresa as doador', 'necessitados.name as necessitado', 'doacao_financimentos.*','financiamentos.users_id')
+        ->get();
+    }
+       
     
     //    dd($data);
 

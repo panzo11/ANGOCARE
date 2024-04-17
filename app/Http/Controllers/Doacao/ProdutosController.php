@@ -17,23 +17,66 @@ class ProdutosController extends Controller
 {
     // 
     public function index(){
-        $user=Auth::user();
-        $data['doacoes']=DoacaoProduto::join('users as doador','doacao_produtos.users_id','doador.id')
-        ->join('produtos','doacao_produtos.produtos_id','produtos.id')
-        ->join('users as necessitado','produtos.users_id','necessitado.id')
-        ->select('doacao_produtos.*','doador.name as users_1','necessitado.name as user_2')
-        ->where('doador.it_tipo_utilizador','!=',4)
-        ->get();
+        $user=Auth::user()->it_tipo_utilizador;
+        $id=Auth::user()->id;
+        if($user==0){
+            $data['doacoes']=DoacaoProduto::join('users as doador','doacao_produtos.users_id','doador.id')
+            ->join('produtos','doacao_produtos.produtos_id','produtos.id')
+            ->join('users as necessitado','produtos.users_id','necessitado.id')
+            ->select('doador.it_tipo_utilizador','doacao_produtos.*','doador.name as users_1','necessitado.name as user_2')
+            ->where('doador.it_tipo_utilizador','!=',4)
+            ->get();
+        }
+        elseif($user==1){
+            $data['doacoes']=DoacaoProduto::join('users as doador','doacao_produtos.users_id','doador.id')
+            ->join('produtos','doacao_produtos.produtos_id','produtos.id')
+            ->join('users as necessitado','produtos.users_id','necessitado.id')
+            ->select('doador.it_tipo_utilizador','doacao_produtos.*','doador.name as users_1','necessitado.name as user_2','doacao_produtos.users_id')
+            ->where('doador.it_tipo_utilizador','!=',4)
+            ->where('doacao_produtos.users_id',$id)
+            ->get();
+        }
+        elseif($user==2){
+            $data['doacoes']=DoacaoProduto::join('users as doador','doacao_produtos.users_id','doador.id')
+            ->join('produtos','doacao_produtos.produtos_id','produtos.id')
+            ->join('users as necessitado','produtos.users_id','necessitado.id')
+            ->select('doador.it_tipo_utilizador','doacao_produtos.*','doador.name as users_1','necessitado.name as user_2','produtos.users_id')
+            ->where('doador.it_tipo_utilizador','!=',4)
+            ->where('produtos.users_id',$id)
+            ->get();
+        }
         return view('admin.produto.doacao',$data);
     }
     public function index2(){
-        $user=Auth::user();
-        $data['doacoes']=DoacaoProduto::join('users as doador','doacao_produtos.users_id','doador.id')
-        ->join('produtos','doacao_produtos.produtos_id','produtos.id')
-        ->join('users as necessitado','produtos.users_id','necessitado.id')
-        ->select('doacao_produtos.*','doador.name as users_1','necessitado.name as user_2')
-        ->where('doador.it_tipo_utilizador',4)
-        ->get();
+        $user=Auth::user()->it_tipo_utilizador;
+        $id=Auth::user()->id;
+        if($user==0){
+            $data['doacoes']=DoacaoProduto::join('users as doador','doacao_produtos.users_id','doador.id')
+            ->join('produtos','doacao_produtos.produtos_id','produtos.id')
+            ->join('users as necessitado','produtos.users_id','necessitado.id')
+            ->select('doador.it_tipo_utilizador','doacao_produtos.*','doador.name as users_1','necessitado.name as user_2')
+            ->where('doador.it_tipo_utilizador',4)
+            ->get();
+        }
+        elseif($user==4){
+            $data['doacoes']=DoacaoProduto::join('users as doador','doacao_produtos.users_id','doador.id')
+            ->join('produtos','doacao_produtos.produtos_id','produtos.id')
+            ->join('users as necessitado','produtos.users_id','necessitado.id')
+            ->select('doador.it_tipo_utilizador','doacao_produtos.*','doador.name as users_1','necessitado.name as user_2','doacao_produtos.users_id')
+            ->where('doador.it_tipo_utilizador',4)
+            ->where('doacao_produtos.users_id',$id)
+            ->get();
+        }
+        else{
+            $data['doacoes']=DoacaoProduto::join('users as doador','doacao_produtos.users_id','doador.id')
+            ->join('produtos','doacao_produtos.produtos_id','produtos.id')
+            ->join('users as necessitado','produtos.users_id','necessitado.id')
+            ->select('doador.it_tipo_utilizador','doacao_produtos.*','doador.name as users_1','necessitado.name as user_2','produtos.users_id')
+            ->where('doador.it_tipo_utilizador',4)
+            ->where('produtos.users_id',$id)
+            ->get();
+        }
+        
         
         return view('admin.produto.doacao',$data);
     }

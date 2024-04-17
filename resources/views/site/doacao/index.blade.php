@@ -364,14 +364,14 @@
                             </div>
                         </div> --}}
                         <div class="col-md-12">
-                            <button class="btn btn-default"><i data-feather="heart"></i> Donate Now</button>
+                            <button class="btn btn-default"><i data-feather="heart"></i> Doar Agora</button>
                         </div>
                     </form>
                     </div>
                 </div>
 
                 </div>
-                <div class="col-lg-4 col-md-12">
+                {{-- <div class="col-lg-4 col-md-12">
                     <div class="faqs-sidebar pos-rel">
                         <div class="bg-overlay blue opacity-80"></div>                            
                         <form>
@@ -391,7 +391,7 @@
                             <button type="submit" class="btn btn-default mt-3">Ask It Now</button>
                         </form>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
@@ -404,12 +404,12 @@
             <div class="row align-items-center">
                 <div class="col-lg-7">
                     <h1 class="heading-main light-mode">
-                        <small>Help Other People</small>
-                        We Dream to Create A Bright Future Of The Underprivileged Children
+                        <small>Ajude outras Pessoas</small>
+                        Sonhamos em criar um futuro brilhante para as crianças carentes
                     </h1>
                 </div>
                 <div class="col-sm-12 text-md-end">
-                    <a href="{{ route("site.causas.index") }}" class="btn btn-default">Donate Now</a>
+                    <a href="{{ route("site.causas.index") }}" class="btn btn-default">Doa Agora</a>
                 </div>
             </div>
         </div>

@@ -11,9 +11,12 @@ return new class extends Migration
      */
 
     /**
-     * 0 - Precisa de AJUDA
+     * 0 - Administrador
      * 1 - Doadores Singular
-     * 2 - Doadores Organizacionais
+     * 2 - Necessitado
+     * 3 - Organização
+     * 4 - Empresa
+     * 
      */
     public function up(): void
     {
@@ -24,7 +27,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->longText('bi');
-            $table->integer('it_tipo_utilizador')->default(0);
+            $table->integer('it_tipo_utilizador')->default(2);
             $table->rememberToken();
             $table->timestamps();
         });

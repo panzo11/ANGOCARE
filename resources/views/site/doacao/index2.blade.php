@@ -376,7 +376,7 @@ Nome do Produto: Quantidade
                 </div>
 
                 </div>
-                <div class="col-lg-4 col-md-12">
+                {{-- <div class="col-lg-4 col-md-12">
                     <div class="faqs-sidebar pos-rel">
                         <div class="bg-overlay blue opacity-80"></div>                            
                         <form>
@@ -396,7 +396,7 @@ Nome do Produto: Quantidade
                             <button type="submit" class="btn btn-default mt-3">Ask It Now</button>
                         </form>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>

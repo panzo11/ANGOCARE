@@ -85,7 +85,7 @@
                                        </svg>
                                     </span>
                                  </a>
-                 
+                                 @if(Auth::user()->it_tipo_utilizador==0)
                                      @if($financiamento->estado==0)
                                            <a class="btn btn-sm btn-icon btn-success rounded" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Aprovar" href="{{route('financiamento.activar', $financiamento->id)}}">
                                               <span class="btn-inner">
@@ -127,7 +127,7 @@
                                                   </span>
                                     </a>
                                      @endif
-                                     
+                                @endif     
                                    
                                 </td>
                         </tr>

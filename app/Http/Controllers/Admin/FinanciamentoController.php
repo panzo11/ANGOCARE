@@ -37,6 +37,8 @@ class FinanciamentoController extends Controller
             ->select('users.name as usuario','financiamentos.*')
             ->get();
         }
+        
+       
         // Exibir a view com a lista de registros de financiamento
         return view('admin.financiamento.index', $data);
     }

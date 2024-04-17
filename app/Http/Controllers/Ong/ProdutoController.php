@@ -13,12 +13,33 @@ class ProdutoController extends Controller
 {
     // 
     public function index(){
-        $user=Auth::user();
+        $user=Auth::user()->it_tipo_utilizador;
+        $id=Auth::user()->id;
+        if($user==0){
         $data['doacoes']=DoacaoProdutoOng::join('users as doador','doacao_produto_ongs.users_id','doador.id')
         ->join('organizacaos as necessitado','doacao_produto_ongs.organizacaos_id','necessitado.id')
         // ->join('users as dono','organizacaos.users_id','necessitado.id')
         ->select('doacao_produto_ongs.*','doador.name as users_1','necessitado.nome as user_2')
         ->get();
+        }
+        elseif($user==3){
+            $data['doacoes']=DoacaoProdutoOng::join('users as doador','doacao_produto_ongs.users_id','doador.id')
+            ->join('organizacaos as necessitado','doacao_produto_ongs.organizacaos_id','necessitado.id')
+            // ->join('users as dono','organizacaos.users_id','necessitado.id')
+            ->where('necessitados.users_id',$id)
+            ->select('doacao_produto_ongs.*','doador.name as users_1','necessitado.nome as user_2')
+            
+            ->get();
+        }
+        else{
+            $data['doacoes']=DoacaoProdutoOng::join('users as doador','doacao_produto_ongs.users_id','doador.id')
+            ->join('organizacaos as necessitado','doacao_produto_ongs.organizacaos_id','necessitado.id')
+            // ->join('users as dono','organizacaos.users_id','necessitado.id')
+            ->where('doador.id',$id)
+            ->select('doacao_produto_ongs.*','doador.name as users_1','necessitado.nome as user_2')
+            
+            ->get();
+        }
         return view('admin.organizacao.doacao.produto',$data);
     }
     public function store(Request $req,$id){

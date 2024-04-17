@@ -371,7 +371,7 @@
                 </div>
 
                 </div>
-                <div class="col-lg-4 col-md-12">
+                {{-- <div class="col-lg-4 col-md-12">
                     <div class="faqs-sidebar pos-rel">
                         <div class="bg-overlay blue opacity-80"></div>                            
                         <form>
@@ -391,7 +391,7 @@
                             <button type="submit" class="btn btn-default mt-3">Ask It Now</button>
                         </form>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
@@ -409,7 +409,7 @@
                     </h1>
                 </div>
                 <div class="col-sm-12 text-md-end">
-                    <a href="{{ route("site.ong.index") }}" class="btn btn-default">Donate Now</a>
+                    <a href="{{ route("site.ong.index") }}" class="btn btn-default">Doa Agora</a>
                 </div>
             </div>
         </div>
