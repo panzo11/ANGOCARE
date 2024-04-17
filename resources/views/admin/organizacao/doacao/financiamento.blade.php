@@ -24,7 +24,9 @@
                             <th>Valor Doado</th>
                             <th>Comprovativo</th>
                             <th>Estado</th>
+                            @if(Auth::user()->it_tipo_utilizador==0)
                             <th>Acções</th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>

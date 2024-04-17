@@ -24,7 +24,9 @@
                             <th>Produtos Doados</th>
                             <th>Entrega</th>
                             <th>Estado</th>
+                            @if(Auth::user()->it_tipo_utilizador==0)
                             <th>Acções</th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
