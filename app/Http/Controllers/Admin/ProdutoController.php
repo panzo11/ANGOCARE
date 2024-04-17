@@ -28,7 +28,7 @@ class ProdutoController extends Controller
         ->get();
         $data['usuarios']=User::all();
         }
-        if(Auth::user()->it_tipo_utlizador==2){
+        else{
             $id=Auth::user()->id;
             $data['produtos'] = Produto::join('users','produtos.users_id','users.id')
             ->where('produtos.users_id',$id)
