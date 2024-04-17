@@ -98,7 +98,7 @@ class RegisterController extends Controller
                 // dd('ola');
                 // 
     
-                if($data['tipo_estabelecimento']==2){
+                if($data['tipo_estabelecimento']==3){
     
                     $reqImagem = $data['logotipo'];
             
