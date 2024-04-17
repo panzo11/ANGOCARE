@@ -26,7 +26,7 @@ class ProdutoController extends Controller
             $data['doacoes']=DoacaoProdutoOng::join('users as doador','doacao_produto_ongs.users_id','doador.id')
             ->join('organizacaos as necessitado','doacao_produto_ongs.organizacaos_id','necessitado.id')
             // ->join('users as dono','organizacaos.users_id','necessitado.id')
-            ->where('necessitados.users_id',$id)
+            ->where('necessitado.users_id',$id)
             ->select('doacao_produto_ongs.*','doador.name as users_1','necessitado.nome as user_2')
             
             ->get();
