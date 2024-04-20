@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
             'name' => "Euclides Costa",
             'email' => "911111222",
             'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
+            'password' => static::$password ??= Hash::make('  n'),
             'bi'=> fake()->name(),
             'it_tipo_utilizador' => 2,
         ]);
