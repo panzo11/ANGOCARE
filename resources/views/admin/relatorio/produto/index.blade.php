@@ -55,6 +55,7 @@
                                 <label for="inputState">Categoria</label>
                                 <select id="categorias" class="form-control" name="categorias" style="width: 100%;" >
                                 <option value="" >Todos</option>
+                                
                                 @foreach ($produtos as $produto)
 
                                     <option value="{{ $produto->categoria }}">{{ $produto->categoria }}</option>
@@ -76,7 +77,7 @@
                                         
                                 <div class="modal-footer">
                                     <button type="button" class="btn  btn-secondary" data-dismiss="modal">Fechar</button>
-                                    <button  class="btn  btn-primary" id="ajaxSubmit" >Cadastrar</button>
+                                    <button  class="btn  btn-primary" id="ajaxSubmit" >Gerar Relatório</button>
                                 </div>
                             </form>
                 </div>

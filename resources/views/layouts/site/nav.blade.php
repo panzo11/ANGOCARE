@@ -80,7 +80,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('site.ong.index') }}">ONGs</a>
+                            <a class="nav-link" href="{{ route('site.ong.index') }}">Centros de Caridade</a>
                         </li>
 
                         <li class="nav-item">

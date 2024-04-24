@@ -28,73 +28,15 @@ $documentos=App\Models\Documento::get();
 						 <p class="text-center">Registra-se</p>
 						 <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                             @csrf
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="name" class="form-label">Nome*</label>
-                                        <input type="text" class="form-control" name="name" value="{{ old('name') }}" required id="name" placeholder="Primeiro Nome">
-                                    </div>
-                                </div>
-                        
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="bi" class="form-label">BI*</label>
-                                        <input type="text" class="form-control" name="bi" value="{{ old('bi') }}" required placeholder="BI">
-                                        @error('bi')
-                                        <span class="invalid-feedback form-control" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                    </div>
-                                </div>
-                        
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="email" class="form-label">Telefone*</label>
-                                        <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"  aria-describedby="Telefone" placeholder="900111000">
-                                        @error('email')
-                                        <span class="invalid-feedback form-control" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="password" class="form-label">Senha*</label>
-                                        <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="password" id="password" aria-describedby="password" placeholder="xxxx">
-                                        @error('password')
-                                        <span class="invalid-feedback form-control" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                    </div>
-                                </div>
-                        
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="password_confirmation" class="form-label">Confirmar senha*</label>
-                                        <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" required autocomplete="password_confirmation" id="password_confirmation" aria-describedby="password_confirmation" placeholder="xxxx">
-                                        @error('password_confirmation')
-                                        <span class="invalid-feedback form-control" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                    </div>
-                                </div>
-                            </div>
-                        
+
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="vc_nome">Tipo de Prestador*</label>
                                         <select type="text" id="tipo_estabelecimento" class="form-control" name="tipo_estabelecimento" placeholder="Nome do Estabelecimento">
                                             <option value="1"{{ old('tipo_estabelecimento') == '1' ? ' selected' : '' }}>Doador</option>
-                                            <option value="2"{{ old('tipo_estabelecimento') == '2' ? ' selected' : '' }}>Necessitado</option>
-                                            <option value="3"{{ old('tipo_estabelecimento') == '3' ? ' selected' : '' }}>Organização</option>
+                                           <!--  <option value="2"{{ old('tipo_estabelecimento') == '2' ? ' selected' : '' }}>Necessitado</option> 
+                                             <option value="3"{{ old('tipo_estabelecimento') == '3' ? ' selected' : '' }}>Organização</option> -->
                                             <option value="4"{{ old('tipo_estabelecimento') == '4' ? ' selected' : '' }}>Empresa</option>
                                         </select>
                                     </div>
@@ -155,6 +97,80 @@ $documentos=App\Models\Documento::get();
                                 </div>
                                 @include('admin.organizacao.form.step2')
                             </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="name" class="form-label">Representante*</label>
+                                        <input type="text" class="form-control" name="name" value="{{ old('name') }}" required id="name" placeholder="Primeiro Nome">
+                                    </div>
+                                </div>
+                        
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="bi" class="form-label">BI*</label>
+                                        <input type="text" class="form-control" name="bi" value="{{ old('bi') }}" required placeholder="BI">
+                                        @error('bi')
+                                        <span class="invalid-feedback form-control" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                        
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Telefone*</label>
+                                        <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"  aria-describedby="Telefone" placeholder="944837203">
+                                        @error('email')
+                                        <span class="invalid-feedback form-control" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">E-mail*</label>
+                                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"  aria-describedby="email" placeholder="example@gmail.com">
+                                        @error('email')
+                                        <span class="invalid-feedback form-control" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="password" class="form-label">Senha*</label>
+                                        <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="password" id="password" aria-describedby="password" placeholder="xxxx">
+                                        @error('password')
+                                        <span class="invalid-feedback form-control" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                        
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="password_confirmation" class="form-label">Confirmar senha*</label>
+                                        <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" required autocomplete="password_confirmation" id="password_confirmation" aria-describedby="password_confirmation" placeholder="xxxx">
+                                        @error('password_confirmation')
+                                        <span class="invalid-feedback form-control" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+                        
+                           
                         
                             <div class="d-flex justify-content-center">
                                 <button type="submit" class="btn btn-primary w-100">Registrar</button>

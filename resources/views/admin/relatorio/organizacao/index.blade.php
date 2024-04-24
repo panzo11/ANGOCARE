@@ -7,7 +7,7 @@
           <div class="card">
              <div class="card-header d-flex justify-content-between">
                 <div class="header-title">
-                   <h4 class="card-title">Organizações</h4>
+                   <h4 class="card-title">Centros de Caridade </h4>
                 </div>
                 {{-- <div>
                     <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target=".bd-example-modal-xl">Cadastrar
@@ -25,7 +25,7 @@
                                 
                                 
                             <div class="form-group col-md-6">
-                                <label for="inputState">Organização</label>
+                                <label for="inputState">Centros de Caridade</label>
                                 <select id="nome" class="form-control" name="nome" style="width: 100%;" >
                                 <option value="">Todas</option>
                                 @foreach ($organizacoes as $organizacao)
@@ -64,7 +64,7 @@
                                         
                                 <div class="modal-footer">
                                     <button type="button" class="btn  btn-secondary" data-dismiss="modal">Fechar</button>
-                                    <button  class="btn  btn-primary" id="ajaxSubmit" >Cadastrar</button>
+                                    <button  class="btn  btn-primary" id="ajaxSubmit" >Gerar Relatório</button>
                                 </div>
                             </form>
                 </div>

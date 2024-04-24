@@ -6,11 +6,11 @@
   <section class="breadcrumbs-page-wrap">
     <div class="bg-fixed pos-rel breadcrumbs-page">
         <div class="container">
-            <h1>Organizações que apoiam necessitados</h1>
+            <h1>Centros que apoiam necessitados</h1>
             <nav aria-label="breadcrumb" class="breadcrumb-wrap">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('site.home.index') }}">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">ONGs</li>
+                    <li class="breadcrumb-item active" aria-current="page">Centros de Caridade</li>
                 </ol>
             </nav>  
         </div>
