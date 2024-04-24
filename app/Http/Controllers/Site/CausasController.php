@@ -20,6 +20,7 @@ class CausasController extends Controller
         ->leftJoin('doacao_financimentos', 'doacao_financimentos.financiamentos_id', '=', 'financiamentos.id')
         // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
         ->join('users','financiamentos.users_id','users.id')
+        ->where('financiamentos.estado',1)
         ->select(
             'financiamentos.id',
             'financiamentos.valores',
@@ -99,6 +100,7 @@ class CausasController extends Controller
 
     public function index2(){
         $data['doacoes'] = DB::table('produtos')->join('users','produtos.users_id','users.id')
+        ->where('produtos.estado',1)
         ->select('users.name as utilizador','produtos.*')
         ->get();
         return view('site.causes.index2',$data);

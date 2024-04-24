@@ -71,8 +71,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-    // DB::beginTransaction();
-            // try {
+    DB::beginTransaction();
+            try {
                 $nome=$data['name'];
                 $messagem="Olá $nome,Seja muito bem-vindo ao ANGOCARE, a plataforma dedicada às doações e solidariedade! Estamos empolgados por tê-lo(a) conosco. Sua presença faz toda a diferença em nossa missão de promover o bem.   
                 O ANGOCARE é mais do que uma plataforma; é uma comunidade de corações generosos que se unem para fazer a diferença. Através do seu envolvimento, estamos construindo um impacto positivo e transformador.
@@ -141,11 +141,17 @@ class RegisterController extends Controller
                     }
                  }
                 
-                //  DB::commit();
+                 DB::commit();
                
                 return $user;
             
-                // }
+                }
+                catch (\Throwable $th) {
+                    //throw $th;
+                    dd($th);
+                    DB::rollback();
+                    return redirect()->back()->with('doacao.error',1);
+                }
    
          
     }

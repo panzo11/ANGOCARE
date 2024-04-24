@@ -19,6 +19,7 @@ class HomeController extends Controller
         $data['doacoes'] = DB::table('financiamentos')
         ->leftJoin('doacao_financimentos', 'doacao_financimentos.financiamentos_id', '=', 'financiamentos.id')
         // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
+        ->where('financiamentos.estado',1)
         ->join('users','financiamentos.users_id','users.id')
         ->select(
             'financiamentos.id',
