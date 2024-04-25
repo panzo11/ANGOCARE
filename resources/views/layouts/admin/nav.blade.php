@@ -214,7 +214,7 @@
                     @if(Auth::user()->it_tipo_utilizador==1  || Auth::user()->it_tipo_utilizador==0)
                     <li class="nav-item static-item">
                         <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
-                            <span class="default-icon">Individuos</span>
+                            <span class="default-icon">Pedidos de Ajuda</span>
                             <span class="mini-icon" data-bs-toggle="tooltip" title="Home" data-bs-placement="right">-</span>
                         </a>
                     </li>
@@ -288,7 +288,7 @@
                     @if(Auth::user()->it_tipo_utilizador==3 || Auth::user()->it_tipo_utilizador==0 || Auth::user()->it_tipo_utilizador==1)
                     <li class="nav-item static-item">
                         <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
-                            <span class="default-icon">Organizacões</span>
+                            <span class="default-icon">Centro de Caridade</span>
                             <span class="mini-icon" data-bs-toggle="tooltip" title="Home" data-bs-placement="right">-</span>
                         </a>
                     </li>

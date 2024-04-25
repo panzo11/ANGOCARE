@@ -42,10 +42,7 @@
                                 <div class="form-group">
 
                                     <div class="mt-3">
-                                       <textarea name="doados" id="" cols="30" rows="10" class="form-control">Nome do Produto: Quantidade
-Nome do Produto: Quantidade
-Nome do Produto: Quantidade
-                                       </textarea>
+                                       <textarea name="doados" id="" cols="30" rows="10" class="form-control" placeholder="Produto : Quantidade"></textarea>
                                     </div>
                                 </div>
                             </div>

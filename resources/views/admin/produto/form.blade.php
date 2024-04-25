@@ -7,11 +7,7 @@
         <input type="text" id="titulo" class="form-control" name="titulo" placeholder="titulo"
             value="{{ isset($produto->titulo) ? $produto->titulo : '' }}">
     </div>
-        <div class="form-group col-md-6">
-            <label for="produtos">Produtos</label>
-            <input type="text" id="produtos" class="form-control" name="produtos" placeholder="produtos1, produto2, produto3"
-                value="{{ isset($produto->produtos) ? $produto->produtos : '' }}">
-        </div>
+   
         
      
         
@@ -46,6 +42,14 @@
             <label for="capa">Foto de Capa</label>
             <input type="file" id="capa" class="form-control" name="capa" placeholder="capa"
                 value="{{ isset($produto->capa) ? $produto->capa : '' }}">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="produtos">Produtos</label>
+            {{-- <input type="text" id="produtos" class="form-control" name="produtos" placeholder="produtos1, produto2, produto3"
+                value="{{ isset($produto->produtos) ? $produto->produtos : '' }}"> --}}
+
+                <textarea   name="produtos" cols="30" rows="5" class="form-control" placeholder="Produto : Quantidade">{{ old('motivo') }}</textarea>
+            
         </div>
         <div class="col-md-12">
             <div class="form-group">
