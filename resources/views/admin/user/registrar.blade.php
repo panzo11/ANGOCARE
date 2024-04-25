@@ -1,5 +1,12 @@
 @extends('layouts.admin.index')
 @section('conteudo')
+@if($errors->any())
+    <ul>
+        @foreach($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+@endif
 
 
 <div class="content-inner container-fluid pb-0" id="page_layout">

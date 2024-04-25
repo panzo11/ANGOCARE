@@ -22,15 +22,13 @@ class UserStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nome' => 'string|max:255',
+            'nome' => 'max:255',
             'logotipo' => 'mimes:pdf,jpg,jpeg,png',
-            'descricao' => 'string',
             'documentos.*.documento' => 'mimes:pdf,jpg,jpeg,png',
             'name'=>'required',
             'email'=>'required',
             'password'=>'required',
-            'bi'=>'required',
-            'it_tipo_utilizador'=>'required',
+            'vc_tipo_utilizador'=>'required',
         ];
     }
 
@@ -50,8 +48,7 @@ class UserStoreRequest extends FormRequest
             'name.required' => 'O campo nome é obrigatório.',
             'email.required' => 'O campo email é obrigatório.',
             'password.required' => 'O campo senha é obrigatório.',
-            'bi.required' => 'O campo bi é obrigatório.',
-            'it_tipo_utilizador.required' => 'O campo tipo de utilizador é obrigatório.',
+            'vc_tipo_utilizador.required' => 'O campo tipo de utilizador é obrigatório.',
         ];
     }
 }

@@ -16,6 +16,13 @@
                     
                         <input type="file" name="documentos[{{ $documento->id }}][documento]" class="form-control " value="{{ old('documentos.'.$documento->id.'.documento') }}" >
                         <input type="hidden" name="documentos[{{ $documento->id }}][id]" value="{{ $documento->id }}">
+                        @if($errors->has('documentos.*.documento'))
+    <ul>
+        @foreach($errors->get('documentos.*.documento') as $error)
+            <li class="text-danger">{{ $error[0] }}</li>
+        @endforeach
+    </ul>
+@endif
                     </div>
                 </div>
             @endforeach

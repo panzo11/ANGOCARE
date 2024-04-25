@@ -6,8 +6,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Documento;
-use App\Requets\UserStoreRequest;
+use App\Http\Requests\UserStoreRequest;
 use Illuminate\Support\Facades\Hash;
+use App\Helpers\ImageUploadHelper;
+use App\Models\Organizacao;
+use App\Models\Documento as Doc;
 class UserController extends Controller
 {
     /** Nivel de Acesso
@@ -98,6 +101,7 @@ class UserController extends Controller
                     return redirect()->back()->with('store',1);
     }
     }catch (\Throwable $th) {
+        dd($th);
         return redirect()->back()->with("store.error", 1);
     }
     }
