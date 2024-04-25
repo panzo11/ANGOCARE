@@ -5,7 +5,7 @@
     <section class="breadcrumbs-page-wrap">
         <div class="bg-fixed pos-rel breadcrumbs-page">
             <div class="container">
-                <h1>{{ $doacao->titulo }</h1>
+                <h1>{{ $doacao->categoria }</h1>
                 <nav aria-label="breadcrumb" class="breadcrumb-wrap">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('site.home.index') }}">Home</a></li>
@@ -28,7 +28,7 @@
 
                             <h1 class="heading-main">
                                 <small>Ajude-nos Agora</small>
-                               {{$doacao->titulo}}
+                               {{$doacao->categoria}}
                             </h1>
                             <!-- Causes Single Wrap -->
                             <div class="causes-wrap single">
