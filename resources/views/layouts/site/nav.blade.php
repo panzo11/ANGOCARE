@@ -1,16 +1,16 @@
- <!-- Header Start -->
+ <!-- Header Start -- -->
  <header class="header-style-fullwidth">
     <div class="top-bar-right d-flex align-items-center text-md-left">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col d-flex align-items-center contact-info">
                     <div>
-                        <i data-feather="phone"></i>  <a href="tel:+244911111111">+244911111111</a>
+                        <i data-feather="phone"></i>  <a href="tel:+244949756951">+244 949 756 951</a>
                     </div>
                     <div>
                         <i data-feather="mail"></i>  <a href="/cdn-cgi/l/email-protection#dab3b4bcb59abbacbbaebbb3bef4b9b5b7"><span class="__cf_email__" >angocare@gmail.com</span></a>
                     </div>
-                  
+
                 </div>
 
                 {{-- <div class="col-md-auto">
@@ -32,10 +32,10 @@
             <div class="d-flex align-items-center w-100 col p-0 logo-brand">
                 <a class="navbar-brand rounded-bottom light-bg" href="index.html">
                     <img src="assets/images/logo_white.svg" alt="">
-                </a> 
+                </a>
             </div>
             <!-- Topbar Buttons Start -->
-            <div class="d-inline-flex request-btn order-lg-last col-auto p-0 align-items-center"> 
+            <div class="d-inline-flex request-btn order-lg-last col-auto p-0 align-items-center">
                 <a class="btn-outline-primary btn ms-3" href="#" id="search_home"><i data-feather="search"></i></a>
 
                 <a class="nav-link btn btn-default ms-3 donate-btn" href="{{ route('site.causas.index') }}">Doar</a>
@@ -51,13 +51,13 @@
                 <!-- Toggle Button End -->
             </div>
             <!-- Topbar Buttons End -->
-            
+
             <div class="navbar-collapse">
                 <!-- Mobile Logo -->
                 <div class="offcanvas-header">
                     <a href="index.html" class="logo-small">
                         <img src="assets/images/logo_white.svg" alt="">
-                    </a>                        
+                    </a>
                 </div>
                 <!-- Mobile Logo -->
                 <!-- Mobile Menu -->
@@ -69,7 +69,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('site.sobre.index') }}">Sobre Nós</a>
                         </li>
-                     
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle-mob" href="{{ route('site.causas.index') }}" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pedidos de Ajuda </a>
                             <ul class="dropdown-menu">
@@ -78,11 +78,11 @@
 
                             </ul>
                         </li>
-                      
+
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('site.ong.index') }}">ONGs</a>
+                            <a class="nav-link" href="{{ route('site.ong.index') }}">Centros de Caridade</a>
                         </li>
-                   
+
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('site.contacte.index') }}">Contacte-Nos</a>
                         </li>
@@ -99,8 +99,8 @@
                             <a class="nav-link" href="{{ url('register') }}">Registrar-se</a>
                         </li>
                         @endguest
-                      
-                        
+
+
                     </ul>
                 </div>
                 <!-- Mobile Menu -->

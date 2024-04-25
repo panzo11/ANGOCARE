@@ -31,8 +31,8 @@
 							<div class="row">
 							   <div class="col-lg-12">
 								  <div class="form-group">
-									 <label for="email" class="form-label">Telefone</label>
-									 <input type="number" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" id="email" aria-describedby="email" placeholder="911222333">
+									 <label for="email" class="form-label">E-mail ou Telefone</label>
+									 <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" id="email" aria-describedby="email" placeholder="Digite seu e-mail ou telefone">
 									 @error('email')
 									 <span class="invalid-feedback form-control" role="alert">
 										 <strong>{{ $message }}</strong>

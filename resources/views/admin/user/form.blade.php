@@ -10,8 +10,15 @@
 
  </div>
  <div class="form-group col-md-6">
-    <label for="vc_path">Email</label>
+    <label for="vc_path">Telefone</label>
        <input type="text" id="email" class="form-control" name="email"
+           placeholder="Sub-Categoria" value="{{ isset($user->email) ? $user->email : "" }}">
+
+ </div>
+ </div>
+ <div class="form-group col-md-6">
+    <label for="vc_path">Email</label>
+       <input type="email" id="email" class="form-control" name="email"
            placeholder="Sub-Categoria" value="{{ isset($user->email) ? $user->email : "" }}">
 
  </div>
@@ -43,8 +50,8 @@
   <div class="form-group col-md-6">
     <label for="inputState">Nivel de acesso</label>
     <select id="nivel_acesso" class="form-control" name="vc_tipo_utilizador" style="width: 100%;" >
-        <option name="vc_tipo_utilizador" value="1">Adminstrador</option>
-        <option name="vc_tipo_utilizador" value="4">Necessitado</option>
+        <option name="vc_tipo_utilizador" value="1">Empresa</option>
+        <!-- <option name="vc_tipo_utilizador" value="4">Necessitado</option> -->
         <option name="vc_tipo_utilizador" value="0">Organização</option>
         <option name="vc_tipo_utilizador" value="2">Doador</option>
     </select>

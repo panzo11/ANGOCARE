@@ -1,7 +1,7 @@
 @extends('layouts.site.index')
 @section('titulo',$doacao->categoria)
 @section('conteudo')
-    <!-- Page Breadcrumbs Start -->
+
     <section class="breadcrumbs-page-wrap">
         <div class="bg-fixed pos-rel breadcrumbs-page">
             <div class="container">
@@ -11,22 +11,21 @@
                         <li class="breadcrumb-item"><a href="{{ route('site.home.index') }}">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Detalhe do Pedido</li>
                     </ol>
-                </nav>  
+                </nav>
             </div>
         </div>
     </section>
     <!-- Page Breadcrumbs End -->
 
-    <!-- Main Body Content Start -->
     <main id="body-content">
 
         <!-- About Us Style Start -->
         <section class="wide-tb-100">
             <div class="container">
-                <div class="row">                    
+                <div class="row">
                     <div class="col-lg-9 col-md-12">
                         <div class="sidebar-spacer">
-                                                    
+
                             <h1 class="heading-main">
                                 <small>Ajude-nos Agora</small>
                                 {{$doacao->titulo}}
@@ -61,8 +60,8 @@
                                 </div>
 
                                 <div class="content-wrap-single border-top">
-                                    
-                                   
+
+
 
                                     {{-- <h3>Summary</h3>
                                     <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain.</p>
@@ -82,15 +81,15 @@
                                     </ul> --}}
                                 </div>
 
-                                
+
 
                             </div>
                             <!-- Causes Single Wrap -->
 
-                            <!-- Leave a Reply -->                            
-                                      
+                            <!-- Leave a Reply -->
 
-                                               
+
+
                             <!-- Leave a Reply -->
                         </div>
 
@@ -111,7 +110,7 @@
                                                 <div class="skillbar-wrap">
                                                     <div class="clearfix">
                                                         <span class="txt-orange">$10086</span> raised of <span class="txt-green">$15000</span>
-                                                    </div>           
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -135,7 +134,7 @@
                                                 <div class="skillbar-wrap">
                                                     <div class="clearfix">
                                                         <span class="txt-orange">$10086</span> raised of <span class="txt-green">$15000</span>
-                                                    </div>           
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -159,7 +158,7 @@
                                                 <div class="skillbar-wrap">
                                                     <div class="clearfix">
                                                         <span class="txt-orange">$10086</span> raised of <span class="txt-green">$15000</span>
-                                                    </div>           
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -185,7 +184,7 @@
                                 <!-- Widget Wrap -->
                                 <div class="widget-wrap">
                                     <h3 class="widget-title">Our Donators</h3>
-                                    
+
                                     <div class="our-donators">
                                         <ul class="list-unstyled">
                                             <li>
@@ -213,14 +212,14 @@
                                 <!-- Widget Wrap -->
                                 <div class="widget-wrap">
                                     <h3 class="widget-title">Categories</h3>
-                                    
+
                                     <div class="blog-list-categories">
-                                        <ul class="list-unstyled icons-listing theme-orange mb-0">                                        
+                                        <ul class="list-unstyled icons-listing theme-orange mb-0">
                                             <li><a href="#">Charity</a></li>
                                             <li><a href="#">Healthcare</a></li>
                                             <li><a href="#">Senior</a></li>
                                             <li><a href="#">Children Citizens</a></li>
-                                            <li><a href="#">Environment</a></li>                                        
+                                            <li><a href="#">Environment</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -228,7 +227,7 @@
                             </div>
                             <!-- Sidebar Secondary End -->
 
-                            
+
                         </aside>
                     </div> --}}
                 </div>
@@ -314,7 +313,7 @@
             </div>
         </section> --}}
         <!-- Our Partners End -->
-        
-           
+
+
     </main>
 @endsection

@@ -16,16 +16,16 @@
                         </li>
                         <li>
                             <div><i data-feather="phone"></i> </div>
-                            <div><a href="tel:+23522530587">+244 911 111 111</a></div>
+                            <div><a href="tel:+23522530587">+244 949 756 951</a></div>
                         </li>
                         <li>
                             <div><i data-feather="mail"></i> </div>
-                            <div><a href="#"><span >angocare@gmail.com&</span></a></div>
+                            <div><a href="#"><span >angocare@gmail.com</span></a></div>
                         </li>
-                        
+
                     </ul>
                 </div>
-                
+
                 {{-- <div class="social-icons">
                     <ul class="list-unstyled list-group list-group-horizontal">
                         <li><a href="#"><i class="icofont-facebook"></i></a></li>
@@ -38,9 +38,9 @@
             </div>
             <!-- Column First -->
 
-            <!-- Column Second -->
+            <!-- Column Second -- -->
             <div class="col-lg-7 offset-lg-1 col-md-12">
-               
+
 
                 <div class="row">
                     <div class="col-md-8">
@@ -60,25 +60,25 @@
                         <div class="give-us-call">
                             <i data-feather="phone"></i>
                             <h4>Liga-Nos</h4>
-                            <h3><a href="tel:+2449111111111">+2449111111111</a></h3>
+                            <h3><a href="tel:+244949756951">+244949756951</a></h3>
                         </div>
                     </div>
                 </div>
 
-                
-            </div>                
+
+            </div>
             <!-- Column Second -->
         </div>
-    </div>  
+    </div>
 
     <div class="copyright-wrap">
         <div class="container pos-rel">
             <div class="row text-md-start text-center">
                 <div class="col-sm-12 col-md-auto copyright-text">
                     © Copyright <span class="txt-blue">ANGOCARE</span> <span id="yearText"></span>.   |   Created by <a href="https://geeltech.com" rel="nofollow">ITEL</a>
-                    
+
                 </div>
-                
+
             </div>
         </div>
     </div>
