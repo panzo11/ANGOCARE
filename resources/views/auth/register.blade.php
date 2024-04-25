@@ -32,7 +32,7 @@ $documentos=App\Models\Documento::get();
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label for="vc_nome">Tipo de Prestador*</label>
+                                        <label for="vc_nome">Tipo de Conta*</label>
                                         <select type="text" id="tipo_estabelecimento" class="form-control" name="tipo_estabelecimento" placeholder="Nome do Estabelecimento">
                                             <option value="1"{{ old('tipo_estabelecimento') == '1' ? ' selected' : '' }}>Doador</option>
                                            <!--  <option value="2"{{ old('tipo_estabelecimento') == '2' ? ' selected' : '' }}>Necessitado</option> 
@@ -120,8 +120,8 @@ $documentos=App\Models\Documento::get();
                         
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label for="email" class="form-label">Telefone*</label>
-                                        <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"  aria-describedby="Telefone" placeholder="944837203">
+                                        <label for="email" class="form-label">E-mail ou Telefone*</label>
+                                        <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"  aria-describedby="Telefone" placeholder="944837203 or Example@gmail.com">
                                         @error('email')
                                         <span class="invalid-feedback form-control" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -131,18 +131,7 @@ $documentos=App\Models\Documento::get();
                                 </div>
                             </div>
 
-                            <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="email" class="form-label">E-mail*</label>
-                                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"  aria-describedby="email" placeholder="example@gmail.com">
-                                        @error('email')
-                                        <span class="invalid-feedback form-control" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                    </div>
-                                </div>
-                            </div>
+                    
                         
                             <div class="row">
                                 <div class="col-lg-6">
