@@ -47,7 +47,7 @@ class UserController extends Controller
                     'name'=>$req->name,
                     'email'=>$req->email,
                     'password'=>Hash::make($req->password),
-                    'bi'=>$caminho,
+                    'vc_path'=>$caminho,
                     'it_tipo_utilizador'=>$req->vc_tipo_utilizador
                 ]);
 

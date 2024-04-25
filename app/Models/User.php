@@ -25,6 +25,7 @@ class User extends Authenticatable
         'empresa',
         'nif',
         'it_tipo_utilizador',
+        'vc_path',
     ];
 
     /**
