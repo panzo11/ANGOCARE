@@ -46,6 +46,7 @@ class UserController extends Controller
                 $user=User::create([
                     'name'=>$req->name,
                     'email'=>$req->email,
+                    'bi'=>$req->bi,
                     'password'=>Hash::make($req->password),
                     'vc_path'=>$caminho,
                     'it_tipo_utilizador'=>$req->vc_tipo_utilizador

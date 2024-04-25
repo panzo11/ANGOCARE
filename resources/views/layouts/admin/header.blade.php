@@ -154,8 +154,13 @@
                    </li>
                    <li class="nav-item dropdown">
                       <a class="py-0 nav-link d-flex align-items-center ps-3" href="#" id="profile-setting" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                         <img src="{{ asset('assets/images/avatars/01.png') }}" alt="User-Profile" class="img-fluid avatar avatar-50 avatar-rounded" loading="lazy">
-                         <div class="caption ms-3 d-none d-md-block ">
+                        @if(Auth::user()->vc_path)
+                        <img src="{{ asset(Auth::user()->vc_path) }}" alt="User-Profile" class="img-fluid avatar avatar-50 avatar-rounded" loading="lazy">
+                        @else
+                        <img src="{{ asset('assets/images/avatars/01.png') }}" alt="User-Profile" class="img-fluid avatar avatar-50 avatar-rounded" loading="lazy">
+                       
+                        @endif 
+                        <div class="caption ms-3 d-none d-md-block ">
                             <h6 class="mb-0 caption-title">{{Auth::user()->name}}</h6>
                             {{-- <option value="1"{{ old('tipo_estabelecimento') == '1' ? ' selected' : '' }}>Doador</option>
                             <option value="2"{{ old('tipo_estabelecimento') == '2' ? ' selected' : '' }}>Necessitado</option>

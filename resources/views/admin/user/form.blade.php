@@ -33,7 +33,17 @@
             @endif
 
  </div>
+ <div class="form-group col-md-6">
+    <label for="vc_path">BI</label>
+       <input type="text" id="email" class="form-control" name="bi"
+           placeholder="Sub-Categoria" value="{{ isset($user->bi) ? $user->bi : "" }}">
+           @if ($errors->has('bi'))
+                <div class="alert alert-danger">
+                      {{ $errors->first('bi') }}
+                </div>
+            @endif
 
+ </div>
  <div class="form-group col-md-6">
     <label for="vc_path">Password</label>
        <input type="password" id="password" class="form-control" name="password"
