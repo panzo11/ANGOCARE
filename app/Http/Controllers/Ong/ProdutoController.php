@@ -46,6 +46,7 @@ class ProdutoController extends Controller
         try {
           
             $user=Auth::user()->id;
+            // dd($id);
             DoacaoProdutoOng:: create([
                 'users_id'=>$user,
                 'organizacaos_id'=>$id,

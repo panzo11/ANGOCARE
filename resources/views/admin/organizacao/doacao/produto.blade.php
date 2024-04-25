@@ -37,7 +37,7 @@
                             <td>
                                 {{$doacao->user_2}}
                             </td>
-                            <td class="text-center"> {{$doacao->user_1}}</td>
+                            <td class="text-center"> {{$doacao->users_1}}</td>
                                        
                            
                             <td>{{$doacao->doados}}</td>
