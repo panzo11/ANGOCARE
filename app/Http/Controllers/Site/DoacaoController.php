@@ -20,12 +20,12 @@ class DoacaoController extends Controller
     }
     public function index3( $organizacao){
         $organizacao=Organizacao::where('id',$organizacao)->first();
-        // dd($organizacao);
+        
         return view('site.doacao.index3', compact('organizacao'));
     }
     public function index4( $organizacao){
         $organizacao=Organizacao::where('id',$organizacao)->first();
-        // dd($organizacao);
+        
         return view('site.doacao.index4', compact('organizacao'));
     }
 }

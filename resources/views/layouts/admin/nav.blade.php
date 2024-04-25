@@ -285,7 +285,7 @@
                         </ul>
                     </li>
                     @endif
-                    @if(Auth::user()->it_tipo_utilizador==3 || Auth::user()->it_tipo_utilizador==0)
+                    @if(Auth::user()->it_tipo_utilizador==3 || Auth::user()->it_tipo_utilizador==0 || Auth::user()->it_tipo_utilizador==1)
                     <li class="nav-item static-item">
                         <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
                             <span class="default-icon">Organizacões</span>
@@ -293,7 +293,7 @@
                         </a>
                     </li>
                     @endif
-                    @if(Auth::user()->it_tipo_utilizador==3 || Auth::user()->it_tipo_utilizador==0 )
+                    @if(Auth::user()->it_tipo_utilizador==3 || Auth::user()->it_tipo_utilizador==0 || Auth::user()->it_tipo_utilizador==1 )
                     <li class="nav-item" id="insc">
                         <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-doacao-organizacao" role="button"
                             aria-expanded="false" aria-controls="sidebar-doacao-organizacao">
