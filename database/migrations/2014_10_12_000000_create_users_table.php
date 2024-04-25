@@ -13,8 +13,8 @@ return new class extends Migration
     /**
      * 0 - Administrador
      * 1 - Doadores Singular
-     * 2 - Necessitado
-     * 3 - Organização
+
+     * 3 - Centro de Caridade
      * 4 - Empresa
      * 
      */

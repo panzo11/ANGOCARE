@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
-
-
+use App\Models\Documento;
+use App\Requets\UserStoreRequest;
 use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
@@ -17,13 +17,20 @@ class UserController extends Controller
          * 3-Afiliado
          */
     public function index(){
-        $users=User::get();
+        $data['users']=User::get();
+        $data['documentos'] = Documento::all();
         // dd($users);
 
-        return view('admin.user.index2', compact('users'));
+        return view('admin.user.index2', $data);
     }
+    public function create(){
+        $data['users']=User::get();
+        $data['documentos'] = Documento::all();
+        // dd($users);
 
-    public function store(Request $req){
+        return view('admin.user.registrar', $data);
+    }
+    public function store(UserStoreRequest $req){
         try{
             if($req->hasFile('vc_path') && $req->file('vc_path')->isValid()){
                 // Imagem VC_PATH
@@ -40,6 +47,54 @@ class UserController extends Controller
                     'bi'=>$caminho,
                     'it_tipo_utilizador'=>$req->vc_tipo_utilizador
                 ]);
+
+
+                if($req->vc_tipo_utilizador=='3'){
+                    $reqImagem = $req->logotipo;
+
+                    // Faz o upload da imagem
+                    $caminhoImagem = ImageUploadHelper::uploadImage($reqImagem, 'imagens/organizacoes');
+        
+                    if (!$caminhoImagem) {
+                       
+                        return redirect()->back()->with('image.error','Erro ao carregar Imagem');;
+                    } 
+                
+                    $organizacao=Organizacao::create([
+                        'nome' => $req->nome,
+                        'logotipo' => $caminhoImagem ,
+                        'descricao' => $req->descricao,
+                        'users_id' => $user->id,
+                    ]);
+        
+                    $documentos = $req->documentos;
+        
+                    foreach ($documentos as $documentoData) {
+                         // $documentos = $req->input('documentos');
+                        
+                    $documento = $documentoData['documento'];
+                    // Faz o upload da imagem
+                    $caminhoDocumento = ImageUploadHelper::uploadImage($documento, 'documentos/organizacoes');
+                    if (!$caminhoDocumento) {
+                    
+                        return redirect()->back()->with('doc.error','Erro ao carregar Imagem');;
+                    }  
+                //    dd($documentoData['id']);
+                    Documento::create(
+                            [
+                                'documento'=>$caminhoDocumento,
+                                'documentos_id'=>$documentoData['id'],
+                                'organizacaos_id'=>$organizacao->id,
+                            ]
+                        );
+                    }
+                }
+                elseif($req->vc_tipo_utilizador=='3'){
+                    $user->update([
+                        'empresa'=>$req->empresa,
+                        'nif'=>$req->nif,
+                    ]);
+                }
                     return redirect()->back()->with('store',1);
     }
     }catch (\Throwable $th) {
