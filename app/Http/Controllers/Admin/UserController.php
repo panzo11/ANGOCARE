@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\Documento;
+use App\Models\OrganizacaoDocumento as Documento;
 use App\Http\Requests\UserStoreRequest;
 use Illuminate\Support\Facades\Hash;
 use App\Helpers\ImageUploadHelper;

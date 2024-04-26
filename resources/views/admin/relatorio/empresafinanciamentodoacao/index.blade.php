@@ -22,7 +22,7 @@
                
                <form action="{{route("relatorio.doacao.empresa.financiamento.request")}}" method="post" enctype="multipart/form-data">
                                 @csrf
-                                
+                                <div class="row">
                                 
                             <div class="form-group col-md-6">
                                 <label for="inputState">Causa</label>
@@ -62,7 +62,19 @@
                                     
                                 </select>
                             </div>
-                                        
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="created_at" class="form-label">De</label>
+                                    <input type="date" class="form-control" id="created_at" name="created_at">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="created_at" class="form-label">Até</label>
+                                    <input type="date" class="form-control" id="created_at" name="created_at">
+                                </div>
+                            </div>
+                        </div>        
                                 <div class="modal-footer">
                                     <button type="button" class="btn  btn-secondary" data-dismiss="modal">Fechar</button>
                                     <button  class="btn  btn-primary" id="ajaxSubmit" >Gerar Relatório</button>

@@ -23,7 +23,7 @@
                <form action="{{route("relatorio.doacao.empresa.produto.request")}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 
-                                
+                                <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="inputState">Pedidos</label>
                                 <select id="titulo" class="form-control" name="titulo" style="width: 100%;" >
@@ -62,7 +62,7 @@
                                     
                                 </select>
                             </div>
-                                        
+                        </div>     
                                 <div class="modal-footer">
                                     <button type="button" class="btn  btn-secondary" data-dismiss="modal">Fechar</button>
                                     <button  class="btn  btn-primary" id="ajaxSubmit" >Gerar Relatório</button>

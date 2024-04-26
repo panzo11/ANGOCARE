@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Doacao;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Requests\DoacaoFinanciamentoRequest;
-use App\Requests\DoacaoFinanciamentoUpdateRequest;
+use App\Http\Requests\DoacaoFinanciamentoRequest;
+use App\Http\Requests\DoacaoFinanciamentoUpdateRequest;
 use App\Models\DoacaoFinancimento;
 use App\Models\User;
 use App\Helpers\ImageUploadHelper;
@@ -93,7 +93,7 @@ class FinanciamentoController extends Controller
        return view('admin.financiamento.doacao',$data);
     }
 
-    public function store(Request $req,$id){
+    public function store(DoacaoFinanciamentoRequest $req,$id){
         try {
             
             

@@ -17,5 +17,6 @@ class DoacaoProdutoOng extends Model
         'doados',
         'entrega',
         'estado',
+        'ate',
     ];
 }

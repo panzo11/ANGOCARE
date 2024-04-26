@@ -22,7 +22,7 @@
                
                <form action="{{route('relatorio.organizacao.request')}}" method="post" enctype="multipart/form-data">
                                 @csrf
-                                
+                                <div class="row">
                                 
                             <div class="form-group col-md-6">
                                 <label for="inputState">Centros de Caridade</label>
@@ -61,7 +61,7 @@
                                     <option value="2">Rejeitados</option>
                                 </select>
                             </div>
-                                        
+                        </div>   
                                 <div class="modal-footer">
                                     <button type="button" class="btn  btn-secondary" data-dismiss="modal">Fechar</button>
                                     <button  class="btn  btn-primary" id="ajaxSubmit" >Gerar Relatório</button>

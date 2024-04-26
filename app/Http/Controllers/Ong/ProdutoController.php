@@ -52,6 +52,7 @@ class ProdutoController extends Controller
                 'organizacaos_id'=>$id,
                 'doados'=>$req->doados,
                 'entrega'=>$req->entrega,
+                'ate'=>$req->ate,
                 'estado'=>0,
             ]);
             return redirect()->back()->with('doacao',1);

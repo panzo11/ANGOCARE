@@ -41,6 +41,11 @@
 
                                     <div class="mt-3">
                                         <input type="text" class="form-control" name="valores" id="custom" placeholder="Valor da Sua Doação">
+                                        @if ($errors->has('valores'))
+                <div class="alert alert-danger">
+                      {{ $errors->first('valores') }}
+                </div>
+            @endif
                                     </div>
                                 </div>
                             </div>
@@ -53,7 +58,12 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="comprovativo">Comprovativo</label>
-                                    <input type="file" class="form-control" id="name" name="comprovativo" placeholder="Comprovativ">
+                                    <input type="file" class="form-control" id="name" name="comprovativo" placeholder="Comprovativo">
+                                    @if ($errors->has('comprovativo'))
+                                        <div class="alert alert-danger">
+                                            {{ $errors->first('comprovativo') }}
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
 

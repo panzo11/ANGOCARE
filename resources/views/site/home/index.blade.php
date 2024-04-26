@@ -102,7 +102,8 @@
                                     <div class="icon-box-1">
                                         <i class="charity-donate_money"></i>
                                         <div class="text">
-                                            <h3>{{ $fundos }} Kz <br> <span>Fundos Financeiros</span></h3>
+                                            
+                                            <h3>{{ number_format($fundos, 2, ',', '.') }}Kz <br> <span>Fundos Financeiros</span></h3>
                                         </div>
                                     </div>
                                 </div>
@@ -289,7 +290,7 @@
                                 <div class="raised-progress">
                                     <div class="skillbar-wrap">
                                         <div class="clearfix">
-                                            {{ $doacao->total }}Kz alcançado de {{ $doacao->valores }}Kz
+                                            {{ number_format($doacao->total, 2, ',', '.') }}Kz alcançado de {{ number_format($doacao->valores, 2, ',', '.') }}Kz
                                         </div>
                                         @php
                                             $porcetangem=($doacao->total/$doacao->valores)*100

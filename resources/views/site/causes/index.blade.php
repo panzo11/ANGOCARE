@@ -39,7 +39,7 @@
                             <div class="raised-progress">
                                 <div class="skillbar-wrap">
                                     <div class="clearfix">
-                                        {{ $doacao->total }}Kz alcançado de {{ $doacao->valores }}Kz
+                                        {{ number_format($doacao->total, 2, ',', '.') }}Kz alcançado de {{ number_format($doacao->valores, 2, ',', '.') }}Kz
                                     </div>
                                     @php
                                         $porcetangem=($doacao->total/$doacao->valores)*100

@@ -11,7 +11,7 @@ class DoacaoFinanciamentoRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return tru;
+        return true;
     }
 
     /**
@@ -24,8 +24,15 @@ class DoacaoFinanciamentoRequest extends FormRequest
         return [
             
             'valores'=>'required',
-            'comprovativo'=>'required',
-        
+            'comprovativo'=>'required|mimes:pdf,jpg,jpeg,png',
+        ];
+    }
+    public function messages(): array
+    {
+        return [
+            'valores.required'=>'Valores é um campo obrigatorio',
+            'comprovativo.required' => 'Um comprovativo é necessário.',
+            'comprovativo.mimes' => 'O comprovativo deve ser um arquivo do tipo: pdf, jpg, jpeg, png.',
         ];
     }
 }

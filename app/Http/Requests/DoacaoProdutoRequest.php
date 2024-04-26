@@ -23,6 +23,7 @@ class DoacaoProdutoRequest extends FormRequest
     {
         return [
             'doados'=>'required',
+            
             'entrega'=>'required'|'date',
         ];
     }

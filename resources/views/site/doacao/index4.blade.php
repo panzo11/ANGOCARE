@@ -52,11 +52,17 @@
                                 <p class="text-primary">This is simple a note to the donators regarding our services and policy.</p>
                                 <div class="border-top mb-4"></div>
                             </div> --}}
-
+                            <h3 class="h3-sm fw-5 txt-blue mb-3">Intervalo de Dias que o Produto será entregue</h3>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="entrega">Data que o produto será entregue</label>
+                                    <label for="entrega">De</label>
                                     <input type="date" class="form-control" id="entrega" name="entrega" placeholder="Comprovativ">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="entrega">Até</label>
+                                    <input type="date" class="form-control" id="entrega" name="ate" placeholder="Comprovativ">
                                 </div>
                             </div>
 

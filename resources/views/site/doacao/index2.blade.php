@@ -54,8 +54,14 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="entrega">Data que o produto será entregue</label>
+                                    <label for="entrega">De</label>
                                     <input type="date" class="form-control" id="entrega" name="entrega" placeholder="Comprovativ">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="entrega">Até</label>
+                                    <input type="date" class="form-control" id="entrega" name="ate" placeholder="Comprovativ">
                                 </div>
                             </div>
 
