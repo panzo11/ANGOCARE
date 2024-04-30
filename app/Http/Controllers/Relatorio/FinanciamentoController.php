@@ -42,7 +42,7 @@ class FinanciamentoController extends Controller
             return $query->where('estado', $request->input('estado'));
         })
         ->when($request->input('de'), function ($query) use ($request) {
-            return $query->whereBetween('created_at', [$request->input('de'), $request->input('ate')]);
+            return $query->whereBetween('financiamentos.created_at', [$request->input('de'), $request->input('ate')]);
         })
         ->join('users','financiamentos.users_id','users.id')
         ->select('users.name as usuario','financiamentos.*')
@@ -61,7 +61,7 @@ class FinanciamentoController extends Controller
             return $query->where('estado', $request->input('estado'));
         })
         ->when($request->input('de'), function ($query) use ($request) {
-            return $query->whereBetween('created_at', [$request->input('de'), $request->input('ate')]);
+            return $query->whereBetween('financiamentos.created_at', [$request->input('de'), $request->input('ate')]);
         })
         ->join('users','financiamentos.users_id','users.id')
         ->select('users.name as usuario','financiamentos.*')
