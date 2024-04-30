@@ -30,28 +30,30 @@
 
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const tipoEstabelecimentoSelect = document.getElementById("vc_tipo_utilizador");
-        const divEmpresa = document.querySelector(".empresa");
-        const divIndividual = document.querySelector(".individual");
-    
-        // Adicione um ouvinte de evento para detectar mudanças na seleção
-        tipoEstabelecimentoSelect.addEventListener("change", function() {
-            if (tipoEstabelecimentoSelect.value === "4") {
-              //  Se "Empresa" for selecionado, exiba a div "empresa" e oculte a div "individual"
-                divEmpresa.style.display = "block";
-                divIndividual.style.display = "none";
-            } else if (tipoEstabelecimentoSelect.value === "3") {
-                // Se "Individual" for selecionado, exiba a div "individual" e oculte a div "empresa"
-                divEmpresa.style.display = "none";
-                divIndividual.style.display = "block";
-            } else {
-                // Se "Selecione o Tipo de Empresa" for selecionado, oculte ambas as divs
-                divEmpresa.style.display = "none";
-                divIndividual.style.display = "none";
-            }
-        });
+   document.addEventListener("DOMContentLoaded", function() {
+    const radioDoador = document.querySelector('input[name="vc_tipo_utilizador"][value="1"]');
+    const radioEmpresa = document.querySelector('input[name="vc_tipo_utilizador"][value="4"]');
+    const radioCaridade = document.querySelector('input[name="vc_tipo_utilizador"][value="3"]');
+    const divEmpresa = document.querySelector(".empresa");
+    const divIndividual = document.querySelector(".individual");
+
+    // Adicione um ouvinte de evento para os botões de rádio
+    radioDoador.addEventListener("click", function() {
+        divEmpresa.style.display = "none";
+        divIndividual.style.display = "none";
     });
+
+    radioEmpresa.addEventListener("click", function() {
+        divEmpresa.style.display = "block";
+        divIndividual.style.display = "none";
+    });
+
+    radioCaridade.addEventListener("click", function() {
+        divEmpresa.style.display = "none";
+        divIndividual.style.display = "block";
+    });
+});
+
     </script>
 
     <script>

@@ -2,15 +2,25 @@
 <div class="container">
     
 <div class="row">
-<div class="form-group col-md-12">
-    <label for="inputState">Nivel de acesso</label>
-    <select id="vc_tipo_utilizador" class="form-control" name="vc_tipo_utilizador" style="width: 100%;" >
-      <option name="vc_tipo_utilizador" value="1">Doador</option>
-        <option name="vc_tipo_utilizador" value="4">Empresa</option>
-        <!-- <option name="vc_tipo_utilizador" value="4">Necessitado</option> -->
-        <option name="vc_tipo_utilizador" value="3">centro de caridade</option>
-    </select>
-  </div>
+    <div class="form-group col-md-12">
+        <label>Nível de acesso</label>
+        <div>
+            <label>
+                <input type="radio" name="vc_tipo_utilizador" value="1"> Doador
+            </label>
+        </div>
+        <div>
+            <label>
+                <input type="radio" name="vc_tipo_utilizador" value="4"> Empresa
+            </label>
+        </div>
+        <div>
+            <label>
+                <input type="radio" name="vc_tipo_utilizador" value="3"> Centro de Caridade
+            </label>
+        </div>
+    </div>
+    
  <div class="form-group col-md-6">
     <label for="vc_path">Nome</label>
        <input type="text" id="name" class="form-control" name="name"
