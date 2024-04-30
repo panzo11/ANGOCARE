@@ -17,10 +17,6 @@ use Illuminate\Support\Facades\Auth;
 class OrganizacaoController extends Controller
 {
     //
-   
-
-
-
     public function index(){
         if(Auth::user()->it_tipo_utlizador==0){
         $data['organizacoes']=Organizacao::join('users','organizacaos.users_id','users.id')
@@ -97,7 +93,7 @@ class OrganizacaoController extends Controller
     
             return redirect()->route('organizacoes.index')->with('store','Erro ao Cadastrar Organizacao');
         } catch (\Throwable $th) {
-            dd($th);
+            // dd($th);
           
             return redirect()->back()->with('store.error','Erro ao Cadastrar Organizacao');
         }
@@ -111,6 +107,7 @@ class OrganizacaoController extends Controller
         ->where('organizacao_documentos.organizacaos_id',$id)
         ->select('organizacaos.*','users.name as user','users.id as user_id','organizacao_documentos.documento as documento','organizacao_documentos.id as documento_id')
         ->first();
+        // dd($data);
         $data['usuarios']=User::all();
         $data['documentos']=Doc::all();
         return view('admin.organizacao.edit',$data);

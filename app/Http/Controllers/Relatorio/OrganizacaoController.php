@@ -36,6 +36,9 @@ class OrganizacaoController extends Controller
             ->when($request->input('estado'), function ($query) use ($request) {
                 return $query->where('estado', $request->input('estado'));
             })
+            ->when($request->input('de'), function ($query) use ($request) {
+                return $query->whereBetween('created_at', [$request->input('de'), $request->input('ate')]);
+            })
             ->join('users', 'organizacaos.users_id', '=', 'users.id')
             ->select('users.name as usuario', 'organizacaos.*')
             ->get();
@@ -49,6 +52,9 @@ class OrganizacaoController extends Controller
             })
             ->when($request->input('estado'), function ($query) use ($request) {
                 return $query->where('estado', $request->input('estado'));
+            })
+            ->when($request->input('de'), function ($query) use ($request) {
+                return $query->whereBetween('created_at', [$request->input('de'), $request->input('ate')]);
             })
             ->join('users', 'organizacaos.users_id', '=', 'users.id')
             ->select('users.name as usuario', 'organizacaos.*')
@@ -67,6 +73,9 @@ class OrganizacaoController extends Controller
             ->when($request->input('estado'), function ($query) use ($request) {
                 return $query->where('necessitados.estado', $request->input('estado'));
             })
+            ->when($request->input('de'), function ($query) use ($request) {
+                return $query->whereBetween('doacao_financiamento_ongs.created_at', [$request->input('de'), $request->input('ate')]);
+            })
             ->select('doadores.name as doador', 'necessitados.nome as necessitado', 'doacao_financiamento_ongs.*')
             ->get();
     
@@ -81,6 +90,9 @@ class OrganizacaoController extends Controller
             })
             ->when($request->input('estado'), function ($query) use ($request) {
                 return $query->where('necessitados.estado', $request->input('estado'));
+            })
+            ->when($request->input('de'), function ($query) use ($request) {
+                return $query->whereBetween('doacao_financiamento_ongs.created_at', [$request->input('de'), $request->input('ate')]);
             })
             ->select('doadores.name as doador', 'necessitados.nome as necessitado', 'doacao_financiamento_ongs.*')
             ->count();
@@ -98,6 +110,9 @@ class OrganizacaoController extends Controller
             ->when($request->input('estado'), function ($query) use ($request) {
                 return $query->where('necessitado.estado', $request->input('estado'));
             })
+            ->when($request->input('de'), function ($query) use ($request) {
+                return $query->whereBetween('doacao_produto_ongs.created_at', [$request->input('de'), $request->input('ate')]);
+            })
             ->select('doacao_produto_ongs.*', 'doador.name as users_1', 'necessitado.nome as user_2')
             ->get();
     
@@ -112,6 +127,9 @@ class OrganizacaoController extends Controller
             })
             ->when($request->input('estado'), function ($query) use ($request) {
                 return $query->where('necessitado.estado', $request->input('estado'));
+            })
+            ->when($request->input('de'), function ($query) use ($request) {
+                return $query->whereBetween('doacao_produto_ongs.created_at', [$request->input('de'), $request->input('ate')]);
             })
             ->select('doacao_produto_ongs.*', 'doador.name as users_1', 'necessitado.nome as user_2')
             ->count();

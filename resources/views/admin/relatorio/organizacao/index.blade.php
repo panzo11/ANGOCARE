@@ -61,6 +61,18 @@
                                     <option value="2">Rejeitados</option>
                                 </select>
                             </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="de" class="form-label">De</label>
+                                    <input type="date" class="form-control" id="created_at" name="de">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="ate" class="form-label">Até</label>
+                                    <input type="date" class="form-control" id="created_at" name="ate">
+                                </div>
+                            </div>
                         </div>   
                                 <div class="modal-footer">
                                     <button type="button" class="btn  btn-secondary" data-dismiss="modal">Fechar</button>

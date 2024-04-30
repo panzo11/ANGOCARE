@@ -29,19 +29,27 @@ $documentos=App\Models\Documento::get();
 						 <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                             @csrf
 
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label for="vc_nome">Tipo de Conta*</label>
-                                        <select type="text" id="tipo_estabelecimento" class="form-control" name="tipo_estabelecimento" placeholder="Nome do Estabelecimento">
-                                            <option value="1"{{ old('tipo_estabelecimento') == '1' ? ' selected' : '' }}>Doador</option>
-                                           <!--  <option value="2"{{ old('tipo_estabelecimento') == '2' ? ' selected' : '' }}>Necessitado</option>  -->
-                                             <option value="3"{{ old('tipo_estabelecimento') == '3' ? ' selected' : '' }}>Centros de Caridade</option>
-                                            <option value="4"{{ old('tipo_estabelecimento') == '4' ? ' selected' : '' }}>Empresa</option>
-                                        </select>
-                                    </div>
+                            <<div class="row">
+                                {{-- <div class="form-group col-md-12"> --}}
+                                    <label class="form-label fw-semibold">NiveL de Acesso*</label>
+                                    <div class="row">
+                                        <div class="form-check d-block col-md-4">
+                                            <input class="form-check-input" type="radio" name="vc_tipo_utilizador" id="flexRadioDefault1"
+                                                value="1">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                Doador
+                                            </label>
+                                        </div>
+                                        <div class="form-check d-block col-md-4">
+                                            <input class="form-check-input" type="radio" name="vc_tipo_utilizador" id="flexRadioDefault1"
+                                                value="4">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                Empresa
+                                            </label>
+                                        </div>
+                                        
+                                    {{-- </div> --}}
                                 </div>
-                            </div>
                         
                             <div class="empresa" style="display: none">
                                 <div class="form-card text-start">

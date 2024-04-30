@@ -22,7 +22,7 @@ class DocumentoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'documento' => 'required|mimes:pdf,jpg,jpeg,png',
+            'documento' => 'required',
         ];
     }
 
@@ -31,11 +31,5 @@ class DocumentoRequest extends FormRequest
      *
      * @return array<string, string>
      */
-    public function messages(): array
-    {
-        return [
-            'documento.required' => 'Um documento é necessário.',
-            'documento.mimes' => 'O documento deve ser um arquivo do tipo: pdf, jpg, jpeg, png.',
-        ];
-    }
+    
 }

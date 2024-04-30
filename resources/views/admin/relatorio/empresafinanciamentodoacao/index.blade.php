@@ -64,14 +64,14 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="created_at" class="form-label">De</label>
-                                    <input type="date" class="form-control" id="created_at" name="created_at">
+                                    <label for="de" class="form-label">De</label>
+                                    <input type="date" class="form-control" id="created_at" name="de">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="created_at" class="form-label">Até</label>
-                                    <input type="date" class="form-control" id="created_at" name="created_at">
+                                    <label for="ate" class="form-label">Até</label>
+                                    <input type="date" class="form-control" id="created_at" name="ate">
                                 </div>
                             </div>
                         </div>        

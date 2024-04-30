@@ -35,6 +35,9 @@ class EmpresaProdutoController extends Controller
         ->when($request->input('estado'), function ($query) use ($request) {
             return $query->where('produtos.estado', $request->input('estado'));
         })
+        ->when($request->input('de'), function ($query) use ($request) {
+            return $query->whereBetween('doacao_produtos.created_at', [$request->input('de'), $request->input('ate')]);
+        })
         ->join('users as necessitado','produtos.users_id','necessitado.id')
         ->select('doacao_produtos.*','doador.name as users_1','necessitado.name as user_2')
         ->where('doador.it_tipo_utilizador',4)
@@ -46,6 +49,9 @@ class EmpresaProdutoController extends Controller
         })
         ->when($request->input('estado'), function ($query) use ($request) {
             return $query->where('produtos.estado', $request->input('estado'));
+        })
+        ->when($request->input('de'), function ($query) use ($request) {
+            return $query->whereBetween('doacao_produtos.created_at', [$request->input('de'), $request->input('ate')]);
         })
         ->join('users as necessitado','produtos.users_id','necessitado.id')
         ->select('doacao_produtos.*','doador.name as users_1','necessitado.name as user_2')

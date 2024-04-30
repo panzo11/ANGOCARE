@@ -46,6 +46,9 @@ class FinanciamentoDoacaoController extends Controller
         ->when($request->input('financiamentos_id'), function ($query) use ($request) {
             return $query->where('financiamentos.id', $request->input('financiamentos_id'));
         })
+        ->when($request->input('de'), function ($query) use ($request) {
+            return $query->whereBetween('doacao_financimentos.created_at', [$request->input('de'), $request->input('ate')]);
+        })
         ->join('users as necessitados', 'financiamentos.users_id', '=', 'necessitados.id')
         // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
         ->select('doadores.name as doador', 'necessitados.name as necessitado', 'doacao_financimentos.*')
@@ -59,7 +62,11 @@ $data['doacoes'] = DB::table('financiamentos')
 ->when($request->input('estado'), function ($query) use ($request) {
     return $query->where('financiamentos.estado', $request->input('estado'));
 })
+
 ->leftJoin('doacao_financimentos', 'doacao_financimentos.financiamentos_id', '=', 'financiamentos.id')
+->when($request->input('de'), function ($query) use ($request) {
+    return $query->whereBetween('doacao_financimentos.created_at', [$request->input('de'), $request->input('ate')]);
+})
 // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
 ->join('users','financiamentos.users_id','users.id')
 ->select(

@@ -28,7 +28,7 @@ class UserController extends Controller
     }
     public function create(){
         $data['users']=User::get();
-        $data['documentos'] = Documento::all();
+        $data['documentos'] = Doc::all();
         // dd($users);
 
         return view('admin.user.registrar', $data);

@@ -19,6 +19,7 @@
                 <option value="Humanidade">Humanidade</option>
                 <option value="Água">Água</option>
                 <option value="Alimentação">Alimentação</option>
+                <option value="Outros">Outros</option>
             </select>
         </div>
       

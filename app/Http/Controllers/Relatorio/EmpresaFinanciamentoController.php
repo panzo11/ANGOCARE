@@ -38,6 +38,9 @@ class EmpresaFinanciamentoController extends Controller
         ->when($request->input('empresa'), function ($query) use ($request) {
             return $query->where('doadores.empresa', $request->input('empresa'));
         })
+        ->when($request->input('de'), function ($query) use ($request) {
+            return $query->whereBetween('doacao_financimentos.created_at', [$request->input('de'), $request->input('ate')]);
+        })
      
         ->join('users as necessitados', 'financiamentos.users_id', '=', 'necessitados.id')
         // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
@@ -54,6 +57,9 @@ class EmpresaFinanciamentoController extends Controller
 
         ->when($request->input('financiamentos_id'), function ($query) use ($request) {
             return $query->where('financiamentos.id', $request->input('financiamentos_id'));
+        })
+        ->when($request->input('de'), function ($query) use ($request) {
+            return $query->whereBetween('doacao_financimentos.created_at', [$request->input('de'), $request->input('ate')]);
         })
         ->join('users as necessitados', 'financiamentos.users_id', '=', 'necessitados.id')
         // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
@@ -77,6 +83,9 @@ $data['doacoes'] = DB::table('financiamentos')
 ->when($request->input('empresa'), function ($query) use ($request) {
     return $query->where('doadores.empresa', $request->input('empresa'));
 })
+->when($request->input('de'), function ($query) use ($request) {
+            return $query->whereBetween('doacao_financimentos.created_at', [$request->input('de'), $request->input('ate')]);
+        })
 ->select(
     'financiamentos.id',
     'financiamentos.valores',
@@ -110,6 +119,9 @@ $data['total2'] = DB::table('financiamentos')
 ->when($request->input('estado'), function ($query) use ($request) {
     return $query->where('financiamentos.estado', $request->input('estado'));
 })
+->when($request->input('de'), function ($query) use ($request) {
+            return $query->whereBetween('doacao_financimentos.created_at', [$request->input('de'), $request->input('ate')]);
+        })
 ->leftJoin('doacao_financimentos', 'doacao_financimentos.financiamentos_id', '=', 'financiamentos.id')
 // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
 ->join('users as necessitado','financiamentos.users_id','necessitado.id')

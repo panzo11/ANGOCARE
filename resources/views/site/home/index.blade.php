@@ -360,7 +360,7 @@
                                 <i data-feather="plus-circle"></i>
                             </div>
                         </div>
-                        <img src="{{ asset('asset/images/gallery/gallery_img_1.jpg') }}" alt="">
+                        <img src="{{ asset('asset/images/gallery/gallery_img_1.jpg') }}" alt="" height="300px">
                     </a>
                 </div>
             </div>
@@ -376,7 +376,7 @@
                                 <i data-feather="plus-circle"></i>
                             </div>
                         </div>
-                        <img src="{{ asset('asset/images/gallery/gallery_img_2.jpg') }}" alt="">
+                        <img src="{{ asset('asset/images/gallery/gallery_img_2.jpg') }}" alt=""  height="300px">
                     </a>
                 </div>
                 <!-- Gallery Item -->
@@ -393,7 +393,7 @@
                                 <i data-feather="plus-circle"></i>
                             </div>
                         </div>
-                        <img src="{{ asset('asset/images/gallery/gallery_img_3.jpg') }}" alt="">
+                        <img src="{{ asset('asset/images/gallery/gallery_img_3.jpg') }}" alt=""  height="300px">
                     </a>
                 </div>
             </div>
@@ -409,7 +409,7 @@
                                 <i data-feather="plus-circle"></i>
                             </div>
                         </div>
-                        <img src="{{ asset('asset/images/gallery/gallery_img_4.jpg') }}" alt="">
+                        <img src="{{ asset('asset/images/gallery/gallery_img_4.jpg') }}" alt=""  height="300px">
                     </a>
                 </div>
                 <!-- Gallery Item -->
@@ -426,7 +426,7 @@
                                 <i data-feather="plus-circle"></i>
                             </div>
                         </div>
-                        <img src="{{ asset('asset/images/gallery/gallery_img_5.jpg') }}" alt="">
+                        <img src="{{ asset('asset/images/gallery/gallery_img_5.jpg') }}" alt=""  height="300px">
                     </a>
                 </div>
                 <!-- Gallery Item -->
@@ -443,7 +443,7 @@
                                 <i data-feather="plus-circle"></i>
                             </div>
                         </div>
-                        <img src="{{ asset('asset/images/gallery/gallery_img_6.jpg') }}" alt="">
+                        <img src="{{ asset('asset/images/gallery/gallery_img_6.jpg') }}" alt=""  height="300px">
                     </a>
                 </div>
                 <!-- Gallery Item -->
@@ -460,28 +460,13 @@
                                 <i data-feather="plus-circle"></i>
                             </div>
                         </div>
-                        <img src="{{ asset('asset/images/gallery/gallery_img_7.jpg') }}" alt="">
+                        <img src="{{ asset('asset/images/gallery/gallery_img_7.jpg') }}" alt=""  height="300px">
                     </a>
                 </div>
                 <!-- Gallery Item -->
             </div>
 
-            <div class="col-lg-4 col-md-6">
-                <!-- Gallery Item -->
-                <div class="img-gallery-item">
-                    <a href="{{ asset('asset/images/gallery/gallery_img_8.jpg') }}" title="Child Welfare">
-                        <div class="gallery-content">
-                            {{-- <div class="tag"><span>Education</span></div>
-                            <h3>Child Welfare</h3> --}}
-                            <div class="img-open">
-                                <i data-feather="plus-circle"></i>
-                            </div>
-                        </div>
-                        <img src="{{ asset('asset/images/gallery/gallery_img_8.jpg') }}" alt="">
-                    </a>
-                </div>
-                <!-- Gallery Item -->
-            </div>
+            
 
         </div>
     </div>
