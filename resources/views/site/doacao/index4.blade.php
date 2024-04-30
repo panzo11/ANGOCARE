@@ -371,7 +371,7 @@
                             </div>
                         </div> --}}
                         <div class="col-md-12">
-                            <button class="btn btn-default"><i data-feather="heart"></i> Donate Now</button>
+                            <button class="btn btn-default"><i data-feather="heart"></i> Doar Agora</button>
                         </div>
                     </form>
                     </div>
