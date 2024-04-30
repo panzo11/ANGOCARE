@@ -48,63 +48,10 @@ $documentos=App\Models\Documento::get();
                                             </label>
                                         </div>
                                         
-                                    {{-- </div> --}}
+                                    </div>
                                 </div>
                         
-                            <div class="empresa" style="display: none">
-                                <div class="form-card text-start">
-                                    <div class="row">
-                                        <div class="col-7">
-                                            <h3 class="mb-4">Dados Da Empresa</h3>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="form-label fw-semibold">Nome da Empresa*</label>
-                                                <input type="text" class="form-control" name="empresa" placeholder="Digite o nome da empresa" value="{{ old('empresa') }}">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="form-label fw-semibold">NIF*</label>
-                                                <input type="text" class="form-control" name="nif" placeholder="Digite o NIF da empresa" value="{{ old('nif') }}">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            <div class="individual" style="display: none">
-                                <div class="form-card text-start">
-                                    <div class="row">
-                                        <div class="col-7">
-                                            <h3 class="mb-4">Dados Da Organização</h3>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="form-label fw-semibold">Nome da Organização*</label>
-                                                <input type="text" class="form-control" name="nome" placeholder="Digite o nome da organização" value="{{ old('nome') }}">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="form-label fw-semibold">Logotipo*</label>
-                                                <input type="file" class="form-control" name="logotipo">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="form-label fw-semibold">Descrição*</label>
-                                                <textarea class="form-control" name="descricao" placeholder="Digite a descrição da organização">{{ old('descricao') }}</textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                @include('admin.organizacao.form.step2')
-                            </div>
+                         
                             <div class="row">
                                 <div class="col-7">
                                     <h3 class="mb-4">Dados Pessoais</h3>
@@ -170,7 +117,60 @@ $documentos=App\Models\Documento::get();
                                     </div>
                                 </div>
                             </div>
+                            <div class="empresa" style="display: none">
+                                <div class="form-card text-start">
+                                        <div class="row">
+                                        <div class="col-7">
+                                            <h3 class="mb-4">Dados Da Empresa</h3>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="form-label fw-semibold">Nome da Empresa*</label>
+                                                <input type="text" class="form-control" name="empresa" placeholder="Digite o nome da empresa" value="{{ old('empresa') }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="form-label fw-semibold">NIF*</label>
+                                                <input type="text" class="form-control" name="nif" placeholder="Digite o NIF da empresa" value="{{ old('nif') }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         
+                            <div class="individual" style="display: none">
+                                <div class="form-card text-start">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h3 class="mb-4">Dados Da Organização</h3>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="form-label fw-semibold">Nome da Organização*</label>
+                                                <input type="text" class="form-control" name="nome" placeholder="Digite o nome da organização" value="{{ old('nome') }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="form-label fw-semibold">Logotipo*</label>
+                                                <input type="file" class="form-control" name="logotipo">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="form-label fw-semibold">Descrição*</label>
+                                                <textarea class="form-control" name="descricao" placeholder="Digite a descrição da organização">{{ old('descricao') }}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @include('admin.organizacao.form.step2')
+                            </div>
                            
                         
                             <div class="d-flex justify-content-center">
@@ -196,27 +196,29 @@ $documentos=App\Models\Documento::get();
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        const tipoEstabelecimentoSelect = document.getElementById("tipo_estabelecimento");
-        const divEmpresa = document.querySelector(".empresa");
-        const divIndividual = document.querySelector(".individual");
-    
-        // Adicione um ouvinte de evento para detectar mudanças na seleção
-        tipoEstabelecimentoSelect.addEventListener("change", function() {
-            if (tipoEstabelecimentoSelect.value === "4") {
-              //  Se "Empresa" for selecionado, exiba a div "empresa" e oculte a div "individual"
-                divEmpresa.style.display = "block";
-                divIndividual.style.display = "none";
-            } else if (tipoEstabelecimentoSelect.value === "3") {
-                // Se "Individual" for selecionado, exiba a div "individual" e oculte a div "empresa"
-                divEmpresa.style.display = "none";
-                divIndividual.style.display = "block";
-            } else {
-                // Se "Selecione o Tipo de Empresa" for selecionado, oculte ambas as divs
-                divEmpresa.style.display = "none";
-                divIndividual.style.display = "none";
-            }
-        });
-    });
-    </script>
+     const radioDoador = document.querySelector('input[name="vc_tipo_utilizador"][value="1"]');
+     const radioEmpresa = document.querySelector('input[name="vc_tipo_utilizador"][value="4"]');
+     const radioCaridade = document.querySelector('input[name="vc_tipo_utilizador"][value="3"]');
+     const divEmpresa = document.querySelector(".empresa");
+     const divIndividual = document.querySelector(".individual");
+ 
+     // Adicione um ouvinte de evento para os botões de rádio
+     radioDoador.addEventListener("click", function() {
+         divEmpresa.style.display = "none";
+         divIndividual.style.display = "none";
+     });
+ 
+     radioEmpresa.addEventListener("click", function() {
+         divEmpresa.style.display = "block";
+         divIndividual.style.display = "none";
+     });
+ 
+     radioCaridade.addEventListener("click", function() {
+         divEmpresa.style.display = "none";
+         divIndividual.style.display = "block";
+     });
+ });
+ 
+     </script>
     
         @endsection
