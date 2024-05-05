@@ -14,6 +14,7 @@ use App\Helpers\DoacaoHelper;
 use App\Modes\DoacaoF;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Helpers\MessageHelper;
 class FinanciamentoController extends Controller
 {
     //
@@ -165,6 +166,7 @@ class FinanciamentoController extends Controller
             DB::commit();
             return redirect()->back()->with('on', 1);
         } catch (\Throwable $th) {
+            dd($th);
             DB::rollback();
             return redirect()->back()->with('on.error', 1);
         }

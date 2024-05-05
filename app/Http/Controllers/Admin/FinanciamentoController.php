@@ -146,6 +146,7 @@ class FinanciamentoController extends Controller
             return redirect()->back()->with('on', 1);
 
         }catch (\Throwable $th) {
+            // dd($th);
             return redirect()->back()->with('on.error', 1);
       
         }

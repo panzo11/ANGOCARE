@@ -32,7 +32,8 @@ class HomeController extends Controller
             'users.name as utilizador',
           
             'financiamentos.capa',
-            DB::raw('SUM(doacao_financimentos.valores) as total')
+            // DB::raw('SUM(doacao_financimentos.valores) as total')
+             DB::raw('SUM(CASE WHEN doacao_financimentos.estado = 1 THEN doacao_financimentos.valores ELSE 0 END) as total')
         )
         ->groupBy(
             'financiamentos.id',

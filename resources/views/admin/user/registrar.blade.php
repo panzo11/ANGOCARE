@@ -56,11 +56,12 @@
 
     </script>
 
-    <script>
-      $('#summernote').summernote({
-        placeholder: 'Hello Bootstrap 4',
-        tabsize: 2,
-        height: 100
-      });
-    </script>
+@include('admin.organizacao.editor')
+<script>
+  $('#summernote').summernote({
+    placeholder: 'Hello Bootstrap 4',
+    tabsize: 2,
+    height: 100
+  });
+</script>
 @endsection

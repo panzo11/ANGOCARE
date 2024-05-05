@@ -137,7 +137,7 @@
                     Swal.fire(
                         'Doação aprovada com sucesso!',
                         '',
-                        'error'
+                        'success'
                     )
                 </script>
                 @endif

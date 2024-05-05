@@ -93,7 +93,7 @@
                     <div class="modal-dialog modal-xl">
                        <div class="modal-content">
                           <div class="modal-header">
-                             <h5 class="modal-title">CADASTRAR USUARIO</h5>
+                             <h5 class="modal-title">Atualizar Dados do {{ $user->name }}</h5>
                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                              </button>
                           </div>
@@ -101,7 +101,7 @@
                             <form action="{{route('admin.user.update',$user->id)}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 
-                                @include('admin.user.form')
+                                @include('admin.user.form2')
             
                                 <div class="modal-footer">
                                     <button type="button" class="btn  btn-secondary" data-dismiss="modal">Fechar</button>

@@ -73,6 +73,7 @@ class RegisterController extends Controller
     {
     DB::beginTransaction();
             try {
+                // dd($data);
                 $nome=$data['name'];
                 $messagem="Olá $nome,Seja muito bem-vindo ao ANGOCARE, a plataforma dedicada às doações e solidariedade! Estamos empolgados por tê-lo(a) conosco. Sua presença faz toda a diferença em nossa missão de promover o bem.   
                 O ANGOCARE é mais do que uma plataforma; é uma comunidade de corações generosos que se unem para fazer a diferença. Através do seu envolvimento, estamos construindo um impacto positivo e transformador.
@@ -86,10 +87,10 @@ class RegisterController extends Controller
                     'name' => $data['name'],
                     'email' => $data['email'],
                     'bi' => $data['bi'],
-                    'it_tipo_utilizador' => $data['tipo_estabelecimento'],
+                    'it_tipo_utilizador' => $data['vc_tipo_utilizador'],
                     'password' => Hash::make($data['password']),
                 ]);
-                if($data['tipo_estabelecimento']==4){
+                if($data['vc_tipo_utilizador']==4){
                     $user->update([
                         'empresa'=>$data['empresa'],
                         'nif'=>$data['nif'],
@@ -98,7 +99,7 @@ class RegisterController extends Controller
                 // dd('ola');
                 // 
     
-                if($data['tipo_estabelecimento']==3){
+                if($data['vc_tipo_utilizador']==3){
     
                     $reqImagem = $data['logotipo'];
             
@@ -148,7 +149,7 @@ class RegisterController extends Controller
                 }
                 catch (\Throwable $th) {
                     //throw $th;
-                    dd($th);
+                    // dd($th);
                     DB::rollback();
                     return redirect()->back()->with('doacao.error',1);
                 }

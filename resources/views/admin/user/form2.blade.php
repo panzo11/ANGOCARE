@@ -3,22 +3,25 @@
     
 <div class="row">
     <div class="form-group col-md-12">
+        <div class="row">
         <label>Nível de acesso</label>
         <div>
             <label>
+                <input type="radio" name="vc_tipo_utilizador" value="0"> Administrador
+            </label>
+            <label>
                 <input type="radio" name="vc_tipo_utilizador" value="1"> Doador
             </label>
-        </div>
-        <div>
+       
             <label>
                 <input type="radio" name="vc_tipo_utilizador" value="4"> Empresa
             </label>
-        </div>
-        <div>
+        
             <label>
                 <input type="radio" name="vc_tipo_utilizador" value="3"> Centro de Caridade
             </label>
         </div>
+    </div>
     </div>
     
  <div class="form-group col-md-6">
