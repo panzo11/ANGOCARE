@@ -308,7 +308,7 @@
                                 <h3><a href="{{ route('site.causas.show',$doacao->id) }}">{{ $doacao->titulo }}</a></h3>
                                 <p>{{ $doacao->utilizador }}</p>
                                 <div class="btn-wrap">
-                                    <a class="btn-primary btn" href="{{ route('site.causas.show',$doacao->id) }}">Doe agora</a>
+                                    <a class="btn-primary btn" href="{{ route('site.causas.show',$doacao->id) }}">Ver Detalhes</a>
                                 </div>
                             </div>
                         </div>

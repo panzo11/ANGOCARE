@@ -61,7 +61,7 @@
                                 echo $doacao->utilizador
                             @endphp </p>
                             <div class="btn-wrap">
-                                <a class="btn-primary btn" href="{{ route('site.doar.index',$doacao->id) }}">Doe agora</a>
+                                <a class="btn-primary btn" href="{{ route('site.causas.show',$doacao->id) }}">Ver Detalhes</a>
                             </div>
                         </div>
                     </div>
