@@ -10,19 +10,25 @@ class ImageUploadHelper
     {
         try {
             if ($image && $image->isValid()) {
-                $imageName = md5($image->getClientOriginalName() . strtotime('now')) . "." . $image->extension();
-                $path = $image->storeAs($folder, $imageName, 'public');
-    
+                // $imageName = md5($image->getClientOriginalName() . strtotime('now')) . "." . $image->extension();
+                // $path = $image->storeAs($folder, $imageName, 'public');
+
                 // Se precisar do caminho completo (com URL), utilize o Storage::url:
-                $fullPath = Storage::url($path);
-    
-                return $fullPath;
+                // $fullPath = Storage::url($path);
+
+                // $extension= $image->extension();
+                $imageName = md5($image->getClientOriginalName() . strtotime('now')) . "." . $image->extension();
+                $destino=$image->move(public_path($folder),$imageName);
+                $caminho=$folder."/".$imageName;
+
+
+                return $caminho;
             }
-    
+
             return 0;
         } catch (\Throwable $th) {
             return 1;
         }
-        
+
     }
 }
