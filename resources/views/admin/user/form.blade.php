@@ -162,6 +162,13 @@
                                                 @endif
                                             </div>
                                         </div>
+                                        <div class="col-md-12">
+            <div class="form-group">
+                <label class="form-label fw-semibold">IBAN*</label>
+                <input type="text" class="form-control" name="iban" placeholder="Digite o iban da organização" value="{{ isset($organizacao) ?  $organizacao->iban : old('iban') }}">
+            </div>
+        </div>
+
                                         {{-- <div class="col-md-12">
                                             <div class="form-group">
                                                 <label class="form-label fw-semibold">Descrição*</label>
