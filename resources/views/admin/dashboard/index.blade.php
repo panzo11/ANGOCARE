@@ -1219,48 +1219,4 @@ y: {
             });
     });
 </script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const chartElement = document.querySelector("#project_category_pie_chart");
-        const dataUrl = chartElement.getAttribute('data-url');
-
-        fetch(dataUrl)
-            .then(response => response.json())
-            .then(data => {
-                const options = {
-                    series: data.map(item => item.user_count),
-                    labels: data.map(item => item.tipo_utilizador),
-                    chart: {
-                        type: 'donut',
-                        height: 306
-                    },
-                    plotOptions: {
-                        pie: {
-                            donut: {
-                                size: '70%'
-                            }
-                        }
-                    },
-                    colors: ["#008FFB", "#00E396", "#FEB019", "#FF4560", "#775DD0", "#546E7A", "#26a69a", "#D10CE8"],
-                    legend: {
-                        show: true,
-                        position: 'bottom',
-                        horizontalAlign: 'center',
-                        fontWeight: 400,
-                        fontSize: '8px',
-                        offsetX: 0,
-                        offsetY: 0,
-                        markers: {
-                            width: 9,
-                            height: 9,
-                            radius: 4
-                        }
-                    }
-                };
-
-                const chart = new ApexCharts(chartElement, options);
-                chart.render();
-            });
-    });
-</script>
 @endsection

@@ -106,7 +106,7 @@ class UserController extends Controller
                 return redirect()->back()->with('store',1);
     }
     }catch (\Throwable $th) {
-        dd($th);
+        // dd($th);
         DB::rollback();
         return redirect()->back()->with("store.error", 1);
     }
