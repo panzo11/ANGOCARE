@@ -54,11 +54,7 @@
 
                                     <h3>Desafios</h3>
                                     <p>@php echo $doacao->motivo @endphp</p>
-                                    {{-- <ul class="list-unstyled icons-listing theme-green mb-0 mt-4">
-                                        <li>Third spirit you behold don’t grass lesser divide they are man.</li>
-                                        <li>Can not two very was above man abundantly also second.</li>
-                                        <li>Together herb shall were bearing fill grass made fill heaven.</li>
-                                    </ul> --}}
+                                   
                                 </div>
 
 

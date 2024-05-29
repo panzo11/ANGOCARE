@@ -42,7 +42,7 @@
                 <th width="3px">Nº</th>
               
                 <th>Usuario</th>
-                <th>Valores</th>
+                <th>Produtos Doados</th>
                 <th>Categoria</th>
                 {{-- <th>Motivo</th> --}}
                 {{-- <th>Estado</th>--}}

@@ -12,6 +12,7 @@ use App\Helpers\ImageUploadHelper;
 use App\Helpers\EstadoHelper;
 use App\Helpers\DoacaoHelper;
 use App\Modes\DoacaoF;
+use App\Models\Financiamento;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Helpers\MessageHelper;
@@ -50,7 +51,7 @@ class FinanciamentoController extends Controller
         ->where('financiamentos.users_id',$id)
         ->get();
     }
-    
+
         // dd($data);
 
        return view('admin.financiamento.doacao',$data);
@@ -87,8 +88,8 @@ class FinanciamentoController extends Controller
         ->select('doadores.empresa as doador', 'necessitados.name as necessitado', 'doacao_financimentos.*','financiamentos.users_id')
         ->get();
     }
-       
-    
+
+
     //    dd($data);
 
        return view('admin.financiamento.doacao',$data);
@@ -96,24 +97,24 @@ class FinanciamentoController extends Controller
 
     public function store(DoacaoFinanciamentoRequest $req,$id){
         try {
-            
-            
+
+
             $id_user=Auth::user()->id;
             $caminho= ImageUploadHelper::uploadImage($req->comprovativo, 'documentos/doacoes/financiamento');
-           
+
             $doacao=DoacaoFinancimento::create([
                 'users_id'=> $id_user,
                 'financiamentos_id'=>$id,
                 'valores'=>$req->valores,
                 'comprovativo'=>$caminho,
                 'estado'=>0,
-          
+
             ]);
             // dd( $doacao);
             return redirect()->back()->with('doacao',1);
         } catch (\Throwable $th) {
             //throw $th;
-            dd($th);
+            // dd($th);
             // DB::rollback();
             return redirect()->back()->with('doacao.error',1);
         }
@@ -127,7 +128,7 @@ class FinanciamentoController extends Controller
                     'users_id'=> $id_user,
                     'valores'=>req->valores,
                     'comprovativo'=>$caminho,
-              
+
                 ]);
             }
             else{
@@ -135,7 +136,7 @@ class FinanciamentoController extends Controller
                     'users_id'=> $id_user,
                     'financiamentos_id'=>req->financiamentos_id,
                     'valores'=>req->valores,
-              
+
                 ]);
             }
             DB::commit();
@@ -143,7 +144,7 @@ class FinanciamentoController extends Controller
         } catch (\Throwable $th) {
             DB::rollback();
             return redirect()->back()->with('doacao.error',1);
-      
+
         }
     }
 
@@ -151,10 +152,53 @@ class FinanciamentoController extends Controller
     public function activar( $produto){
         DB::beginTransaction();
         try {
+
+
+
             $activar = DoacaoFinancimento::where('id',$produto)->update([
                 'estado'=>1
             ]);
             $financiamento=DoacaoFinancimento::where('id',$produto)->first();
+            $id=$financiamento->financiamentos_id;
+
+            $valores = DB::table('financiamentos')
+            ->leftJoin('doacao_financimentos', 'doacao_financimentos.financiamentos_id', '=', 'financiamentos.id')
+            ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
+            // ->where('doacao_financimentos.id',$id)
+            ->select(
+                'financiamentos.id',
+                'financiamentos.valores',
+                'financiamentos.categoria',
+                'financiamentos.motivo',
+                'financiamentos.users_id',
+                'financiamentos.estado',
+                'financiamentos.video',
+
+                'financiamentos.capa',
+                DB::raw('SUM(CASE WHEN doacao_financimentos.estado = 1 THEN doacao_financimentos.valores ELSE 0 END) as total')
+            )
+            ->groupBy(
+                'financiamentos.id',
+                'financiamentos.valores',
+                'financiamentos.categoria',
+                'financiamentos.motivo',
+                'financiamentos.users_id',
+                'financiamentos.estado',
+                'financiamentos.video',
+                'financiamentos.capa'
+            )
+
+            ->first();
+//financiamentos_id, valores
+// dd($valores);
+            $id=$financiamento->financiamentos_id;
+            $bool=Financiamento::where("id",$id)->first("valores");
+            // dd($bool->valores<=$valores->total);
+            if($bool->valores<=$valores->total){
+                    Financiamento::where("id",$id)->update([
+                        "estado"=>3
+                    ]);
+            }
             $user=User::where('id',$financiamento->users_id)->first();
             $nome=$user->name;
             $numero=$user->email;
@@ -166,11 +210,11 @@ class FinanciamentoController extends Controller
             DB::commit();
             return redirect()->back()->with('on', 1);
         } catch (\Throwable $th) {
-            dd($th);
+            // dd($th->getMessage());
             DB::rollback();
             return redirect()->back()->with('on.error', 1);
         }
-       
+
 
     }
     public function desativar( $produto){
@@ -192,7 +236,7 @@ class FinanciamentoController extends Controller
             DB::rollback();
             return redirect()->back()->with('off.error', 1);
         }
-       
+
 
     }
 }

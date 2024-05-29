@@ -18,7 +18,7 @@ class FinanciamentoController extends Controller
         if($user==0){
             $data['doacoes'] = DoacaoFinanciamentoOng::join('users as doadores', 'doacao_financiamento_ongs.users_id', '=', 'doadores.id')
             ->join('organizacaos as necessitados', 'doacao_financiamento_ongs.organizacaos_id', '=', 'necessitados.id')
-            
+
             // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
             ->select('doadores.name as doador', 'necessitados.nome as necessitado', 'doacao_financiamento_ongs.*')
             ->get();
@@ -26,7 +26,7 @@ class FinanciamentoController extends Controller
         elseif($user==3){
             $data['doacoes'] = DoacaoFinanciamentoOng::join('users as doadores', 'doacao_financiamento_ongs.users_id', '=', 'doadores.id')
             ->join('organizacaos as necessitados', 'doacao_financiamento_ongs.organizacaos_id', '=', 'necessitados.id')
-            
+
             // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
             ->select('doadores.name as doador', 'necessitados.nome as necessitado', 'doacao_financiamento_ongs.*','necessitados.users_id')
             ->where('necessitados.users_id',$id)
@@ -35,7 +35,7 @@ class FinanciamentoController extends Controller
         else{
             $data['doacoes'] = DoacaoFinanciamentoOng::join('users as doadores', 'doacao_financiamento_ongs.users_id', '=', 'doadores.id')
             ->join('organizacaos as necessitados', 'doacao_financiamento_ongs.organizacaos_id', '=', 'necessitados.id')
-            
+
             // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
             ->where('doadores.id',$id)
             ->select('doadores.name as doador', 'necessitados.nome as necessitado', 'doacao_financiamento_ongs.*','necessitados.users_id','doadores.id as doador_id')
@@ -48,11 +48,11 @@ class FinanciamentoController extends Controller
 
     public function store(Request $req,$id){
         try {
-            
-            
+
+
             $id_user=Auth::user()->id;
             $caminho= ImageUploadHelper::uploadImage($req->comprovativo, 'documentos/doacoes/financiamento');
-           
+
             $doacao=DoacaoFinanciamentoOng::create([
                 'users_id'=> $id_user,
                 'organizacaos_id'=>$id,
@@ -64,7 +64,7 @@ class FinanciamentoController extends Controller
             return redirect()->back()->with('doacao',1);
         } catch (\Throwable $th) {
             //throw $th;
-            dd($th);
+            // dd($th);
             // DB::rollback();
             return redirect()->back()->with('doacao.error',1);
         }
@@ -78,38 +78,38 @@ class FinanciamentoController extends Controller
                     'users_id'=> $id_user,
                     'valores'=>req->valores,
                     'comprovativo'=>$caminho,
-              
+
                 ]);
             }
             else{
                  $financiamento->update([
                     'valores'=>req->valores,
                     'comprovativo'=>$caminho,
-              
+
                 ]);
             }
             return redirect()->back()->with('update',1);
         } catch (\Throwable $th) {
             DB::rollback();
             return redirect()->back()->with('update.error',1);
-      
+
         }
     }
 
 
     public function activar( $produto){
         try {
-           
+
             $activar = DoacaoFinanciamentoOng::where('id',$produto)->update([
                 'estado'=>1
             ]);
-            
+
             return redirect()->back()->with('on.success', 1);
         } catch (\Throwable $th) {
-            dd($th);
+            // dd($th);
             return redirect()->back()->with('off.error', 1);
         }
-       
+
 
     }
     public function desativar( $produto){
@@ -121,7 +121,7 @@ class FinanciamentoController extends Controller
         } catch (\Throwable $th) {
             return redirect()->back()->with('off.error', 1);
         }
-       
+
 
     }
 }

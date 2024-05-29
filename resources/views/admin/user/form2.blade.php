@@ -1,6 +1,6 @@
 
 <div class="container">
-    
+
 <div class="row">
     <div class="form-group col-md-12">
         <div class="row">
@@ -12,18 +12,18 @@
             <label>
                 <input type="radio" name="vc_tipo_utilizador" value="1"> Doador
             </label>
-       
+
             <label>
                 <input type="radio" name="vc_tipo_utilizador" value="4"> Empresa
             </label>
-        
+
             <label>
                 <input type="radio" name="vc_tipo_utilizador" value="3"> Centro de Caridade
             </label>
         </div>
     </div>
     </div>
-    
+
  <div class="form-group col-md-6">
     <label for="vc_path">Nome</label>
        <input type="text" id="name" class="form-control" name="name"
@@ -79,7 +79,7 @@
             @endif
  </div>
 
- 
+
  <div class="form-group col-md-6 ">
 
        <label for="vc_path">Imagem</label>
@@ -92,13 +92,13 @@
             @endif
     </div>
 
-    
-    
-    
-    
 
 
-  
+
+
+
+
+
 
 
   <div class="empresa" style="display: none">
@@ -134,7 +134,7 @@
                                     </div>
                                 </div>
                             </div>
-                        
+
                             <div class="individual" style="display: none">
                                 <div class="form-card text-start">
                                     <div class="row">
@@ -176,6 +176,12 @@
                                                 @endif
                                             </div>
                                         </div> --}}
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="form-label fw-semibold">IBAN*</label>
+                                                <input type="text" class="form-control" name="iban" placeholder="Digite o iban da organização" value="{{ isset($organizacao) ?  $organizacao->iban : old('iban') }}">
+                                            </div>
+                                        </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label class="form-label fw-semibold">Descrição*</label>

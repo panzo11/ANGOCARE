@@ -34,7 +34,7 @@
                 <div class="col-sm-12 col-md-6 col-lg-4">
                     <div class="causes-wrap">
                         <div class="img-wrap">
-                            <a href="{{ route('site.doar.index2',$doacao->id) }}"><img src="{{asset($doacao->capa)}}" alt=""></a>
+                            <a href="{{ route('site.doar.index2',$doacao->id) }}"><img src="{{asset($doacao->capa)}}" alt="" height="300px"></a>
 
                         </div>
 

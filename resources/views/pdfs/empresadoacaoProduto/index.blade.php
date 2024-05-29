@@ -19,7 +19,7 @@
 <body>
     <div class="text-center"  style="text-align: center;">
 <img src="images/logo.png" alt="" style="width: 10%">
-          
+
     <p>
             <br>
             <?php echo "República de Angola"; ?>
@@ -40,7 +40,7 @@
         <thead>
             <tr>
                 <th width="3px">Nº</th>
-              
+
                 <th>Necessitado</th>
                 <th>Empresa Doadora</th>
                 <th>Produtos Doados</th>
@@ -56,17 +56,17 @@
 
                 <tr align="center">
                     <td align="center"><?php echo $contador++; ?></td>
-                 
+
                     <td>
                         <?php echo $row->user_2; ?>
                     </td>
-                    <td class="text-center"> <?php echo $row->users_1; ?></td>
-                               
-                   
+                    <td class="text-center"> <?php echo $row->empresa; ?></td>
+
+
                     <td><?php echo $row->doados; ?></td>
                     <td><?php echo $row->entrega; ?></td>
                     <td align="center">
-                    <?php 
+                    <?php
                         if($row->estado==0){
                             echo "Em analise";
                         }
@@ -76,11 +76,11 @@
                         elseif($row->estado==2){
                             echo "Rejeitado";
                         }
-                          
+
 
                     ?></td>
                 </tr>
-                
+
             <?php endforeach; ?>
                 <tr>
                     <td colspan="5">Total</td>

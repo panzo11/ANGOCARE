@@ -20,23 +20,24 @@ class FinanciamentoDoacaoController extends Controller
     public function index(){
         $data["financiamentos"]=Financiamento::get();
 
-    
+
         $data["users"]=User::get();
-   
+
         return view("admin.relatorio.financiamentodoacao.index",$data);
     }
     public function request(Request $request){
         // dd($request);
-       
+
         $data["financiamentos"]= DoacaoFinancimento::
         join('users as doadores', 'doacao_financimentos.users_id', '=', 'doadores.id')
         ->join('financiamentos', 'doacao_financimentos.financiamentos_id', '=', 'financiamentos.id')
         ->when($request->input('financiamentos_id'), function ($query) use ($request) {
             return $query->where('financiamentos.id', $request->input('financiamentos_id'));
         })
-     
+
         ->join('users as necessitados', 'financiamentos.users_id', '=', 'necessitados.id')
         // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
+        ->where('doadores.it_tipo_utilizador',1)
         ->select('doadores.name as doador', 'necessitados.name as necessitado', 'doacao_financimentos.*')
         ->get();
 
@@ -51,7 +52,9 @@ class FinanciamentoDoacaoController extends Controller
         })
         ->join('users as necessitados', 'financiamentos.users_id', '=', 'necessitados.id')
         // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
+        ->where('doadores.it_tipo_utilizador',1)
         ->select('doadores.name as doador', 'necessitados.name as necessitado', 'doacao_financimentos.*')
+        ->where("doacao_financimentos.estado",1)
          ->count();
 
 // doacoes
@@ -69,6 +72,7 @@ $data['doacoes'] = DB::table('financiamentos')
 })
 // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
 ->join('users','financiamentos.users_id','users.id')
+
 ->select(
     'financiamentos.id',
     'financiamentos.valores',
@@ -78,7 +82,7 @@ $data['doacoes'] = DB::table('financiamentos')
     'financiamentos.estado',
     'financiamentos.titulo',
     'users.name',
-  
+
     'financiamentos.capa',
     DB::raw('SUM(doacao_financimentos.valores) as total')
 )
@@ -93,6 +97,7 @@ $data['doacoes'] = DB::table('financiamentos')
     'financiamentos.titulo',
     'financiamentos.capa'
 )
+->where("doacao_financimentos.estado",1)
 ->get();
 
 $data['total2'] = DB::table('financiamentos')
@@ -100,8 +105,10 @@ $data['total2'] = DB::table('financiamentos')
     return $query->where('id', $request->input('financiamentos_id'));
 })
 ->leftJoin('doacao_financimentos', 'doacao_financimentos.financiamentos_id', '=', 'financiamentos.id')
+
 // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
 ->join('users','financiamentos.users_id','users.id')
+->where('users.it_tipo_utilizador',1)
 ->select(
     'financiamentos.id',
     'financiamentos.valores',
@@ -110,8 +117,8 @@ $data['total2'] = DB::table('financiamentos')
     'financiamentos.users_id',
     'financiamentos.estado',
     'financiamentos.titulo',
- 
-  
+
+
     'financiamentos.capa',
     DB::raw('COUNT(doacao_financimentos.valores) as total')
 )
@@ -126,6 +133,7 @@ $data['total2'] = DB::table('financiamentos')
     'financiamentos.titulo',
     'financiamentos.capa'
 )
+->where("doacao_financimentos.estado",1)
 ->count();
 
         // dd($data);
@@ -138,7 +146,7 @@ $data['total2'] = DB::table('financiamentos')
         // $this->loggerData('Imprimiu Lista dos Funcionários');
         $html = view("pdfs.doacaoFinanciamento.index", $data);
         $mpdf->writeHTML($html);
-        $mpdf->Output("Livros.pdf", "I");
-        
+        $mpdf->Output("Financiamentos.pdf", "I");
+
     }
 }

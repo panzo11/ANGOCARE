@@ -31,6 +31,7 @@
 
                     <div class="donation-wrap">
                         <h3 class="h3-sm fw-5 txt-blue mb-3">Digite o valor da sua doação</h3>
+                        <h6 class="h6-sm fw-5 txt-blue mb-3">IBAN: <span style="font-size: 20px; font-family:'Times New Roman', Times, serif">AO06.0005.0000.7202.0561.1019.7</span></h6>
 {{-- @dd($financimento) --}}
                         <div class="row">
                             <div class="col-md-8">

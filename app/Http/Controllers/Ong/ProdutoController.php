@@ -11,7 +11,7 @@ use App\Helpers\ImageUploadHelper;
 use App\Helpers\EstadoHelper;
 class ProdutoController extends Controller
 {
-    // 
+    //
     public function index(){
         $user=Auth::user()->it_tipo_utilizador;
         $id=Auth::user()->id;
@@ -28,7 +28,7 @@ class ProdutoController extends Controller
             // ->join('users as dono','organizacaos.users_id','necessitado.id')
             ->where('necessitado.users_id',$id)
             ->select('doacao_produto_ongs.*','doador.name as users_1','necessitado.nome as user_2')
-            
+
             ->get();
         }
         else{
@@ -37,14 +37,14 @@ class ProdutoController extends Controller
             // ->join('users as dono','organizacaos.users_id','necessitado.id')
             ->where('doacao_produto_ongs.users_id',$id)
             ->select('doacao_produto_ongs.*','doador.name as users_1','necessitado.nome as user_2')
-            
+
             ->get();
         }
         return view('admin.organizacao.doacao.produto',$data);
     }
     public function store(Request $req,$id){
         try {
-          
+
             $user=Auth::user()->id;
             // dd($id);
             DoacaoProdutoOng:: create([
@@ -57,7 +57,7 @@ class ProdutoController extends Controller
             ]);
             return redirect()->back()->with('doacao',1);
         } catch (\Throwable $th) {
-            dd($th);
+            // dd($th);
             return redirect()->back()->with('doacao.failed',1);
         }
     }
@@ -68,7 +68,7 @@ class ProdutoController extends Controller
         } catch (\Throwable $th) {
             return redirect()->back()->with('on.error', 1);
         }
-       
+
 
     }
     public function desativar(DoacaoProdutoOng $produto){
@@ -78,7 +78,7 @@ class ProdutoController extends Controller
         } catch (\Throwable $th) {
             return redirect()->back()->with('off.error', 1);
         }
-       
+
 
     }
 }

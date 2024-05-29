@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>ANGOCARE - ORGANIZAÇÕES</title>
+    <title>ANGOCARE - Centro de Caridade</title>
     <style>
         <?php echo $bootstrap;
         echo $css;
@@ -33,7 +33,7 @@
     </div>
     <br>
     <div class="text-center" style="text-align: center;">
-        <h3 class="tema">Organizacões</h3>
+        <h3 class="tema">Centro de Caridade</h3>
     </div>
 
     <table class="table table-striped  table-bodered table-hover"  border="1" width="100%" style="border-collapse: collapse;">
@@ -42,7 +42,7 @@
                 <th width="3px">Nº</th>
               
                 <th>Usuario</th>
-                <th>Organizacao</th>
+                <th>Centro de Caridade</th>
                 {{-- <th>Descrição</th> --}}
                 {{-- <th>Motivo</th> --}}
                 {{-- <th>Estado</th>--}}
@@ -102,7 +102,7 @@
                 <th>Necessitado</th>
                 <th>Doador</th>
                 <th>Valor Doado</th>
-                <th>Comprovativo</th>
+               
                 <th>Estado</th>
                 {{-- <th>Descrição</th> --}}
 
@@ -122,7 +122,7 @@
                     <td class="text-center"> <?php echo $row->doador; ?></td>
                                
                    
-                    <td><?php echo $row->doador; ?></td>
+                    
                     <td><?php echo $row->valores; ?></td>
                   
                     
@@ -145,8 +145,8 @@
                 
             <?php endforeach; ?>
                 <tr>
-                    <td colspan="5">Total</td>
-                    <td><?php echo $total ?></td>
+                    <td colspan="4">Total</td>
+                    <td><?php echo $totalf ?></td>
                 </tr>
 
             <br>
@@ -208,7 +208,7 @@
         <?php endforeach; ?>
             <tr>
                 <td colspan="5">Total</td>
-                <td><?php echo $total ?></td>
+                <td><?php echo $totalp ?></td>
             </tr>
 
         <br>

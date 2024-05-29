@@ -22,7 +22,7 @@ class EmpresaProdutoController extends Controller
         $data["produtos"]=Produto::get();
         $data["empresas"]=User::get('empresa');
 
-   
+
         return view('admin.relatorio.empresaprodutodoacao.index',$data);
     }
     public function request(Request $request){
@@ -39,7 +39,7 @@ class EmpresaProdutoController extends Controller
             return $query->whereBetween('doacao_produtos.created_at', [$request->input('de'), $request->input('ate')]);
         })
         ->join('users as necessitado','produtos.users_id','necessitado.id')
-        ->select('doacao_produtos.*','doador.name as users_1','necessitado.name as user_2')
+        ->select('doacao_produtos.*','doador.name as users_1','necessitado.name as user_2', 'doador.empresa as empresa')
         ->where('doador.it_tipo_utilizador',4)
         ->get();
         $data["total"]=DoacaoProduto::join('users as doador','doacao_produtos.users_id','doador.id')
@@ -54,7 +54,7 @@ class EmpresaProdutoController extends Controller
             return $query->whereBetween('doacao_produtos.created_at', [$request->input('de'), $request->input('ate')]);
         })
         ->join('users as necessitado','produtos.users_id','necessitado.id')
-        ->select('doacao_produtos.*','doador.name as users_1','necessitado.name as user_2')
+        ->select('doacao_produtos.*','doador.name as users_1','necessitado.name as user_2', 'doador.empresa as empresa')
         ->where('doador.it_tipo_utilizador',4)
         ->count();
         // dd($data);
@@ -68,6 +68,6 @@ class EmpresaProdutoController extends Controller
         $html = view("pdfs/empresadoacaoProduto/index", $data);
         $mpdf->writeHTML($html);
         $mpdf->Output("Livros.pdf", "I");
-        
+
     }
 }

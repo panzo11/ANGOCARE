@@ -7,7 +7,7 @@
           <div class="card">
              <div class="card-header d-flex justify-content-between">
                 <div class="header-title">
-                   <h4 class="card-title">Doações Realiadas</h4>
+                   <h4 class="card-title">Doações Realizadas</h4>
                 </div>
                
              </div>

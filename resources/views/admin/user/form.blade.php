@@ -1,6 +1,6 @@
 
 <div class="container">
-    
+
 <div class="row">
     <div class="form-group col-md-12">
         <label>Nível de acesso</label>
@@ -20,11 +20,11 @@
             </label>
         </div>
     </div>
-    
+
  <div class="form-group col-md-6">
-    <label for="vc_path">Nome</label>
+    <label for="vc_path">Representante</label>
        <input type="text" id="name" class="form-control" name="name"
-           placeholder="Sub-Categoria" value="{{ isset($user->name) ? $user->name : "" }}">
+           placeholder="Digite o seu nome" value="{{ isset($user->name) ? $user->name : "" }}">
            @if ($errors->has('name'))
            <div class="alert alert-danger">
                {{ $errors->first('name') }}
@@ -35,7 +35,7 @@
  <div class="form-group col-md-6">
     <label for="vc_path">Telefone/Email</label>
        <input type="text" id="email" class="form-control" name="email"
-           placeholder="Sub-Categoria" value="{{ isset($user->email) ? $user->email : "" }}">
+           placeholder="Digite o seu telefone ou email" value="{{ isset($user->email) ? $user->email : "" }}">
            @if ($errors->has('email'))
                 <div class="alert alert-danger">
                       {{ $errors->first('email') }}
@@ -46,7 +46,7 @@
  <div class="form-group col-md-6">
     <label for="vc_path">BI</label>
        <input type="text" id="email" class="form-control" name="bi"
-           placeholder="Sub-Categoria" value="{{ isset($user->bi) ? $user->bi : "" }}">
+           placeholder="Digite o Numero do BI" value="{{ isset($user->bi) ? $user->bi : "" }}">
            @if ($errors->has('bi'))
                 <div class="alert alert-danger">
                       {{ $errors->first('bi') }}
@@ -57,7 +57,7 @@
  <div class="form-group col-md-6">
     <label for="vc_path">Password</label>
        <input type="password" id="password" class="form-control" name="password"
-           placeholder="Sub-Categoria" >
+           placeholder="Digite a sua password" >
            @if ($errors->has('password'))
                 <div class="alert alert-danger">
                       {{ $errors->first('password') }}
@@ -68,7 +68,7 @@
  <div class="form-group col-md-6">
     <label for="vc_path">Confirmar Password</label>
        <input type="password" id="password_confirmation" class="form-control" name="password_confirmation"
-           placeholder="Sub-Categoria" >
+           placeholder="Confirme a sua password" >
            @if ($errors->has('password_confirmation'))
                 <div class="alert alert-danger">
                       {{ $errors->first('password_confirmation') }}
@@ -76,7 +76,7 @@
             @endif
  </div>
 
- 
+
  <div class="form-group col-md-6 ">
 
        <label for="vc_path">Imagem</label>
@@ -89,13 +89,13 @@
             @endif
     </div>
 
-    
-    
-    
-    
 
 
-  
+
+
+
+
+
 
 
   <div class="empresa" style="display: none">
@@ -131,7 +131,7 @@
                                     </div>
                                 </div>
                             </div>
-                        
+
                             <div class="individual" style="display: none">
                                 <div class="form-card text-start">
                                     <div class="row">
@@ -160,6 +160,12 @@
                                                         {{ $errors->first('logotipo') }}
                                                     </div>
                                                 @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="form-label fw-semibold">IBAN*</label>
+                                                <input type="text" class="form-control" name="iban" placeholder="Digite o iban da organização" value="{{ isset($organizacao) ?  $organizacao->iban : old('iban') }}">
                                             </div>
                                         </div>
                                         {{-- <div class="col-md-12">

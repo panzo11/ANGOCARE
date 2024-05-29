@@ -72,6 +72,9 @@
                         elseif($row->estado==2){
                             echo "Rejeitado";
                         }
+                        elseif($row->estado==3){
+                            echo "Finalizado";
+                        }
                           
 
                     ?></td>

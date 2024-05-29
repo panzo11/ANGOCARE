@@ -23,7 +23,7 @@ class FinanciamentoController extends Controller
     public function index(){
         $data["financiamentos"]=Financiamento::get();
         $data["users"]=User::get();
-   
+
         return view('admin.relatorio.financiamento.index',$data);
     }
     public function request(Request $request){
@@ -64,6 +64,7 @@ class FinanciamentoController extends Controller
             return $query->whereBetween('financiamentos.created_at', [$request->input('de'), $request->input('ate')]);
         })
         ->join('users','financiamentos.users_id','users.id')
+      
         ->select('users.name as usuario','financiamentos.*')
         ->count();
         // dd($data);
@@ -77,6 +78,6 @@ class FinanciamentoController extends Controller
         $html = view("pdfs/financiamento/index", $data);
         $mpdf->writeHTML($html);
         $mpdf->Output("Livros.pdf", "I");
-        
+
     }
 }

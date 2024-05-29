@@ -36,9 +36,7 @@
             </div>
             <!-- Topbar Buttons Start -->
             <div class="d-inline-flex request-btn order-lg-last col-auto p-0 align-items-center">
-                <a class="btn-outline-primary btn ms-3" href="#" id="search_home"><i data-feather="search"></i></a>
-
-                <a class="nav-link btn btn-default ms-3 donate-btn" href="{{ route('site.causas.index') }}">Doar</a>
+              
 
                 <!-- Toggle Button Start -->
                 <button class="navbar-toggler x collapsed" type="button" data-bs-toggle="collapse"
@@ -64,39 +62,43 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('site.home.index') }}">Home</a>
+                            <a class="nav-link fs-5" href="{{ route('site.home.index') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('site.sobre.index') }}">Sobre Nós</a>
+                            <a class="nav-link fs-5" href="{{ route('site.sobre.index') }}">Sobre Nós</a>
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle-mob" href="{{ route('site.causas.index') }}" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pedidos de Ajuda </a>
+                            <a class="nav-link dropdown-toggle-mob fs-5" href="{{ route('site.causas.index') }}" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pedidos de Ajuda </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{{ route('site.causas.index') }}">Recursos Financeiros</a></li>
-                                <li><a class="dropdown-item" href="{{ route('site.causas.index2') }}">Recursos Materias</a></li>
+                                <li><a class="dropdown-item fs-5" href="{{ route('site.causas.index') }}">Recursos Financeiros</a></li>
+                                <li><a class="dropdown-item fs-5" href="{{ route('site.causas.index2') }}">Recursos Materias</a></li>
 
                             </ul>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('site.ong.index') }}">Centros de Caridade</a>
+                            <a class="nav-link fs-5" href="{{ route('site.ong.index') }}">Centros de Caridade</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('site.contacte.index') }}">Contacte-Nos</a>
+                            <a class="nav-link fs-5" href="{{ route('site.contacte.index') }}">Contacte-Nos</a>
                         </li>
                         @auth
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.index') }}">Perfil</a>
+                            <a class="nav-link fs-5" href="{{ route('admin.index') }}">Perfil</a>
                         </li>
                         @endauth
                         @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('login') }}">Iniciar Sessão</a>
+                         <a class="btn-outline-primary btn ms-3" href="{{url('login')}}">Iniciar Sessão</a>
+
+
+
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('register') }}">Registrar-se</a>
+                           
+                            <a class="btn-default  btn ms-3" href="{{ url('register') }}">Registrar-se</a>
                         </li>
                         @endguest
 

@@ -21,7 +21,7 @@ class ProdutoDoacaoController extends Controller
     public function index(){
         $data["produtos"]=Produto::get();
         $data["users"]=User::get();
-   
+
         return view('admin.relatorio.produtodoacao.index',$data);
     }
     public function request(Request $request){
@@ -39,7 +39,7 @@ class ProdutoDoacaoController extends Controller
         })
         ->join('users as necessitado','produtos.users_id','necessitado.id')
         ->select('doacao_produtos.*','doador.name as users_1','necessitado.name as user_2')
-        ->where('doador.it_tipo_utilizador','!=',4)
+        ->where('doador.it_tipo_utilizador','!=',1)
         ->get();
         $data["total"]=DoacaoProduto::join('users as doador','doacao_produtos.users_id','doador.id')
         ->join('produtos','doacao_produtos.produtos_id','produtos.id')
@@ -67,6 +67,6 @@ class ProdutoDoacaoController extends Controller
         $html = view("pdfs/doacaoProduto/index", $data);
         $mpdf->writeHTML($html);
         $mpdf->Output("Livros.pdf", "I");
-        
+
     }
 }

@@ -27,7 +27,7 @@ class FinanciamentoController extends Controller
             $data['financiamentos'] = Financiamento::join('users','financiamentos.users_id','users.id')
             ->select('users.name as usuario','financiamentos.*')
             ->get();
-        }   
+        }
         else{
             $id=Auth::user()->id;
             $data['usuarios']=User::where('id',$id)->get();
@@ -37,15 +37,15 @@ class FinanciamentoController extends Controller
             ->select('users.name as usuario','financiamentos.*')
             ->get();
         }
-        
-       
+
+
         // Exibir a view com a lista de registros de financiamento
         return view('admin.financiamento.index', $data);
     }
 
     public function create()
-    { 
-        
+    {
+
         if(Auth::user()->it_tipo_utilizador==0){
             // dd(Auth::user()->it_tipo_utilizador);
          $data['usuarios']=User::all();
@@ -90,9 +90,9 @@ class FinanciamentoController extends Controller
             //throw $th;
             return redirect()->back()->with('store.error', 1);
         }
-       
 
-      
+
+
     }
 
     public function show(Financiamento $financiamento)
@@ -120,7 +120,7 @@ class FinanciamentoController extends Controller
             //throw $th;
             return redirect()->back()->back()->with('update.error', 1);
         }
-       
+
     }
 
 
@@ -138,7 +138,7 @@ class FinanciamentoController extends Controller
              // Redirecionar após a exclusão
              return redirect()->back()->with('delete.error', 1);
         }
-       
+
     }
     public function activar(Financiamento $financiamento){
         try {
@@ -148,9 +148,9 @@ class FinanciamentoController extends Controller
         }catch (\Throwable $th) {
             // dd($th);
             return redirect()->back()->with('on.error', 1);
-      
+
         }
-       
+
 
     }
     public function desativar(Financiamento $financiamento){
@@ -160,7 +160,7 @@ class FinanciamentoController extends Controller
         } catch (\Throwable $th) {
             return redirect()->back()->with('off.error', 1);
         }
-       
+
 
     }
     public function video(Request $req,Financiamento $financiamento){
@@ -176,9 +176,9 @@ class FinanciamentoController extends Controller
         return redirect()->back()->with('video', 1);
         } catch (\Throwable $th) {
             //throw $th;
-            dd($th);
+            // dd($th);
             return redirect()->back()->with('video.error', 1);
         }
-      
+
     }
 }
