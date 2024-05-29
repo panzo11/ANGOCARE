@@ -27,9 +27,10 @@ class OrganizacaoRequest extends FormRequest
             'descricao' => 'required|string',
             'users_id' => 'required|exists:users,id',
             'documentos.*.documento' => 'required',
-            
-            
-      
+            'iban'=> 'required',
+
+
+
         ];
     }
 }

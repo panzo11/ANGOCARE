@@ -30,7 +30,7 @@
                         <div class="col-md-6 col-lg-4 col-sm-12 mb-0">                                    
                             <div class="post-wrap">
                                 <div class="post-img">
-                                    <a href="{{ route('site.ong.show',$organizacao->id) }}"><img src="{{ asset($organizacao->logotipo)}}" alt=""></a>
+                                    <a href="{{ route('site.ong.show',$organizacao->id) }}"><img src="{{ asset($organizacao->logotipo)}}" alt="" height="300px"></a>
                                 </div>
                                 <div class="post-content">
                                     {{-- <div class="post-date">17, Aug, 2020</div> --}}

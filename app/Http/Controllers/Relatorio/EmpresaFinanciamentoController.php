@@ -20,14 +20,14 @@ class EmpresaFinanciamentoController extends Controller
     public function index(){
         $data["financiamentos"]=Financiamento::get();
 
-    
+
         $data["empresas"]=User::get('empresa');
-   
+
         return view("admin.relatorio.empresafinanciamentodoacao.index",$data);
     }
     public function request(Request $request){
         // dd($request);
-       
+
         $data["financiamentos"]= DoacaoFinancimento::
         join('users as doadores', 'doacao_financimentos.users_id', '=', 'doadores.id')
         ->where('doadores.it_tipo_utilizador',4)
@@ -41,7 +41,7 @@ class EmpresaFinanciamentoController extends Controller
         ->when($request->input('de'), function ($query) use ($request) {
             return $query->whereBetween('doacao_financimentos.created_at', [$request->input('de'), $request->input('ate')]);
         })
-     
+
         ->join('users as necessitados', 'financiamentos.users_id', '=', 'necessitados.id')
         // ->where('financiamentos_id', $id)  // Descomente e ajuste conforme necessário
         ->select('doadores.empresa as doador', 'necessitados.name as necessitado', 'doacao_financimentos.*')
@@ -49,7 +49,7 @@ class EmpresaFinanciamentoController extends Controller
 
         $data["total1"]= DoacaoFinancimento::
         join('users as doadores', 'doacao_financimentos.users_id', '=', 'doadores.id')
-       
+
         ->join('financiamentos', 'doacao_financimentos.financiamentos_id', '=', 'financiamentos.id')
         ->when($request->input('empresa'), function ($query) use ($request) {
             return $query->where('doadores.empresa', $request->input('empresa'));
@@ -95,7 +95,7 @@ $data['doacoes'] = DB::table('financiamentos')
     'financiamentos.estado',
     'financiamentos.titulo',
     'necessitado.name',
-  
+
     'financiamentos.capa',
     DB::raw('SUM(doacao_financimentos.valores) as total')
 )
@@ -139,7 +139,7 @@ $data['total2'] = DB::table('financiamentos')
     'financiamentos.estado',
     'financiamentos.titulo',
     'users.necessitado',
-  
+
     'financiamentos.capa',
     DB::raw('SUM(doacao_financimentos.valores) as total')
 )
@@ -167,6 +167,6 @@ $data['total2'] = DB::table('financiamentos')
         $html = view("pdfs.empresadoacaoFinanciamento.index", $data);
         $mpdf->writeHTML($html);
         $mpdf->Output("Livros.pdf", "I");
-        
+
     }
 }

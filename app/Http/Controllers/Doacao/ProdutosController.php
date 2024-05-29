@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 class ProdutosController extends Controller
 {
-    // 
+    //
     public function index(){
         $user=Auth::user()->it_tipo_utilizador;
         $id=Auth::user()->id;
@@ -76,13 +76,13 @@ class ProdutosController extends Controller
             ->where('produtos.users_id',$id)
             ->get();
         }
-        
-        
+
+
         return view('admin.produto.doacao',$data);
     }
     public function store(Request $req,$id){
         try {
-          
+
             $user=Auth::user()->id;
             DoacaoProduto:: create([
                 'users_id'=>$user,
@@ -94,7 +94,7 @@ class ProdutosController extends Controller
             ]);
             return redirect()->back()->with('doacao',1);
         } catch (\Throwable $th) {
-            dd($th);
+            // dd($th);
             return redirect()->back()->with('doacao.error',1);
         }
     }
@@ -119,7 +119,7 @@ class ProdutosController extends Controller
             DB::rollback();
             return redirect()->back()->with('on.error', 1);
         }
-       
+
 
     }
     public function desativar( $produto){
@@ -128,7 +128,7 @@ class ProdutosController extends Controller
             $activar = DoacaoProduto::where('id',$produto)->update([
                 'estado'=>2
             ]);
-     
+
         $produto=DoacaoProduto::where('id',$produto)->first();
         $user=User::where('id',$produto->users_id)->first();
         $nome=$user->name;
@@ -142,7 +142,7 @@ class ProdutosController extends Controller
             DB::rollback();
             return redirect()->back()->with('off.error', 1);
         }
-       
+
 
     }
 }

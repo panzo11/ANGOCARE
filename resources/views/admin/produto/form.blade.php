@@ -14,11 +14,11 @@
         <div class="form-group col-md-6">
             <label for="categoria">Categoria</label>
             <select class="form-select mb-3 shadow-none" name="categoria">
-                <option selected disabled>Selecione a categoria</option>
-                <option value="Educação">Educação</option>
-                <option value="Humanidade">Humanidade</option>
-                <option value="Água">Água</option>
+            <option selected disabled>Selecione a categoria</option>
                 <option value="Alimentação">Alimentação</option>
+                <option value="Saúde">Saúde</option>
+                <option value="Educação">Educação</option>
+                <option value="Materias de Ajuda humanitária">Materias de Ajuda humanitária</option>
                 <option value="Outros">Outros</option>
             </select>
         </div>

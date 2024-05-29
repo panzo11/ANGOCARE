@@ -34,6 +34,7 @@
 
                     <div class="donation-wrap">
                         <h3 class="h3-sm fw-5 txt-blue mb-3">Digite o valor da sua doação</h3>
+                        <h6 class="h6-sm fw-5 txt-blue mb-3">IBAN: <span style="font-size: 20px; font-family:'Times New Roman', Times, serif">AO06.0005.0000.7202.0561.1019.7</span></h6>
                         <div class="row">
                             <div class="col-md-8">
                                 <form action="{{ route('doacao.produto.store',$produto->id) }}" method="post" enctype="multipart/form-data">
@@ -55,13 +56,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="entrega">De</label>
-                                    <input type="date" class="form-control" id="entrega" name="entrega" placeholder="Comprovativ">
+                                    <input type="date" class="form-control" id="entrega" name="entrega"  min="<?php echo date('Y-m-d'); ?>">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="entrega">Até</label>
-                                    <input type="date" class="form-control" id="entrega" name="ate" placeholder="Comprovativ">
+                                    <input type="date" class="form-control" id="entrega" name="ate" min="<?php echo date('Y-m-d'); ?>">
                                 </div>
                             </div>
 

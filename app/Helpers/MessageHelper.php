@@ -11,9 +11,9 @@ class MessageHelper
     public static function send($numero,$mensagem)
     {
         try {
-            
-            $apiToken = env('API_TOKEN');
-            $sender = env('API_SENDER');
+
+            // $apiToken ="3a61f6e8a8dd7cce0066da185c55bfd1957572348";
+            $sender = "ANGOCARE";
 
             $client = new Client();
             $url = 'http://52.30.114.86:8080/mimosms/v1/message/send?token=' . $apiToken;
@@ -27,7 +27,7 @@ class MessageHelper
             $response = $client->post($url, [
                 'json' => $data,
             ]);
-    
+
             return response()->json([
                 'status'=>1,
                 'message'=>$response
@@ -38,6 +38,6 @@ class MessageHelper
                 'message'=>$th->getMessage()
             ]);
         }
-        
+
     }
 }

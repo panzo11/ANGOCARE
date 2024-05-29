@@ -55,7 +55,6 @@ Table of Content
         return false;
     });
 
-
     $('#basicuse').jflickrfeed({
         limit: 6,
         qstrings: {
@@ -63,6 +62,7 @@ Table of Content
         },
         itemTemplate: '<li><a href="{{image_b}}"><img src="{{image_s}}" alt="{{title}}" /></a></li>'
     });
+  
     
     var custom_js = {
 

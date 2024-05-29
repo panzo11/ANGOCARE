@@ -35,7 +35,7 @@
                 <div class="col-sm-12 col-md-6 col-lg-4">
                     <div class="causes-wrap">
                         <div class="img-wrap">
-                            <a href="{{ route('site.causas.show',$doacao->id) }}"><img src="{{asset($doacao->capa)}}" alt=""></a>
+                            <a href="{{ route('site.causas.show',$doacao->id) }}"><img src="{{asset($doacao->capa)}}" alt="" height="300px"></a>
                             <div class="raised-progress">
                                 <div class="skillbar-wrap">
                                     <div class="clearfix">
@@ -44,7 +44,7 @@
                                     @php
                                         $porcetangem=($doacao->total/$doacao->valores)*100
                                     @endphp
-                                    <div class="skillbar" data-percent="{{ $porcetangem }}%">
+                                    <div class="skillbar mt-4" data-percent="{{ $porcetangem }}%">
                                         <div class="skillbar-percent">{{ $porcetangem }}%</div>
                                         <div class="skillbar-bar"></div>
                                     </div>
@@ -56,10 +56,15 @@
                             <span class="tag">{{ $doacao->categoria }}</span>
                             <h3><a href="{{ route('site.causas.show',$doacao->id) }}">{{ $doacao->categoria }}</a></h3>
 
+                            @php
+                                $user=App\Models\Organizacao::join('users','organizacaos.users_id','users.id')
+                                ->select('users.name as proprietario','organizacaos.*')
+                                ->where('users.id',$doacao->users_id)
+                                ->first();
 
-                            <p>@php
-                                echo $doacao->utilizador
-                            @endphp </p>
+   @endphp
+   {{-- @dd($user) --}}
+                            <p>{{$user->nome}}</p>
                             <div class="btn-wrap">
                                 <a class="btn-primary btn" href="{{ route('site.causas.show',$doacao->id) }}">Ver Detalhes</a>
                             </div>

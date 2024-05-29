@@ -14,5 +14,6 @@ class Organizacao extends Model
         'logotipo',
         'descricao',
         'estado',
+        'iban',
     ];
 }

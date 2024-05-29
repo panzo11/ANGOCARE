@@ -58,31 +58,32 @@ class UserController extends Controller
 
                     // Faz o upload da imagem
                     $caminhoImagem = ImageUploadHelper::uploadImage($reqImagem, 'imagens/organizacoes');
-        
+
                     if (!$caminhoImagem) {
-                       
+
                         return redirect()->back()->with('image.error','Erro ao carregar Imagem');;
-                    } 
-                
+                    }
+
                     $organizacao=Organizacao::create([
                         'nome' => $req->nome,
                         'logotipo' => $caminhoImagem ,
                         'descricao' => $req->descricao,
                         'users_id' => $user->id,
+                        'iban' => $req->iban,
                     ]);
-        
+
                     $documentos = $req->documentos;
-        
+
                     foreach ($documentos as $documentoData) {
                          // $documentos = $req->input('documentos');
-                        
+
                     $documento = $documentoData['documento'];
                     // Faz o upload da imagem
                     $caminhoDocumento = ImageUploadHelper::uploadImage($documento, 'documentos/organizacoes');
                     if (!$caminhoDocumento) {
-                    
+
                         return redirect()->back()->with('doc.error','Erro ao carregar Imagem');;
-                    }  
+                    }
                 //    dd($documentoData['id']);
                     Documento::create(
                             [
@@ -102,13 +103,13 @@ class UserController extends Controller
                     return redirect()->back()->with('store',1);
     }
     }catch (\Throwable $th) {
-        dd($th);
+        // dd($th);
         return redirect()->back()->with("store.error", 1);
     }
     }
     public function update($id, Request $req){
         try{
-           
+
             if($req->hasFile('vc_path') && $req->file('vc_path')->isValid()){
                 // Imagem VC_PATH
                 $req_imagem=$req->vc_path;
@@ -128,8 +129,8 @@ class UserController extends Controller
                 ]);
                 return redirect()->back()->with('editada',1);
                 }
-                
-            
+
+
                 else{
                     User::where('id',$id)->update([
                         'name'=>$req->name,
@@ -141,16 +142,16 @@ class UserController extends Controller
                     return redirect()->back()->with('editada',1);
                 }
 
-            
+
     } catch (\Throwable $th) {
-       dd($th);
+    //    dd($th);
         return redirect()->back()->with("editada_f", 1);
     }
     }
     public function delete($id){
         try{
 
-     
+
         User::destroy($id);
         return redirect()->back()->with('eliminada',1);
     }catch (\Throwable $th) {

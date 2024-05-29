@@ -30,7 +30,7 @@
             <div class="sidebar-list">
                 <!-- Sidebar Menu Start -->
                 <ul class="navbar-nav iq-main-menu" id="sidebar-menu">
-                @if(Auth::user()->it_tipo_utilizador==0)
+              
                     <li class="nav-item static-item">
                         <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
                             <span class="default-icon">Home</span>
@@ -52,7 +52,7 @@
 
                     
                     
-                   @endif
+                
                  
                    @if(Auth::user()->it_tipo_utilizador==0)
                    <li><hr class="hr-horizontal"></li>
@@ -285,7 +285,7 @@
                         </ul>
                     </li>
                     @endif
-                    @if(Auth::user()->it_tipo_utilizador==3 || Auth::user()->it_tipo_utilizador==0 || Auth::user()->it_tipo_utilizador==1)
+                    @if(Auth::user()->it_tipo_utilizador==3 || Auth::user()->it_tipo_utilizador==0 || Auth::user()->it_tipo_utilizador==1 || Auth::user()->it_tipo_utilizador==4)
                     <li class="nav-item static-item">
                         <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
                             <span class="default-icon">Centro de Caridade</span>
@@ -293,7 +293,7 @@
                         </a>
                     </li>
                     @endif
-                    @if(Auth::user()->it_tipo_utilizador==3 || Auth::user()->it_tipo_utilizador==0 || Auth::user()->it_tipo_utilizador==1 )
+                    @if(Auth::user()->it_tipo_utilizador==3 || Auth::user()->it_tipo_utilizador==0 || Auth::user()->it_tipo_utilizador==1 || Auth::user()->it_tipo_utilizador==4 )
                     <li class="nav-item" id="insc">
                         <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-doacao-organizacao" role="button"
                             aria-expanded="false" aria-controls="sidebar-doacao-organizacao">

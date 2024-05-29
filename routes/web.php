@@ -17,6 +17,21 @@ use App\Http\Controllers\Site\DoacaoController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// Graficos Financiamento
+Route::get('/financiamento-ong', [App\Http\Controllers\Admin\HomeController::class, 'financiamentoOngs'])->name('admin.financiamentoOngs');
+Route::get('/financiamento', [App\Http\Controllers\Admin\HomeController::class, 'financiamento'])->name('admin.financiamento');
+Route::get('/financiamento-individual', [App\Http\Controllers\Admin\HomeController::class, 'financiamentoIndividual'])->name('admin.financiamentoIndividual');
+Route::get('financiamento-empresa', [App\Http\Controllers\Admin\HomeController::class, 'financiamentoEmpresa'])->name('admin.financiamentoEmpresa');
+
+// Graficos Produtos
+Route::get('/produto-ong', [App\Http\Controllers\Admin\HomeController::class, 'produtoOngs'])->name('admin.produtoEmpresa');
+Route::get('/produto', [App\Http\Controllers\Admin\HomeController::class, 'produto'])->name('admin.produto');
+Route::get('/produto-individual', [App\Http\Controllers\Admin\HomeController::class, 'produtoIndividual'])->name('admin.produtoIndividual');
+Route::get('produto-empresa', [App\Http\Controllers\Admin\HomeController::class, 'produtoEmpresa'])->name('admin.produtoEmpresa');
+
+// Graficos Usuario por Nivel de Acesso
+Route::get('/project-category-data', [App\Http\Controllers\Admin\HomeController::class, 'projectCategoryData'])->name('admin.projectCategoryData');
+
 
 Route::get('/',[HomeController::class, 'index'])->name('site.home.index');
 

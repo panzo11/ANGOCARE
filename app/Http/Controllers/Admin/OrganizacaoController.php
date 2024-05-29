@@ -46,8 +46,8 @@ class OrganizacaoController extends Controller
     }
     public function store(Req $req){
         try {
-            
-           
+
+
             //  dd($req->logotipo);
             // $documentos = $req->input('documentos');
             $reqImagem = $req->logotipo;
@@ -56,29 +56,30 @@ class OrganizacaoController extends Controller
             $caminhoImagem = ImageUploadHelper::uploadImage($reqImagem, 'imagens/organizacoes');
 
             if (!$caminhoImagem) {
-               
+
                 return redirect()->back()->with('image.error','Erro ao carregar Imagem');;
-            } 
-        
+            }
+
             $organizacao=Organizacao::create([
                 'nome' => $req->nome,
                 'logotipo' => $caminhoImagem ,
                 'descricao' => $req->descricao,
                 'users_id' => $req->users_id,
+                'iban' => $req->iban,
             ]);
 
             $documentos = $req->documentos;
 
             foreach ($documentos as $documentoData) {
                  // $documentos = $req->input('documentos');
-                
+
             $documento = $documentoData['documento'];
             // Faz o upload da imagem
             $caminhoDocumento = ImageUploadHelper::uploadImage($documento, 'documentos/organizacoes');
             if (!$caminhoDocumento) {
-            
+
                 return redirect()->back()->with('doc.error','Erro ao carregar Imagem');;
-            }  
+            }
         //    dd($documentoData['id']);
             Documento::create(
                     [
@@ -89,12 +90,12 @@ class OrganizacaoController extends Controller
                 );
             }
 
-            
-    
+
+
             return redirect()->route('organizacoes.index')->with('store','Erro ao Cadastrar Organizacao');
         } catch (\Throwable $th) {
             // dd($th);
-          
+
             return redirect()->back()->with('store.error','Erro ao Cadastrar Organizacao');
         }
     }
@@ -122,32 +123,34 @@ class OrganizacaoController extends Controller
     }
     public function update($id, Request $req){
         try {
-            
-           
+
+
             //  dd($req->logotipo);
             // $documentos = $req->input('documentos');
             $reqImagem = $req->logotipo;
 
             // Faz o upload da imagem
             $caminhoImagem = ImageUploadHelper::uploadImage($reqImagem, 'imagens/organizacoes');
-              
+
             if ($caminhoImagem) {
-               
+
                 $organizacao=Organizacao::where('id',$id)->update([
                     'nome' => $req->nome,
                     'logotipo' => $caminhoImagem ,
                     'descricao' => $req->descricao,
                     'users_id' => $req->users_id,
+                    'iban' => $req->iban,
                 ]);
-            } 
+            }
             else{
                 $organizacao=Organizacao::where('id',$id)->update([
                     'nome' => $req->nome,
                     'descricao' => $req->descricao,
                     'users_id' => $req->users_id,
+                    'iban' => $req->iban,
                 ]);
             }
-        
+
             $org=Organizacao::where('id',$id)->first();
 
             $documentos = $req->documentos;
@@ -156,10 +159,10 @@ class OrganizacaoController extends Controller
             foreach ($documentos as $documentoData) {
                 if (is_array($documentoData) && isset($documentoData['documento'])) {
                     $documento = $documentoData['documento'];
-                
+
                     // Faz o upload da imagem
                     $caminhoDocumento = ImageUploadHelper::uploadImage($documento, 'documentos/organizacoes');
-                
+
                     Documento::where('documentos_id', $documentoData['id'])
                              ->where('organizacaos_id', $id)
                              ->update([
@@ -167,18 +170,18 @@ class OrganizacaoController extends Controller
                                  'documentos_id' => $documentoData['id'],
                                  'organizacaos_id' => $org->id,
                              ]);
-                }  
-                
+                }
+
         //    dd($documentoData['id']);
-           
+
             }
 
-            
-    
+
+
             return redirect()->route('organizacoes.index')->with('store','Erro ao Cadastrar Organizacao');
         } catch (\Throwable $th) {
-            dd($th);
-          
+            // dd($th);
+
             return redirect()->back()->with('store.error','Erro ao Cadastrar Organizacao');
         }
     }
@@ -191,7 +194,7 @@ class OrganizacaoController extends Controller
             //throw $th;
             return redirect()->back()->with('delete.error','Organizacao Eliminada com Sucesso');
         }
-       
+
     }
     public function activar(Organizacao $organizacao){
         try {
@@ -209,7 +212,7 @@ class OrganizacaoController extends Controller
         } catch (\Throwable $th) {
             return redirect()->back()->with('on.error', 'Erro ao Aprovar com sucesso!');
         }
-       
+
 
     }
     public function desativar(Organizacao $organizacao){
@@ -226,7 +229,7 @@ class OrganizacaoController extends Controller
         } catch (\Throwable $th) {
             return redirect()->back()->with('off.error', 'Erro ao Rejeitar com sucesso!');
         }
-       
+
 
     }
 }

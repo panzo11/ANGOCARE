@@ -19,14 +19,19 @@
                 <input type="file" class="form-control" name="logotipo" value="{{ isset($organizacao) ?  $organizacao->logotipo : old('logotipo') }}">>
             </div>
         </div>
-
+        <div class="col-md-12">
+            <div class="form-group">
+                <label class="form-label fw-semibold">IBAN*</label>
+                <input type="text" class="form-control" name="iban" placeholder="Digite o iban da organização" value="{{ isset($organizacao) ?  $organizacao->iban : old('iban') }}">
+            </div>
+        </div>
         <div class="col-md-12">
             <div class="form-group">
                 <label class="form-label fw-semibold">Descrição*</label>
                 <textarea  id="summernote" name="descricao" placeholder="Digite a descrição da organização">{{ isset($organizacao) ?  $organizacao->descricao : old('descricao') }}"</textarea>
             </div>
         </div>
-       
+
         <div class="col-md-6">
             <div class="form-group">
                 <label class="form-label fw-semibold">Usuário Responsável*</label>

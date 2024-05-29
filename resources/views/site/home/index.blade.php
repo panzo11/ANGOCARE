@@ -77,7 +77,7 @@
 
                             <div class="col-lg-7 col-md-12">
                                 <div class="text-center">
-                                    <img src="{{asset('asset/images/about_img.png')}}" alt="">
+                                    <img src="{{asset('asset/images/breadcrumbs_bg.jpg')}}" alt="">
                                 </div>
                             </div>
 
@@ -110,7 +110,7 @@
                                 <!-- Map Icons Start -->
                             </div>
                             @guest
-                            <a href="{{ route('login') }}" class="btn btn-outline-default">Inscreva-se</a>
+                            <a href="{{ route('register') }}" class="btn btn-outline-default">Inscreva-se</a>
                             @endguest
 
                         </div>
@@ -286,7 +286,7 @@
                     <div class="item">
                         <div class="causes-wrap">
                             <div class="img-wrap">
-                                <a href="{{ route('site.causas.show',$doacao->id) }}"><img src="{{asset($doacao->capa)}}" alt=""></a>
+                                <a href="{{ route('site.causas.show',$doacao->id) }}"><img src="{{asset($doacao->capa)}}" alt="" height="300px"></a>
                                 <div class="raised-progress">
                                     <div class="skillbar-wrap">
                                         <div class="clearfix">
@@ -480,7 +480,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-7 col-md-12">
                         <div class="text-center">
-                            <img src="{{asset('asset/images/about_img.png')}}" alt="">
+                            <img src="{{asset('asset/images/breadcrumbs_bg.jpg')}}" alt="">
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-12">
@@ -500,7 +500,7 @@
                         </div> --}}
 
                         <div class="d-flex">
-                            <a class="btn btn-default me-3" href="{{ route('login') }}">Inscreva-se agora</a>
+                            <a class="btn btn-default me-3" href="{{ route('register') }}">Inscreva-se agora</a>
                             <div class="sobre-telefone">
                                 <i data-feather="phone-call"></i>
                                 Contate-nos <br> +244 949756951
