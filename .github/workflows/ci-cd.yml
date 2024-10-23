@@ -64,6 +64,9 @@ jobs:
         echo "DB_PASSWORD=root" >> .env
         php artisan key:generate
 
+    - name: Run migrations
+      run: php artisan migrate
+
     - name: Run PHP tests
       run: php artisan test
 
@@ -87,3 +90,4 @@ jobs:
     - name: Deploy to Docker Swarm
       run: |
         docker stack deploy -c docker-compose.yml angocare
+g
