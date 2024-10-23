@@ -3,7 +3,7 @@
 @if (session('doacao'))
 <script>
     Swal.fire(
-        'Doação realizada com sucesso!',
+        'Doação realizada com sucesso!!',
         '',
         'success'
     )
