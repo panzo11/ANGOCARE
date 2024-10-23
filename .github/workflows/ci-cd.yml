@@ -49,8 +49,10 @@ jobs:
     - name: Install PHP dependencies
       run: composer install
 
-    - name: Generate application key
-      run: php artisan key:generate
+    - name: Create .env file
+      run: |
+        cp .env.example .env
+        php artisan key:generate
 
     - name: Run PHP tests
       run: php artisan test
