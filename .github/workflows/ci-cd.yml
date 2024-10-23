@@ -90,4 +90,3 @@ jobs:
     - name: Deploy to Docker Swarm
       run: |
         docker stack deploy -c docker-compose.yml angocare
-g
