@@ -98,7 +98,8 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Initialize Docker Swarm
-      run: docker swarm init || ddocker swarm join --token SWMTKN-1-4ib0mp3wa4i87mlxx0706m5t4afi3bedfl0sc5p7n4yvr1xepx-3wp8rmj58f5lfnk1i0iexe4n5 192.168.221.88:2377
+      run: docker swarm init || docker swarm join --token SWMTKN-1-4ib0mp3wa4i87mlxx0706m5t4afi3bedfl0sc5p7n4yvr1xepx-3wp8rmj58f5lfnk1i0iexe4n5 192.168.221.88:2377
 
     - name: Deploy to Docker Swarm
-      run: docker stack deploy -c docker-compose.yml angocare
+      run: |
+        docker stack deploy --compose-file docker-compose.yml angocare --with-registry-auth
