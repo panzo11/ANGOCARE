@@ -84,16 +84,10 @@ jobs:
         git config --global user.email "panzopedro26@gmail.com"
         git config --global user.name "panzo11"
 
-    - name: Generate and push Docker tag
+    - name: Create and push tag
+      uses: anothrNick/github-tag-action@v1.38.0
       env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
-      run: |
-        TAG=$(date +'%Y%m%d%H%M%S')
-        docker tag angocare:latest $DOCKER_USERNAME/angocare:$TAG
-        docker push $DOCKER_USERNAME/angocare:$TAG
-        git tag -a $TAG -m "Automated tag creation"
-        git push https://$MY_GITHUB_TOKEN@github.com/panzo11/ANGOCARE.git $TAG
+        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
 
   deploy:
     runs-on: ubuntu-latest
