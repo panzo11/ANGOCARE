@@ -85,9 +85,9 @@ jobs:
         git config --global user.name "panzo11"
 
     - name: Create and push tag
-      uses: anothrNick/github-tag-action@v1.38.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+      uses: phish108/autotag-action@v1.1.55
+      with:
+        github-token: ${{ secrets.MY_GITHUB_TOKEN }}
 
   deploy:
     runs-on: ubuntu-latest
