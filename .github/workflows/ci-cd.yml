@@ -93,7 +93,7 @@ jobs:
         docker tag angocare:latest $DOCKER_USERNAME/angocare:$TAG
         docker push $DOCKER_USERNAME/angocare:$TAG
         git tag -a $TAG -m "Automated tag creation"
-        git push origin $TAG
+        git push https://$MY_GITHUB_TOKEN@github.com/panzo11/ANGOCARE.git $TAG
 
   deploy:
     runs-on: ubuntu-latest
