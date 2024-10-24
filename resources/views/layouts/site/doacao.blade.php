@@ -12,7 +12,7 @@
 @if (session('doacao.error'))
 <script>
 Swal.fire(
-    'Error ao realizar Doação!',
+    'Error ao realizar Doação!!',
     '',
     'error'
 )
