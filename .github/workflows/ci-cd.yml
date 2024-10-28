@@ -30,26 +30,26 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Node.js
+    - name: Configurar Node.js
       uses: actions/setup-node@v2
       with:
         node-version: '14'
 
-    - name: Install dependencies
+    - name: Instalar dependências
       run: npm install
 
-    - name: Run tests
+    - name: Executar testes
       run: npm test
 
-    - name: Set up PHP
+    - name: Configurar PHP
       uses: shivammathur/setup-php@v2
       with:
         php-version: '8.1'
 
-    - name: Install PHP dependencies
+    - name: Instalar dependências PHP
       run: composer install
 
-    - name: Create .env file
+    - name: Criar arquivo .env
       run: |
         echo "APP_NAME=Laravel" > .env
         echo "APP_ENV=local" >> .env
@@ -64,27 +64,27 @@ jobs:
         echo "DB_PASSWORD=root" >> .env
         php artisan key:generate
 
-    - name: Run migrations
+    - name: Executar migrações
       run: php artisan migrate
 
-    - name: Run PHP tests
+    - name: Executar testes PHP
       run: php artisan test
 
-    - name: Build Docker image
+    - name: Construir imagem Docker
       run: docker build -t angocare:latest .
 
-    - name: Log in to Docker Hub
+    - name: Fazer login no Docker Hub
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       run: echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
 
-    - name: Configure Git
+    - name: Configurar Git
       run: |
         git config --global user.email "panzopedro26@gmail.com"
         git config --global user.name "panzo11"
 
-    - name: Create and push tag
+    - name: Criar e enviar tag
       uses: phish108/autotag-action@v1.1.55
       with:
         github-token: ${{ secrets.MY_GITHUB_TOKEN }}
@@ -97,14 +97,14 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Initialize Docker Swarm
+    - name: Inicializar Docker Swarm
       run: docker swarm init || docker swarm join --token SWMTKN-1-4ib0mp3wa4i87mlxx0706m5t4afi3bedfl0sc5p7n4yvr1xepx-3wp8rmj58f5lfnk1i0iexe4n5 192.168.221.88:2377
 
-    - name: Deploy to Docker Swarm
+    - name: Deploy no Docker Swarm
       run: |
         docker stack deploy --compose-file docker-compose.yml angocare --with-registry-auth
 
-    - name: Notify Portainer
+    - name: Notificar Portainer
       run: |
         curl -X POST -H "Authorization: Bearer ${{ secrets.PORTAINER_API_TOKEN }}" \
         -H "Content-Type: application/json" \
@@ -119,6 +119,6 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Docker Compose
+    - name: Configurar Docker Compose
       run: |
         docker-compose -f docker-compose.proxy.yml up -d
