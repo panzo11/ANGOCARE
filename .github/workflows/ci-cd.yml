@@ -103,3 +103,22 @@ jobs:
     - name: Deploy to Docker Swarm
       run: |
         docker stack deploy --compose-file docker-compose.yml angocare --with-registry-auth
+
+    - name: Notify Portainer
+      run: |
+        curl -X POST -H "Authorization: Bearer ${{ secrets.PORTAINER_API_TOKEN }}" \
+        -H "Content-Type: application/json" \
+        -d '{"type": "stack", "method": "git", "endpointId": 1, "repositoryUrl": "https://github.com/panzo11/ANGOCARE.git", "stackFile": "docker-compose.yml", "env": []}' \
+        http://localhost:9000/api/stacks
+
+  proxy_manager:
+    runs-on: ubuntu-latest
+    needs: deploy
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Docker Compose
+      run: |
+        docker-compose -f docker-compose.proxy.yml up -d
